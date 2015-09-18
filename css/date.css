@@ -1,0 +1,36 @@
+.dateInfo strong{
+	margin-right:30px;
+}
+
+.dateInfo {
+	margin-bottom:10px;
+}
+
+.dateInfo p {
+	text-align:left;
+}
+
+.attending {
+	margin-bottom:10px;
+}
+
+.message hr {
+	padding-bottom: 0px;
+	margin-top:3px;
+	margin-bottom: 5px;
+	padding-top:0px;
+}
+
+.uoftBanner {
+	background-image: 'http://uoftbaddy.ca/u/uoft.jpg';
+	background-size: cover;
+	position:relative;
+}
+
+.title {
+	position:absolute;
+	background-color: rgba(0, 0, 0, 0.4);
+	color: white;
+	bottom: 0px;
+	right: 50px;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "ngScrollSpy",
+  "version": "1.0.8",
+  "description": "An implementation of Bootstrap's scollspy and affix for AngularJS",
+  "dependencies": {
+    "angular": "~1.2.0"
+  },
+  "main": "./dist/ngScrollSpy.js",
+  "devDependencies": {
+    "angular-mocks": "~1.2.0"
+  },
+  "homepage": "https://github.com/mg/ngScrollSpy",
+  "_release": "1.0.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.8",
+    "commit": "7ee491c44b73a5093988d05a418f50677fcbcd23"
+  },
+  "_source": "git://github.com/mg/ngScrollSpy.git",
+  "_target": "~1.0.8",
+  "_originalSource": "ngScrollSpy",
+  "_direct": true
+}

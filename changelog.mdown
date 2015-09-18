@@ -1,0 +1,28 @@
+August 7, 2015:
+- Set the database in favor of a global table for keeping track of turnouts. The table for any event action is now:
+
+	Table Name: `turnouts`
+	date_id		user_id		type
+	UNIQUE INDEX ON date_id, user_id, type
+
+- For an action of join, the following sql statment is used:
+
+	INSERT INTO turnouts (date_id, user_id, type) VALUES('$date', '$user->user_id', 1);
+
+- For an action of having appeared for a badminton date:
+
+	INSERT INTO turnouts (date_id, user_id, type) VALUES('$date', '$user->user_id', 2);
+
+- To check if a user has joined and appeared for a group
+	
+	SELECT date_id FROM turnouts WHERE date_id = '$date->date_id' AND user_id = '$user->user_id' AND type = 2;
+
+- Public static function get_current_user_id() now depreciated to a private static function that helps a public static function get_current_user(), which returns the current user object
+
+- Created the Database
+- Finished Groups.php
+- Finished User.php
+- Finished BadmintonDate.php
+- Refactored the objects code for BadmintonDate
+- Finished basic reputation system
+- Need to think about how to log actions....

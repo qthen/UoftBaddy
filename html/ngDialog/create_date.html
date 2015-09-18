@@ -1,0 +1,42 @@
+<html>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<h4>Create Confirmed Time</h4>
+				<div ng-show="errorMessage">
+					<small style="color:red;">
+						{{errorMessage}}
+					</small>
+				</div>
+				<hr>
+				You are confirming a badminton date into the crowd calendar that has been booked to the best of your knowledge. 
+				<hr>
+				<form role="form">
+					<div class="form-group">
+						<input type="text" class="form-control" ng-model="data.eventName">
+					</div>
+					<div class="form-group">
+						Optimal Number of Participants	<input type="number" ng-model="data.maxAttendants" class="form-control">
+					</div>
+					<div class="form-group">
+						<textarea ng-model="data.summary" class="form-control" placeholder="Any quick details? Are you mainly playing singles, casual, a few drills?" rows="3">
+						</textarea>
+					</div>
+					<div class="form-group">
+						<p class="input-group">
+							<input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="data.dt" is-open="datepicker.opened" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+					</div>
+					<div class="form-group">
+						<timepicker style="display:inline-block;margin-right:10px;" ng-model="data.mytime" hour-step="hstep" show-meridian="true" min="7:00 AM"></timepicker>
+						<timepicker style="display:inline-block;" ng-model="data.endtime" hour-step="hstep" show-meridian="true" min="7:00 AM"></timepicker>
+					</div>
+					<input type="submit" ng-click="submit()" class="btn btn-primary">
+				</form>
+			</div>
+		</div>
+	</div>
+</html>

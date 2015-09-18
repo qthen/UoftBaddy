@@ -1,0 +1,2 @@
+Users can create private and public dates in order to populate the schedule as best as possible
+For now, just public dates

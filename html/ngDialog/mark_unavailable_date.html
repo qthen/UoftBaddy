@@ -1,0 +1,30 @@
+<html>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<h4>Create Confirmed Time</h4>
+				<hr>
+				You are confirming a badminton date into the crowd calendar that has been booked to the best of your knowledge. 
+				<hr>
+				<form role="form">
+					<div class="form-group">
+						<input type="text" class="form-control" ng-model="data.eventName">
+					</div>
+					<div class="form-group">
+						<p class="input-group">
+							<input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="data.dt" is-open="status.opened" min-date="minDate" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>
+					</div>
+					<div class="form-group">
+						<timepicker style="display:inline-block;margin-right:10px;" ng-model="data.mytime" hour-step="hstep" show-meridian="true" min="7:00 AM"></timepicker>
+						<timepicker style="display:inline-block;" ng-model="data.endtime" hour-step="hstep" show-meridian="true" min="7:00 AM"></timepicker>
+					</div>
+					<input type="submit" ng-click="submit()" class="btn btn-primary">
+				</form>
+			</div>
+		</div>
+	</div>
+</html>
