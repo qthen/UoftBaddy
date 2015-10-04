@@ -1,0 +1,5 @@
+body {
+    background-image: url("/ui/blurredHome.jpg");
+    background-size: cover;
+    position:relative;
+}

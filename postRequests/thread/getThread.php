@@ -5,10 +5,11 @@ $user = User::get_current_user();
 $request = file_get_contents('php://input');
 $data = json_decode($request);
 $thread_id = $data->thread_id;
+//$thread_id = 27;
 try {
     if (is_numeric($thread_id)) {
         $mysqli = Database::connection();
-        $sql = "SELECT t1.thread_id, t1.thread_title, t1.thread_text, t1.date_play, t1.date_posted, t1.author_id as `user_id`, t2.username, t2.email, t2.reputation, t2.avatar
+        $sql = "SELECT t1.thread_id, t1.thread_title, t1.thread_text, t1.date_play, t1.date_posted, t1.author_id as `user_id`, t2.username, t2.email, t2.reputation, t2.avatar_link
         FROM `threads` as t1 
         LEFT JOIN `users` as t2 
         ON t2.user_id = t1.author_id
@@ -19,6 +20,7 @@ try {
             $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
             $row['author'] = new ProfileUser($row);
             $thread = new Thread($row);
+            $thread->get_comments();
             http_response_code(200);
             echo json_encode($thread, JSON_PRETTY_PRINT);
         }

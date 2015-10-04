@@ -15,6 +15,46 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'ngSanitize', 'angular
         $provide.constant('getUserEvents', 'postRequests/user/getUserEvents.php');
         $provide.constant('getCreatedEvents', 'postRequests/user/getCreatedUserEvents.php');
         $provide.constant('getUserDropdown', 'postRequests/user/getUserDropdown.php');
+        $provide.constant('getUserNotifications', 'postRequests/user/getUserNotifications.php');
+        $provide.constant('markNotificationAsRead', 'postRequests/user/MarkNotificationAsRead.php');
+        $provide.constant('PlayingLevelChoices', [
+            {
+                choice_id: 0,
+                choice_name: 'Unspecified'
+            },
+            {
+                'choice_id': 1,
+                'choice_name': 'Beginner'
+            },
+            {
+                'choice_id': 2,
+                'choice_name': 'Casual Intermediate'
+            },
+            {
+                'choice_id': 3,
+                'choice_name': 'Frequent Intermediate'
+            },
+            {
+                'choice_id': 4,
+                'choice_name': 'Low-Level Advanced'
+            },
+            {
+                'choice_id': 5,
+                'choice_name': 'Intermediate Advanced'
+            },
+            {
+                'choice_id': 6,
+                'choice_name': 'High-Level Advanced'
+            },
+            {
+                'choice_id': 7,
+                'choice_name': 'Provincially Ranked'
+            },
+            {
+                'choice_id': 8,
+                'choice_name': 'Internatioally Ranked'
+            }
+        ]);
         $provide.value('MySQLtoJS', function(datetimeString) {
             var t = datetimeString.split(/[- :]/);
             var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
@@ -50,6 +90,22 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'ngSanitize', 'angular
                 deferred.reject('The input parameters are not valid');
             }
             return deferred.promise;    
+        }
+    }]).factory('notificationsFactory', ['httpHandler', 'getUserNotifications', 'markNotificationAsRead', function(httpHandler, getUserNotifications, markNotificationAsRead) {
+        return {
+            CurrentUserNotifications: function() {
+                return httpHandler.request(getUserNotifications, {});
+            },
+            MarkAsRead: function(notificationObject) {
+                /*
+                (Notification) -> Promise Object
+                Marks the notification as read in the database
+                */
+                console.log(notificationObject);
+                return httpHandler.request(markNotificationAsRead, {
+                    notification_id: notificationObject.notification_id
+                });;
+            }
         }
     }]).factory('userDropdown', ['httpHandler', 'getUserDropdown', function(httpHandler, getUserDropdown){
         return {
@@ -184,11 +240,41 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'ngSanitize', 'angular
                 restrict:"E"
         };
         return e
-    }).controller('controller', ['$scope', '$http', 'profileFactory', 'profileHelper', 'userDropdown', function($scope, $http, profileFactory, profileHelper, userDropdown) {
+    }).controller('controller', ['$scope', '$http', 'profileFactory', 'profileHelper', 'userDropdown', 'notificationsFactory', 'PlayingLevelChoices', function($scope, $http, profileFactory, profileHelper, userDropdown, notificationsFactory, PlayingLevelChoices) {
     $scope.data = {}, //Holding object for scopes
     $scope.data.animationsEnabled = true;
     $scope.data.badmintonDates = [
-    ]
+    ];
+
+    notificationsFactory.CurrentUserNotifications().then(function(successResponse) {
+        console.log(successResponse);
+        $scope.data.notifications = successResponse.data;
+        $scope.data.newNotifications = 0;
+        for (var i = 0; i < $scope.data.notifications.length; i++) {
+            //console.log($scope.data.notifications[i]);
+            if ($scope.data.notifications[i].read_status == 0) {
+                $scope.data.newNotifications++;
+                $scope.data.notifications[i].style = {
+                    "background-color": 'rgba(41, 128, 185, 0.1)'
+                };
+            }
+            else {
+                $scope.data.notifications[i].style = '';
+            }
+        }
+    }, function(errorResponse) {
+        console.log(errorResponse);
+    });
+
+    $scope.propogateRead = function(notificationObject) {
+        notificationsFactory.MarkAsRead(notificationObject).then(function(successResponse) {
+            $window.location.href = '/' + notificationObject.a_href;
+        }, function(errorResponse) {
+            alert('Some error occured in handling notifications');
+            console.log(errorResponse);
+        });
+    }
+
 
     //Sidebar code
     $scope.toggle = true;
@@ -197,8 +283,11 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'ngSanitize', 'angular
         $scope.toggle = !$scope.toggle;
     }
 
-    $scope.init = function(profileID) {
+    $scope.init = function(profileID, currentUserID) {
         $scope.data = {}; //Holding object in case of primitive scopes
+        $scope.user = {
+            user_id: currentUserID
+        };
 
         profileFactory.barebonesProfile(profileID).then(function(successResponse) {
             console.log(successResponse);
@@ -206,6 +295,17 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'ngSanitize', 'angular
 
             //Now convert the profile fields into correct JS Date objects
             $scope.profile = profileHelper.profileMySQLFieldsToJS(profile);
+            var playingLevel = $scope.profile.level;
+            var playingLevels = PlayingLevelChoices;
+
+            for(var i = 0; i < playingLevels.length; i++) {
+                if (playingLevels[i].choice_id == playingLevel) {
+                    $scope.profile.literalPlaying = playingLevels[i].choice_name;
+                }
+            }
+
+            console.log($scope.profile);
+
 
             // $scope.profile.number_of_joins = parseInt($scope.profile.number_of_joins);
             // $scope.profile.number_of_leaves = parseInt($scope.profile.number_of_leaves);

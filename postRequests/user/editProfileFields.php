@@ -6,15 +6,27 @@ $data = json_decode($request);
 $level = $data->level;
 $program = $data->program;
 $commuter = $data->commuter;
+$accolades = $data->accolades;
+$bio = $data->bio;
+// $commuter = 2;
+// $level = 'AngularJS Level';
+// $program = 'Object Oriented';   
+// $level = 1;
+// $playingLevel = $data->playingLevel;
+// $commuter = 1;
+// $bio = 'hey there';
+// $playingLevel = 1;  
 $user = User::get_current_user(); //The user to edit on
 try {
-    if ($user instanceof User) {
+    if ($user instanceof CurrentUser) {
         if (is_numeric($level) && is_numeric($commuter)) {
-            $program = Database::sanitize($program);
+            list($program, $accolades, $bio) = Database::sanitize(array($program, $accolades, $bio));
             $edit = new ProfileUser(array(
                 'level' => $level,
                 'program' => $program,
-                'commuter' => $commuter)
+                'commuter' => $commuter,
+                'bio' => $bio,
+                'accolades' => $accolades)
             );
             $result = $user->edit_self($edit);
             if ($result) {

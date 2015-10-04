@@ -16,17 +16,23 @@
       </a>
     </div> -->
     <div> 
+      <li class="sidebar-title"><span>UoftBaddy</span></li>
+    </div>
+    <li class="sidebar-list">
+      <a href="/index.php">Home<span class="menu-icon fa fa-university"></span></a>
+    </li>
+    <div> 
       <li class="sidebar-title"><span>Badminton</span></li>
     </div>
     <li class="sidebar-list">
-      <a href="courts.php">Confirmed Courts<span class="menu-icon fa fa-tachometer"></span></a>
+      <a href="tentative.php">Discussion<span class="menu-icon fa fa-users"></span></a>
     </li>
     <li class="sidebar-list">
-      <a href="tentative.php">Looking to Play<span class="menu-icon fa fa-tachometer"></span></a>
+      <a href="courts.php">Confirmed Courts<span class="menu-icon fa fa-calendar"></span></a>
     </li>
     <li class="sidebar-title"><span>Your Events</span></li>
     <li class="sidebar-list">
-      <a href="all.php">All Events<span class="menu-icon fa fa-tachometer"></span></a>
+      <a href="all.php">Events Dashboard<span class="menu-icon fa fa-calendar-o"></span></a>
     </li>
 <!--        <li class="sidebar-list">
       <a href="upcoming.php">Upcoming Events<span class="menu-icon fa fa-tachometer"></span></a>
@@ -37,19 +43,23 @@
       <a href="booking.php">Booking Courts<span class="menu-icon fa fa-tachometer"></span></a>
     </li>
     <li class="sidebar-list">
-      <a href="#">This Week Schedule<span class="menu-icon fa fa-tachometer"></span></a>
+      <a href="thisweek.php">This Week Schedule<span class="menu-icon fa fa-tachometer"></span></a>
     </li>
-    <li class="sidebar-title"><span>Users</span></li>
+    <li class="sidebar-title"><span>Members</span></li>
     <li class="sidebar-list">
-    	<a href="users.php">All Users</a>
+    	<a href="users.php">All Members</a>
     </li>
+    <li class="sidebar-title"><span>Feedback</span></li>
     <li class="sidebar-list">
+      <a href="feedback.php">Contact Us</a>
+    </li>
+<!--     <li class="sidebar-list">
     	<a href="#">Recently Played With</a>
-    </li>
-      <li class="sidebar-title"><span>Groups</span></li>
+    </li> -->
+<!--       <li class="sidebar-title"><span>Groups</span></li>
     <li class="sidebar-list">
     	<a href="#">Not Implemented Yet</a>
-    </li>
+    </li> -->
   </ul>
   <div class="sidebar-footer">
     <div class="col-xs-4">
@@ -58,12 +68,12 @@
       </a>
     </div>
     <div class="col-xs-4">
-      <a href="#" target="_blank">
+      <a href="about.php" target="_blank">
         About
       </a>
     </div>
     <div class="col-xs-4">
-      <a href="#">
+      <a href="feedback.php">
         Support
       </a>
     </div>

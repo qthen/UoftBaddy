@@ -25,6 +25,8 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment'])
         //For joining threads
         $provide.constant('joinThread', 'postRequests/user/joinThread.php');
         $provide.constant('conditionallyJoinThread', 'postRequests/user/conditionalJoinThread.php');
+        $provide.constant('getUserNotifications', 'postRequests/user/getUserNotifications.php');
+        $provide.constant('markNotificationAsRead', 'postRequests/user/MarkNotificationAsRead.php');
             
 
         $provide.value('convertMySQLToJS', function(arrayInput) {
@@ -96,6 +98,22 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment'])
             }
             return deferred.promise;    
         }
+    }]).factory('notificationsFactory', ['httpHandler', 'getUserNotifications', 'markNotificationAsRead', function(httpHandler, getUserNotifications, markNotificationAsRead) {
+        return {
+            CurrentUserNotifications: function() {
+                return httpHandler.request(getUserNotifications, {});
+            },
+            MarkAsRead: function(notificationObject) {
+                /*
+                (Notification) -> Promise Object
+                Marks the notification as read in the database
+                */
+                console.log(notificationObject);
+                return httpHandler.request(markNotificationAsRead, {
+                    notification_id: notificationObject.notification_id
+                });;
+            }
+        }
     }]).factory('userDropdown', ['httpHandler', 'getUserDropdown', function(httpHandler, getUserDropdown){
         return {
             dropdownFields: function() {
@@ -114,6 +132,7 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment'])
                 console.log(threadObject);
                 threadObject.date_play = serviceDate.MySQLDatetimeToDateObject(threadObject.date_play + ' 00:00:00');
                 threadObject.date_posted = serviceDate.MySQLDatetimeToDateObject(threadObject.date_posted);
+                //threadObject.date_posted = moment(threadObject.date_posted).fromNow();
                 return threadObject
             }
         };
@@ -128,19 +147,19 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment'])
                     thread_id: thread_id
                 });
             },
-            threadComments: function(thread_id) {
-                /*
-                (Int) -> Array of Comments
-                */
-                httpHandler.request(getThreadComments, {
-                    thread_id: thread_id
-                }).then(function(successResponse) {
-                    return successResponse.data;
-                }, function(errorResponse) {
-                    console.log(errorResponse);
-                    return [];
-                });
-            },
+            // threadComments: function(thread_id) {
+            //     /*
+            //     (Int) -> Array of Comments
+            //     */
+            //     httpHandler.request(getThreadComments, {
+            //         thread_id: thread_id
+            //     }).then(function(successResponse) {
+            //         return successResponse.data;
+            //     }, function(errorResponse) {
+            //         console.log(errorResponse);
+            //         return [];
+            //     });
+            // },
             threadParticipants: function(thread_id) {
                 /*
                 (Int) -> Promise
@@ -245,11 +264,40 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment'])
                 restrict:"E"
         };
         return e
-    }).controller('controller', ['$scope', '$http', 'ngDialog', 'createConfirmedTime', 'createConfirmedTimePHP', 'loadBasicUser', '$q', 'createTentativeDate', 'markUnavailable', 'getAllBadmintonDates', 'convertMySQLToJS', 'uiCalendarConfig', 'duringHours', 'getThreads', 'moment', 'postThreadPHP', 'postCommentPHP', 'getThread', 'threadActionFactory', 'dateHelper', 'threadFactory', 'threadHelper', 'userDropdown', 'currentUser', function($scope, $http, ngDialog, createConfirmedTime, createConfirmedTimePHP, loadBasicUser, $q, createTentativeDate, markUnavailable, getAllBadmintonDates, convertMySQLToJS, uiCalendarConfig, duringHours, getThreads, moment, postThreadPHP, postCommentPHP, getThread, threadActionFactory, dateHelper, threadFactory, threadHelper, userDropdown, currentUser) {
+    }).controller('controller', ['$scope', '$http', 'ngDialog', 'createConfirmedTime', 'createConfirmedTimePHP', 'loadBasicUser', '$q', 'createTentativeDate', 'markUnavailable', 'getAllBadmintonDates', 'convertMySQLToJS', 'uiCalendarConfig', 'duringHours', 'getThreads', 'moment', 'postThreadPHP', 'postCommentPHP', 'getThread', 'threadActionFactory', 'dateHelper', 'threadFactory', 'threadHelper', 'userDropdown', 'currentUser', 'notificationsFactory', 'serviceDate', function($scope, $http, ngDialog, createConfirmedTime, createConfirmedTimePHP, loadBasicUser, $q, createTentativeDate, markUnavailable, getAllBadmintonDates, convertMySQLToJS, uiCalendarConfig, duringHours, getThreads, moment, postThreadPHP, postCommentPHP, getThread, threadActionFactory, dateHelper, threadFactory, threadHelper, userDropdown, currentUser, notificationsFactory, serviceDate) {
     $scope.data = {}, //Holding object for scopes
     $scope.data.animationsEnabled = true;
     $scope.data.badmintonDates = [
     ];
+
+    notificationsFactory.CurrentUserNotifications().then(function(successResponse) {
+        console.log(successResponse);
+        $scope.data.notifications = successResponse.data;
+        $scope.data.newNotifications = 0;
+        for (var i = 0; i < $scope.data.notifications.length; i++) {
+            //console.log($scope.data.notifications[i]);
+            if ($scope.data.notifications[i].read_status == 0) {
+                $scope.data.newNotifications++;
+                $scope.data.notifications[i].style = {
+                    "background-color": 'rgba(41, 128, 185, 0.1)'
+                };
+            }
+            else {
+                $scope.data.notifications[i].style = '';
+            }
+        }
+    }, function(errorResponse) {
+        console.log(errorResponse);
+    });
+
+    $scope.propogateRead = function(notificationObject) {
+        notificationsFactory.MarkAsRead(notificationObject).then(function(successResponse) {
+            $window.location.href = '/' + notificationObject.a_href;
+        }, function(errorResponse) {
+            alert('Some error occured in handling notifications');
+            console.log(errorResponse);
+        });
+    }
 
     //Loading the current user
     currentUser.promise().then(function(successResponse) {
@@ -302,14 +350,20 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment'])
             //Convert the thread to the proper formats
             $scope.thread = threadHelper.threadMySQLFieldstoJS(thread);
 
+            for (var i = 0; i < $scope.thread.comments.length; i++) {
+                $scope.thread.comments[i].date_posted = serviceDate.MySQLDatetimeToDateObject($scope.thread.comments[i].date_posted);
+            }
+
             //Get the commments
-            $scope.thread.comments = threadFactory.threadComments($scope.thread.thread_id);
+            //$scope.thread.comments = threadFactory.threadComments($scope.thread.thread_id);
 
             threadFactory.threadParticipants($scope.thread.thread_id).then(function(successResponse) {
                 $scope.threadParticipants = successResponse.data;
             }, function(errorResponse) {
                 console.log(errorResponse);
-            })
+            });
+
+            console.log($scope.thread);
 
             //console.log($scope.threadParticipants);
             console.log(successResponse);
@@ -321,14 +375,33 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment'])
     }
 
     $scope.postComment = function() {
-        threadActionFactory.postCommentOnThread($scope.thread, $scope.data.possibleComment).then(function(successResponse) {
+        var loopBool = {
+            looping: true
+        };
+
+        console.log('logged')
+        //Sent the post request to post the commment
+        $http({
+            method: "post",
+            url: postCommentPHP,
+            data: {
+                thread_id: $scope.thread.thread_id,
+                comment_text: $scope.data.possibleComment,
+                parent_id: null
+            },
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }).then(function(successResponse) {
             console.log(successResponse);
-            $scope.data.thread.comments.push(successResponse.data);
+            $scope.possibleComment = '';
+            var newComment = successResponse.data;
+            newComment.date_posted = new Date();
+            $scope.thread.comments.push(newComment);
+            //Clear the comment box
+            $scope.data.possibleComment = '';
         }, function(errorResponse) {
             console.log(errorResponse);
         });
     }
-
     //Defaults for form code
     $scope.data.eventName = 'Badminton Date',
     $scope.data.dt = new Date(),

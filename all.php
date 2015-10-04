@@ -22,7 +22,7 @@ else {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Looking To Play</title>
+    <title>All My Events</title>
     <!-- STYLES -->
     <!-- build:css lib/css/main.min.css -->
     <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -65,36 +65,46 @@ else {
             <div class="page-content">
 
                 <!-- Header Bar -->
-                <div class="row header">
+                <div class="row header">   
                     <div class="col-xs-12">
                         <div class="user pull-right">
                             <div class="item dropdown">
                                 <a href="#" class="dropdown-toggle">
-                                    <img ng-src="{{user.avatar}}">
+                                    <img ng-src="{{user.avatar_link}}"> 
                                 </a>
                                 <?php Renderer::get_user_dropdown();?>
                             </div>
                             <div class="item dropdown">
-                             <a href="#" class="dropdown-toggle">
-                                    <i class="fa fa-bell-o"></i>
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="fa fa-bell-o"><span class="badge" style="font-size:12px;position:absolute;top:10;color:white;background-color:#D9230F;" ng-show="data.newNotifications > 0">{{data.newNotifications}}</span></i>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-right">
+                                <ul class="dropdown-menu dropdown-menu-right notification">
                                     <li class="dropdown-header">
                                         Notifications
+                                        <span class="badge">{{data.newNotifications}}</span>
                                     </li>
                                     <li class="divider"></li>
-                                    <li>
-                                        <a href="#">Server Down!</a>
+                                    <li ng-repeat="notification in data.notifications" ng-style="notification.style">
+                                        <a href ng-click="propogateRead(notification)">
+                                            {{notification.message}}
+                                        </a>
                                     </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">
+                                        <a href="notifications.php">
+                                            See All
+                                        </a>
+                                    </li>
+                                    </ul>
                                 </ul>
                             </div>
                         </div>
-                        <div class="meta">
+                        <div class="meta" style="margin:0px;padding:0px;">   
                             <div class="page">
-                                Home
+                                UoftBaddy
                             </div>
                             <div class="breadcrumb-links">
-                                Home
+                                Home / Your Events
                             </div>
                         </div>
                     </div>

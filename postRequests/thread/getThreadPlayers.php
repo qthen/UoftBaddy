@@ -2,7 +2,7 @@
 header("Content-Type: application/json"); //Set header for outputing the JSON information
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/autoload.php';
 $mysqli = Database::connection();
-$sql = "SELECT DISTINCT(t1.author_id) as `user_id`, t2.username, t2.email, t2.reputation, t2.avatar
+$sql = "SELECT DISTINCT(t1.author_id) as `user_id`, t2.username, t2.email, t2.reputation, t2.avatar, t2.avatar_link	
 FROM `threads` as t1
 INNER JOIN `users` as t2 
 ON t2.user_id = t1.author_id

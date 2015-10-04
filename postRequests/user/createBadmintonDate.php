@@ -12,6 +12,7 @@ $visibility = $data->visibility;
 $summary = $data->summary;
 $group_id = $data->group_id;
 $user = User::get_current_user();
+$max_attendants = $data->max_attendants;
 /*$begin_datetime = '2015-09-06 12:00:00';
 $end_datetime = '2015-09-06 13:00:00';*/
 /*$begin_datetime = '2015-09-21 00:00:00';
@@ -27,7 +28,8 @@ try {
 				'datename' => $datename,
 				'begin_datetime' =>  $begin_datetime,
 				'end_datetime' =>  $end_datetime,
-				'creator' => $user)
+				'creator' => $user,
+				'max_attendants' => $max_attendants)
 			);
 		}
 		else {

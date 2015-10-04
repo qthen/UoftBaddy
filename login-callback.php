@@ -1,18 +1,18 @@
 <?php
 header("Content-type: text/html;charset=utf-8");
 session_start();
+//print_r($_SESSION);
 require_once $_SERVER['DOCUMENT_ROOT'] . '/src/Facebook/autoload.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/Database.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/User.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/vars/constants.php';
-
+//print_r($_SESSION);
 //Create the Facebook service
 $fb = new Facebook\Facebook ([
 	'app_id' => '1632050047043531',
 	'app_secret' => '265828cd94179b3a9f5e6e786cb90202',
 	'default_graph_version' => 'v2.4'
 	]);
-
 $helper = $fb->getRedirectLoginHelper();
 try {
 	$accessToken = $helper->getAccessToken();

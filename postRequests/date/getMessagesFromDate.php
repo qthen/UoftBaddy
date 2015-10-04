@@ -4,7 +4,7 @@ header("Content-Type: application/json"); //Set header for outputing the JSON in
 $request = file_get_contents('php://input');
 $data =json_decode($request);
 $date_id  = $data->date_id;
-//$date_id = 1;
+//	$date_id = 13;
 $user = User::get_current_user();
 try {
 	if (is_numeric($date_id)) {

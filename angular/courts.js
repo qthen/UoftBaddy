@@ -14,6 +14,10 @@ module('app', ['mwl.calendar', 'ui.bootstrap', 'ngDialog', 'angularMoment']).
         $provide.constant('loadTopBar', 'postRequests/index/getTopBar.php');
         $provide.constant('getUserDropdown', 'postRequests/user/getUserDropdown.php');
 
+        $provide.constant('getUsersPlaying', 'postRequests/index/getUsersPlaying.php');
+        $provide.constant('getUserNotifications', 'postRequests/user/getUserNotifications.php');
+        $provide.constant('markNotificationAsRead', 'postRequests/user/MarkNotificationAsRead.php');
+
         $provide.value('convertMySQLToJS', function(arrayInput) {
             for (var i = 0; i < arrayInput.length; i++) {
                 var t = arrayInput[i].begin_datetime.split(/[- :]/);
@@ -68,6 +72,22 @@ module('app', ['mwl.calendar', 'ui.bootstrap', 'ngDialog', 'angularMoment']).
             }
             return deferred.promise;    
         }
+    }]).factory('notificationsFactory', ['httpHandler', 'getUserNotifications', 'markNotificationAsRead', function(httpHandler, getUserNotifications, markNotificationAsRead) {
+        return {
+            CurrentUserNotifications: function() {
+                return httpHandler.request(getUserNotifications, {});
+            },
+            MarkAsRead: function(notificationObject) {
+                /*
+                (Notification) -> Promise Object
+                Marks the notification as read in the database
+                */
+                console.log(notificationObject);
+                return httpHandler.request(markNotificationAsRead, {
+                    notification_id: notificationObject.notification_id
+                });;
+            }
+        }
     }]).factory('userDropdown', ['httpHandler', 'getUserDropdown', function(httpHandler, getUserDropdown){
         return {
             dropdownFields: function() {
@@ -80,7 +100,7 @@ module('app', ['mwl.calendar', 'ui.bootstrap', 'ngDialog', 'angularMoment']).
                 });
             }
         }
-    }]).factory('courtsFactory', ['httpHandler', 'getAllBadmintonDates', function(httpHandler, getAllBadmintonDates){
+    }]).factory('courtsFactory', ['httpHandler', 'getAllBadmintonDates', 'getUsersPlaying', function(httpHandler, getAllBadmintonDates, getUsersPlaying){
         return {
             courts: function() {
                 /*
@@ -89,10 +109,15 @@ module('app', ['mwl.calendar', 'ui.bootstrap', 'ngDialog', 'angularMoment']).
                 */
                 return httpHandler.request(getAllBadmintonDates, {
                 });
+            },
+            usersPlaying: function() {
+                /*
+                (Null) -> Promise Object
+                */
+                return httpHandler.request(getUsersPlaying, {});
             }
         }
-    }])
-    .factory('dateFactory', ['moment', 'serviceDate', function(moment, serviceDate) {
+    }]).factory('dateFactory', ['moment', 'serviceDate', function(moment, serviceDate) {
         /*
         Primary factory for manipulating date arrays and array of badminton dates
          */
@@ -126,6 +151,17 @@ module('app', ['mwl.calendar', 'ui.bootstrap', 'ngDialog', 'angularMoment']).
                     var title = arrayInput[i].datename;
                     var type = 'info';
 
+                    console.log(arrayInput[i]);
+
+                    if (arrayInput[i].joined) {
+                        if (arrayInput[i].absent) {
+                            title = '<strong>[Absent]</strong> ' + title + '<i class="fa fa-circle" style="color:red;position:absolute;right:1;bottom:1;"></i>';
+                        }
+                        else {
+                            title = '<strong>[Joined]</strong> ' + title + '<i class="fa fa-circle" style="color:green;position:absolute;right:1;bottom:1;"></i>';
+                        }
+                    }
+
 /*                    if (arrayInput[i].begin_datetime >= new Date()) {
                         arrayInput[i].message = 'Begins at ' + moment(arrayInput[i].begin_datetime).format('MMMM Do YYYY, h:mm a') + ' and likely ends at ' + moment(arrayInput[i].end_datetime).format('MMMM Do YYYY, h:mm a');
                     }
@@ -138,6 +174,20 @@ module('app', ['mwl.calendar', 'ui.bootstrap', 'ngDialog', 'angularMoment']).
                         title: title,
                         type: type,
                         date_id: date_id
+                    }
+                    //Do a smart check on whether or not the event is almost full
+                    if (arrayInput[i].attendees)
+                    if (arrayInput[i].full) {
+                        object.type = 'danger';
+                    }
+                    else {
+                        var freeSpace = parseInt(arrayInput[i].max_attendants) - parseInt(arrayInput[i].attendees);
+                        if (freeSpace <= 2) {
+                            object.type = 'warning';
+                        }
+                        else {
+                            object.type = 'info';
+                        }
                     }
                     if (object.startsAt.getDay() == new Date().getDay()) {
                         //Today
@@ -231,12 +281,41 @@ module('app', ['mwl.calendar', 'ui.bootstrap', 'ngDialog', 'angularMoment']).
                 restrict:"E"
         };
         return e
-    }).controller('controller', ['$scope', '$http', 'ngDialog', 'createConfirmedTime', 'createConfirmedTimePHP', 'loadBasicUser', '$q', 'createTentativeDate', 'markUnavailable', 'getAllBadmintonDates', 'convertMySQLToJS', 'duringHours', 'loadTopBar', 'dateFactory', '$window', 'courtsFactory', 'userDropdown', function($scope, $http, ngDialog, createConfirmedTime, createConfirmedTimePHP, loadBasicUser, $q, createTentativeDate, markUnavailable, getAllBadmintonDates, convertMySQLToJS, duringHours, loadTopBar, dateFactory, $window, courtsFactory, userDropdown) {
+    }).controller('controller', ['$scope', '$http', 'ngDialog', 'createConfirmedTime', 'createConfirmedTimePHP', 'loadBasicUser', '$q', 'createTentativeDate', 'markUnavailable', 'getAllBadmintonDates', 'convertMySQLToJS', 'duringHours', 'loadTopBar', 'dateFactory', '$window', 'courtsFactory', 'userDropdown', 'serviceDate', 'notificationsFactory', function($scope, $http, ngDialog, createConfirmedTime, createConfirmedTimePHP, loadBasicUser, $q, createTentativeDate, markUnavailable, getAllBadmintonDates, convertMySQLToJS, duringHours, loadTopBar, dateFactory, $window, courtsFactory, userDropdown, serviceDate, notificationsFactory) {
         //$scope.data = {};
         $scope.data = {};
         $scope.data.animationsEnabled = true;
         $scope.data.badmintonDates = [
         ];
+
+    notificationsFactory.CurrentUserNotifications().then(function(successResponse) {
+        console.log(successResponse);
+        $scope.data.notifications = successResponse.data;
+        $scope.data.newNotifications = 0;
+        for (var i = 0; i < $scope.data.notifications.length; i++) {
+            //console.log($scope.data.notifications[i]);
+            if ($scope.data.notifications[i].read_status == 0) {
+                $scope.data.newNotifications++;
+                $scope.data.notifications[i].style = {
+                    "background-color": 'rgba(41, 128, 185, 0.1)'
+                };
+            }
+            else {
+                $scope.data.notifications[i].style = '';
+            }
+        }
+    }, function(errorResponse) {
+        console.log(errorResponse);
+    });
+
+    $scope.propogateRead = function(notificationObject) {
+        notificationsFactory.MarkAsRead(notificationObject).then(function(successResponse) {
+            $window.location.href = '/' + notificationObject.a_href;
+        }, function(errorResponse) {
+            alert('Some error occured in handling notifications');
+            console.log(errorResponse);
+        });
+    }
 
         $scope.getUserDropdown = function() {
             userDropdown.dropdownFields().then(function(successResponse) {
@@ -247,7 +326,7 @@ module('app', ['mwl.calendar', 'ui.bootstrap', 'ngDialog', 'angularMoment']).
                 };
                 console.log($scope.data.dropdown);
             }, function(errorResponse) {
-                console.log(errorMessage);
+                console.log(errorResponse);
             });
         }
         $scope.getUserDropdown();
@@ -300,15 +379,79 @@ module('app', ['mwl.calendar', 'ui.bootstrap', 'ngDialog', 'angularMoment']).
             $scope.toggle = !$scope.toggle;
         }
 
+        $scope.navbar = {
+            crowd: 'active',
+            info: null,
+            stats: null
+        };
+
+        $scope.handleNavbar = function(currentTab) {
+            console.log('called');
+            angular.forEach($scope.navbar, function(value, key) {
+                console.log(key);
+                console.log(currentTab);
+                if (key == currentTab) {
+                    console.log('set');
+                    this[key] = 'active';
+                }
+                else {
+                    this[key] = null;
+                }
+            }, $scope.navbar);
+            console.log($scope.navbar);
+        }
+
+        $scope.dropdown = {
+            chosen: 'Split'
+        };
+
+        $scope.handleDropdown = function(dropdownChoice) {
+            console.log('logged');
+            $scope.dropdown.chosen = dropdownChoice;
+            console.log($scope.dropdown);   
+        }
+
+        function scopeUserInCourt(court) {
+            for (var i = 0; i < court.attendees.length; i++) {
+                if (court.attendees[i].user_id == $scope.user.user_id) {
+                    return true;
+                }
+            }
+            return false;
+        }
 
         //Get the badminton courts
         courtsFactory.courts().then(function(successResponse) {
+            console.log(successResponse);
             var courts = successResponse.data;
             var courts = dateFactory.arrayToCalendar(courts);
             $scope.todayEvents = courts.todayEvents;
             $scope.tomorrowEvents = courts.tomorrowEvents;
             console.log($scope.todayEvents);
             console.log($scope.tomorrowEvents);
+
+            //Now figure out which courts have spice
+            $scope.data.todayFreeCourts = [];
+            $scope.data.tomorrowFreeCourts = [];
+
+            var courts = successResponse.data;
+
+            for (var i = 0; i < courts.length; i++) {
+                courts[i].begin_datetime = serviceDate.MySQLDatetimeToDateObject(courts[i].begin_datetime);
+                if (courts[i].begin_datetime.getDay() == new Date().getDay()) {
+                    $scope.data.todayFreeCourts.push(courts[i]);
+                }
+                else {
+                    $scope.data.tomorrowFreeCourts.promiseGetUserh(courts[i]);
+                }
+            }
+            console.log($scope.data.todayFreeCourts);
+        });
+
+        courtsFactory.usersPlaying().then(function(successResponse) {
+            $scope.data.usersPlaying = successResponse.data;
+        }, function(errorResponse) {
+            console.log(errorResponse);
         });
 
 
@@ -362,7 +505,7 @@ module('app', ['mwl.calendar', 'ui.bootstrap', 'ngDialog', 'angularMoment']).
                 ngDialog.open({
                         template: createConfirmedTime,
                         scope: $scope,
-                        controller: ['$scope', '$http', 'ngDialog', 'createConfirmedTimePHP', 'duringHours', 'moment', function($scope, $http, ngDialog, createConfirmedTimePHP, duringHours, moment){
+                        controller: ['$scope', '$http', 'ngDialog', 'createConfirmedTimePHP', 'duringHours', 'moment', '$window', function($scope, $http, ngDialog, createConfirmedTimePHP, duringHours, moment, $window){
 
                             $scope.data = {
                                 currentDay: $scope.createdDay
@@ -413,15 +556,19 @@ module('app', ['mwl.calendar', 'ui.bootstrap', 'ngDialog', 'angularMoment']).
                                             begin_datetime: startTimeMySQL,
                                             end_datetime: endTimeMySQL,
                                             datename: $scope.data.eventName,
-                                            summary: $scope.data.summary
+                                            summary: $scope.data.summary,
+                                            max_attendants : $scope.data.maxAttendants
                                         },
                                         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                                     });
 
                                     promise.then(function(successResponse) {
-                                        ngDialog.open({
+                                        var dialg = ngDialog.open({
                                             template: 'html/ngDialog/success_create_confirm_date.html'
                                         });
+                                        dialog.closePromise.then(function() {
+                                            $window.location.reload();
+                                        })
                                     }, function(errorResponse) {
                                         console.log(errorResponse);
                                     });

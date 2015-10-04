@@ -1,5 +1,4 @@
 <?php
-header("Content-type: text/html;charset=utf-8");
 session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/src/Facebook/autoload.php';
 $fb = new Facebook\Facebook ([
@@ -7,11 +6,16 @@ $fb = new Facebook\Facebook ([
     'app_secret' => '265828cd94179b3a9f5e6e786cb90202',
     'default_graph_version' => 'v2.4'
     ]);
-$helper = $fb->getRedirectLoginHelper();
-$loginUrl = $helper->getLoginUrl('http://uoftbaddy.ca/login-callback.php');
-?>
-<html lang="en" ng-app="app">
 
+$helper = $fb->getRedirectLoginHelper();
+
+$permissions = ['email']; // Optional permissions
+$loginUrl = $helper->getLoginUrl('http://uoftbaddy.ca/login-callback.php', $permissions);
+//print_r($_SESSION);
+
+//echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
+?>
+<html> 
 <head>
 
     <meta charset="utf-8">
@@ -20,7 +24,7 @@ $loginUrl = $helper->getLoginUrl('http://uoftbaddy.ca/login-callback.php');
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>UofT Baddy</title>
+    <title>The UofTBaddy Project</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -29,12 +33,15 @@ $loginUrl = $helper->getLoginUrl('http://uoftbaddy.ca/login-callback.php');
     <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="bower_components/bootstrap-social/bootstrap-social.css" rel="stylesheet">
 
+    <!-- Custom CSS -->
+    <link href="bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <link href="bower_components/ngDialog/css/ngDialog.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/css/fblogin.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,43 +50,52 @@ $loginUrl = $helper->getLoginUrl('http://uoftbaddy.ca/login-callback.php');
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-</head>
-<body ng-controller="controller">
+<body>
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Login with Facebook</h3>
-                    </div>
-                    <div class="panel-body">
-                        <form role="form">
-                            <fieldset>
-                                <!-- Change this to a button or input when using this as a form -->
-                                <?php echo '<a href="' . htmlspecialchars($loginUrl) . '" class="btn btn-lg-btn-success btn-block">Log in with Facebook!</a>';?>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
+            <div class="col-md-12" style="color:white;text-align:center;margin-top:5%;margin-bottom:10px;">
+            <?php //print_r($_SESSION);?>
+            <?php //echo "<a href=\"" . htmlspecialchars($loginUrl) . "\">login</a>";?>
+                    <h1 style="margin-bottom:2px;font-size:60px;">
+                    <i class="fa fa-university" style="margin-bottom:10px;"></i>
+                    UoftBaddy</h1>
+                    <small>
+                        Written in PHP (server-side), MySQL (database), VanillaJavaScript, AngularJS 1.4 Web Framework.
+                    </small>
+                    <br/><br/><br/><br/><br/>
+                <p>
+                    Welcome to UoftBaddy! This is a social site aimed at finding players and booking badminton courts at the Univeristy of Toronto.
+                    <br/>
+                    Whether you're a casual player, Varsity-level, or just started playing yesterday, we're glad you're here. Come and join us!
+                </p>
+            </div>
+            <div class="col-md-3 col-md-offset-3" style="margin-bottom:1px;">
+                <a class="btn btn-block btn-social btn-facebook" href="<?php echo htmlspecialchars($loginUrl);?>">
+                    <i class="fa fa-facebook"></i> Log in with Facebook
+                </a>
+            </div>
+            <div class="col-md-3" style="margin-bottom:1px;">
+                <a class="btn btn-block btn-social btn-linkedin" disabled>
+                    <i class="fa fa-university"></i> Log in with Utoronto Mail
+                </a>
+            </div>
+            <div class="col-md-12" style="color:white;text-align:center;">
+                <small>
+                    *Currently UoftBaddy only supports log in with Facebook for now and will add Utoronto Mail and other account confirmatons in the future
+                </small>
             </div>
         </div>
     </div>
+    <div class="col-md-12" style="color:black;position:absolute;bottom:0;">
+        <small>
+         Dependencies on Bootstrap, Angular-Boostrap, angularMoment, RDash, RDash-Angular
+            UoftBaddy is not associated in any way with the University of Toronto, The Faculty of Kinesiology and Physical Education, or related departmens and sectors of the University. This is not a service offered by them. You can contact uoftbaddy@gmail.ca. 
+        </small>
+    </div>
+
 </body>
 </html>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
-<script src="bower_components/ngDialog/js/ngDialog.js"></script>
-<script src="angular/register/register.js"></script>
-<!-- jQuery -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- Metis Menu Plugin JavaScript -->
-<script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="bower_components/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
-<script src="angular/login/login.js"></script>
+<?php
+//print_r($_SESSION);
+?>

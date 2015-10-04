@@ -20,7 +20,9 @@ or die ($mysqli->error);
 $threads = array();
 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
     $row['author'] = new ProfileUser($row);
+    $row['thread_text'] = nl2br($row['thread_text']);
     $thread = new Thread($row);
+    $thread->get_comments();
     //$thread->get_comments();
     array_push($threads, $thread);
 }

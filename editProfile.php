@@ -13,6 +13,8 @@ $user = User::get_current_user();
     <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/bower_components/rdash-ui/dist/css/rdash.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/ngDialog/css/ngDialog.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/ngDialog/css/ngDialog-theme-default.css">
     <!-- endbuild -->
     <!-- SCRIPTS -->
     <!-- build:js lib/js/main.min.js -->
@@ -44,9 +46,9 @@ $user = User::get_current_user();
 
 
     <!-- Custom Scripts -->
-    <script type="text/javascript" src="/angular/profile.js"></script>
+    <script type="text/javascript" src="/angular/edit.js"></script>
 </head>
-<body ng-controller="controller" ng-init="init('<?php echo $profile_id;?>')">
+<body ng-controller="controller">
     <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
 
     <?php Renderer::get_sidebar();?>
@@ -59,35 +61,45 @@ $user = User::get_current_user();
                         <div class="user pull-right">
                             <div class="item dropdown">
                                 <a href="#" class="dropdown-toggle">
-                                    <img ng-src="{{profile.avatar}}">
+                                    <img ng-src="{{profile.avatar_link}}"> 
                                 </a>
                                 <?php Renderer::get_user_dropdown();?>
                             </div>
                             <div class="item dropdown">
-                             <a href="#" class="dropdown-toggle">
-                                    <i class="fa fa-bell-o"></i>
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="fa fa-bell-o"><span class="badge" style="font-size:12px;position:absolute;top:10;color:white;background-color:#D9230F;" ng-show="data.newNotifications > 0">{{data.newNotifications}}</span></i>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-right">
+                                <ul class="dropdown-menu dropdown-menu-right notification">
                                     <li class="dropdown-header">
                                         Notifications
+                                        <span class="badge">{{data.newNotifications}}</span>
                                     </li>
                                     <li class="divider"></li>
-                                    <li>
-                                        <a href="#">Server Down!</a>
+                                    <li ng-repeat="notification in data.notifications" ng-style="notification.style">
+                                        <a href ng-click="propogateRead(notification)">
+                                            {{notification.message}}
+                                        </a>
                                     </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">
+                                        <a href="notifications.php">
+                                            See All
+                                        </a>
+                                    </li>
+                                    </ul>
                                 </ul>
                             </div>
                         </div>
-                        <div class="meta">
+                        <div class="meta" style="margin:0px;padding:0px;">   
                             <div class="page">
-                                Home
+                                UoftBaddy
                             </div>
                             <div class="breadcrumb-links">
                                 Home
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  
                 <!-- End Header Bar -->
 
                 <!-- Main Content -->
@@ -98,46 +110,86 @@ $user = User::get_current_user();
                                 <rd-widget-header title="Edit Profile">
                                 </rd-widget-header>
                                 <rd-widget-body>
-                                    <form>
-                                        <fieldset>
-                                            <div class="form-group">
-                                                <label class="control-label col-lg-2">Username</label>
-                                                <div class="col-lg-10">
-                                                    <p class="form-control-static">
-                                                        {{user.username}}
-                                                    </p>
-                                                </div>
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2">Username</label>
+                                            <div class="col-lg-10">
+                                                <p class="form-control-static">
+                                                    {{profile.username}}
+                                                </p>
                                             </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-lg-2">Connected With:</label>
-                                                <div class="col-lg-10">
-                                                    <p class="form-control-static">
-                                                        Facebook
-                                                    </p>
-                                                </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2">Connected With:</label>
+                                            <div class="col-lg-8">
+                                                <p class="form-control-static">
+                                                    <a href="#" >Facebook</a>
+                                                </p>
                                             </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-lg-2">Program of Study
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">About Me</label>
+                                            <div class="col-lg-8">
+                                                <textarea class="form-control" ng-model="profile.bio" rows="4">
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2">Play Level</label>
+                                            <div class="col-lg-5">
+                                                <select ng-options="choice.choice_id as choice.choice_name for choice in data.playingLevels" class="form-control" ng-model="profile.level">
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2">Ranking</label>
+                                            <div class="col-lg-8">
+                                                <input type="text" class="form-control" ng-model="profile.ranking">
+                                                <p class="help-text">
+                                                    <small>
+                                                        (If applicable) - Any applicable ranking to better demonstrate your playing strength. <i>(i.e. Class C Ontario Player)</i>
+                                                    </small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2">Accolades</label>
+                                            <div class="col-lg-8">
+                                                <input type="text" ng-model="profile.accolades" class="form-control">
+                                                <p class="help-text">
+                                                    <small>
+                                                        Any additional awards, titles, clubs, participations, or accomplishments to showcase your playing strength.
+                                                        <br/> <i>(i.e. 5th Men's Singles at OFFSA, 3rd at Ryerson Open, 3 years of school team)</i> <strong>*This will be displayed under your name!</strong>
+                                                    </small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2">Program of Study
+                                            </label>
+                                            <div class="col-lg-8">
+                                                <input type="text" class="form-control" ng-model="profile.program"> 
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2">Commuter</label>
+                                            <div class="col-lg-10">
+                                                <label class="radio-inline">
+                                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1" ng-model="profile.int_commuter">Yes
                                                 </label>
-                                                <div class="col-lg-10">
-                                                    <input type="text" class="form-control" ng-model="user.program">
-                                                </div>
+                                                <label class="radio-inline">
+                                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="0" ng-model="profile.int_commuter">No
+                                                </label>
+                                                <label class="radio-inline">
+                                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2" ng-model="profile.int_commuter">Unspecified
+                                                </label>
                                             </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-lg-2">Commuter</label>
-                                                <div class="col-lg-10">
-                                                    <label class="radio-inline">
-                                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1" ng-model="data.commuter">Yes
-                                                    </label>
-                                                    <label class="radio-inline">
-                                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="0" ng-model="data.commuter">No
-                                                    </label>
-                                                    <label class="radio-inline">
-                                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2" ng-model="data.commuter">Unspecified
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </fieldset>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-lg-8 col-lg-offset-2">
+                                                <input type="submit" class="btn btn-primary" value="Submit Changes" ng-click="editProfile()">
+                                            </div>  
+                                        </div>
                                     </form>
                                 </rd-widget-body>
                             </rd-widget>

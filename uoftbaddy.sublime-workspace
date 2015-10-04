@@ -4,6 +4,230 @@
 		"selected_items":
 		[
 			[
+				"error",
+				"errorResponse"
+			],
+			[
+				"eror",
+				"errorResponse"
+			],
+			[
+				"getUser",
+				"getUserStats"
+			],
+			[
+				"uoftbn",
+				"uoftBannerClasses"
+			],
+			[
+				"noti",
+				"notificationsFactory"
+			],
+			[
+				"nEW",
+				"NewMembers"
+			],
+			[
+				"number",
+				"number_of_joins"
+			],
+			[
+				"mSQL",
+				"MySQLDatetimeToDateObject"
+			],
+			[
+				"notifi",
+				"notificationsFactory"
+			],
+			[
+				"notif",
+				"notificationsFactory"
+			],
+			[
+				"mark",
+				"markAllAsRead"
+			],
+			[
+				"notifica",
+				"notificationObject"
+			],
+			[
+				"Mark",
+				"MarkNotificationAsRead"
+			],
+			[
+				"notification",
+				"notificationsFactory"
+			],
+			[
+				"Outo",
+				"OutOfBoundsException"
+			],
+			[
+				"mo",
+				"mondayOfWeek"
+			],
+			[
+				"sunday",
+				"sundayOfWeek"
+			],
+			[
+				"calendar",
+				"calendarDay"
+			],
+			[
+				"Mysql",
+				"MySQLDatetimeToDateObject"
+			],
+			[
+				"feedb",
+				"feedbackFactory"
+			],
+			[
+				"feedback",
+				"feedbackObject"
+			],
+			[
+				"array",
+				"arrayToCalendar"
+			],
+			[
+				"drop",
+				"dropdownChoice"
+			],
+			[
+				"tomor",
+				"tomorrowFreeCourts"
+			],
+			[
+				"tdo",
+				"todayFreeCourts"
+			],
+			[
+				"toda",
+				"todayFreeCourts"
+			],
+			[
+				"tomr",
+				"tomorrowFreeCourts"
+			],
+			[
+				"tom",
+				"tomorrowEvents"
+			],
+			[
+				"succ",
+				"successResponse"
+			],
+			[
+				"badminton",
+				"badminton_date"
+			],
+			[
+				"rd-wd",
+				"rd-widget-body"
+			],
+			[
+				"rd",
+				"rd-widget-body"
+			],
+			[
+				"rd-widg",
+				"rd-widget-body"
+			],
+			[
+				"conver",
+				"conversationObject"
+			],
+			[
+				"badmit",
+				"badmintonDate"
+			],
+			[
+				"PlayingLevl",
+				"PlayingLevelChoices"
+			],
+			[
+				"Plaing",
+				"PlayingLevelChoices"
+			],
+			[
+				"Edit",
+				"AttemptEditOnSelf"
+			],
+			[
+				"Pro",
+				"ProgramOfStudy"
+			],
+			[
+				"editP",
+				"EditedProfile"
+			],
+			[
+				"ser",
+				"service	AngularJS"
+			],
+			[
+				"rd-widget",
+				"rd-widget-header"
+			],
+			[
+				"tomorr",
+				"tomorrow_courts"
+			],
+			[
+				"indx",
+				"indexFactory"
+			],
+			[
+				"booking",
+				"bookings_by_hours"
+			],
+			[
+				"bookings",
+				"bookings_by_hours"
+			],
+			[
+				"bookings_",
+				"bookings_by_hours"
+			],
+			[
+				"bok",
+				"bookings_by_hour"
+			],
+			[
+				"sql_get",
+				"sql_get_most_free_timeslot"
+			],
+			[
+				"va",
+				"vancancy_rate"
+			],
+			[
+				"boking",
+				"bookings_by_dates"
+			],
+			[
+				"book",
+				"bookings_by_dates"
+			],
+			[
+				"bookin",
+				"bookings_by_hour"
+			],
+			[
+				"backgrou",
+				"background-image"
+			],
+			[
+				"unique",
+				"uniqueImageName"
+			],
+			[
+				"imagecreate",
+				"imagecreatefromjpeg"
+			],
+			[
 				"service",
 				"serviceDate"
 			],
@@ -42,10 +266,6 @@
 			[
 				"Arr",
 				"ArrayofActions"
-			],
-			[
-				"number",
-				"number_of_attendants"
 			],
 			[
 				"facto",
@@ -120,10 +340,6 @@
 				"conditionallyJoinThread"
 			],
 			[
-				"array",
-				"array_of_conditionals"
-			],
-			[
 				"arr",
 				"array_of_conditionals"
 			],
@@ -194,10 +410,6 @@
 			[
 				"convert",
 				"convertMySQLToJS"
-			],
-			[
-				"rd",
-				"rd-widget-body"
 			],
 			[
 				"$profile",
@@ -276,10 +488,6 @@
 				"toggleSidebar"
 			],
 			[
-				"Outo",
-				"OutOfRangeException  (class)"
-			],
-			[
 				"ThreadAction",
 				"ThreadActionPusher  (class)"
 			],
@@ -296,10 +504,6 @@
 				"participants"
 			],
 			[
-				"badminton",
-				"badmintonDate"
-			],
-			[
 				"row",
 				"row_convo  (variable)"
 			],
@@ -310,221 +514,97 @@
 			[
 				"curre",
 				"current_action_array_constructor"
-			],
-			[
-				"Joined",
-				"JoinBadmintonDate"
-			],
-			[
-				"Confire",
-				"ConfirmedBadmintonDate  (class)"
-			],
-			[
-				"class",
-				"class_name"
-			],
-			[
-				"error",
-				"errored_action_id"
-			],
-			[
-				"Mysql",
-				"MySQLtoJS"
-			],
-			[
-				"mYSQL",
-				"MySQLtoJS"
-			],
-			[
-				"Badminton",
-				"BadmintonDateAction  (class)"
-			],
-			[
-				"is",
-				"is_reply  (function)"
-			],
-			[
-				"accoun",
-				"account_name_length"
-			],
-			[
-				"mem",
-				"member_priveleges  (variable)"
-			],
-			[
-				"array_merge",
-				"array_merge()"
-			],
-			[
-				"Out",
-				"OutOfBoundsException"
-			],
-			[
-				"chat_visi",
-				"chat_visible_permissions"
-			],
-			[
-				"joinab",
-				"joinable_permissions"
-			],
-			[
-				"badmi",
-				"badmintonDate"
-			],
-			[
-				"getTh",
-				"getThatWeekDates"
-			],
-			[
-				"create",
-				"create_result"
-			],
-			[
-				"con",
-				"conversations"
-			],
-			[
-				"result",
-				"result_get_last"
-			],
-			[
-				"conver",
-				"convertMySQLToJS"
-			],
-			[
-				"conversation",
-				"conversation_id"
-			],
-			[
-				"cn",
-				"controller	AngularJS"
-			],
-			[
-				"createCon",
-				"createConfirmedTime"
-			],
-			[
-				"createConf",
-				"createConfirmedTimePHP"
-			],
-			[
-				"long",
-				"longLivedAccessToken"
-			],
-			[
-				"access",
-				"accessToken"
-			],
-			[
-				"badmt",
-				"badminton_date"
-			],
-			[
-				"E",
-				"e"
-			],
-			[
-				"upvote",
-				"upvoteQuestion"
-			],
-			[
-				"down",
-				"downvoteQuestion"
-			],
-			[
-				"tagg",
-				"taggedLanguageID"
-			],
-			[
-				"sele",
-				"selectedSourceLanguageID"
-			],
-			[
-				"dest",
-				"selectedDestinationLanguageID"
-			],
-			[
-				"Ouo",
-				"OutOfRangeException"
-			],
-			[
-				"des",
-				"destination_language"
-			],
-			[
-				"selec",
-				"selectedDestinationLanguageID"
-			],
-			[
-				"big_o_best_cas",
-				"big_o_best_case_notes"
-			],
-			[
-				"big_o_worst",
-				"big_o_worst_case_notes"
-			],
-			[
-				"search",
-				"search_results  (variable)"
-			],
-			[
-				"array_rever",
-				"array_reverse()"
-			],
-			[
-				"searc",
-				"searchPhrase"
-			],
-			[
-				"get_class",
-				"get_class()"
-			],
-			[
-				"from_fun",
-				"from_functions  (variable)"
-			],
-			[
-				"nl2br",
-				"nl2br()"
-			],
-			[
-				"big_o_average",
-				"big_o_average_summary"
-			],
-			[
-				"possi",
-				"possible_function_phrase"
-			],
-			[
-				"poss",
-				"possible_function_phrase"
-			],
-			[
-				"ng-bind",
-				"ng-bind-html	AngularJS"
-			],
-			[
-				"translations",
-				"translations_today"
-			],
-			[
-				"html",
-				"htmlentities"
-			],
-			[
-				"cons",
-				"constructReasons"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"file": "index1.php",
+			"settings":
+			{
+				"buffer_size": 9094,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 9056,
+				"buffer_size": 16509,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "postRequests/index/getTotalandNewUsers.php",
+			"settings":
+			{
+				"buffer_size": 648,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "postRequests/index/getNewUsers.php",
+			"settings":
+			{
+				"buffer_size": 654,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/bootstrap/bootstrap.min.css",
+			"settings":
+			{
+				"buffer_size": 126330,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "postRequests/index/getNumberOfPeopleLookingToPlay.php",
+			"settings":
+			{
+				"buffer_size": 477,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "logout.php",
+			"settings":
+			{
+				"buffer_size": 263,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "postRequests/index/getCourtStats.php",
+			"settings":
+			{
+				"buffer_size": 745,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "postRequests/index/getTodayTomorrowCourts.php",
+			"settings":
+			{
+				"buffer_size": 2195,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "postRequests/index/getAthelticCentreSchedule.php",
+			"settings":
+			{
+				"buffer_size": 1112,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/index.css",
+			"settings":
+			{
+				"buffer_size": 1419,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -539,8 +619,16 @@
 			"file": "angular/index/index.js",
 			"settings":
 			{
-				"buffer_size": 10065,
+				"buffer_size": 23411,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "postRequests/user/MarkNotificationAsRead.php",
+			"settings":
+			{
+				"buffer_size": 817,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -563,7 +651,7 @@
 			"file": "postRequests/user/joinBadmintonDate.php",
 			"settings":
 			{
-				"buffer_size": 915,
+				"buffer_size": 916,
 				"line_ending": "Windows"
 			}
 		},
@@ -595,8 +683,41 @@
 			"file": "ui/sidebar.php",
 			"settings":
 			{
-				"buffer_size": 2270,
+				"buffer_size": 2723,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "about.php",
+			"settings":
+			{
+				"buffer_size": 9019,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "postRequests/stats/getThisWeekStats.php",
+			"settings":
+			{
+				"buffer_size": 787,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "angular/thisweek.js",
+			"settings":
+			{
+				"buffer_size": 13857,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "php/addSchedule.php",
+			"settings":
+			{
+				"buffer_size": 1346,
+				"line_ending": "Unix",
+				"name": "<?php"
 			}
 		},
 		{
@@ -627,7 +748,7 @@
 			"file": "angular/all.js",
 			"settings":
 			{
-				"buffer_size": 12604,
+				"buffer_size": 14123,
 				"line_ending": "Windows"
 			}
 		},
@@ -635,15 +756,47 @@
 			"file": "includes/User.php",
 			"settings":
 			{
-				"buffer_size": 32613,
+				"buffer_size": 47072,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "bower_components/angular-moment/angular-moment.js",
+			"settings":
+			{
+				"buffer_size": 19478,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/templates/dashboard.html",
+			"settings":
+			{
+				"buffer_size": 5128,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "bower_components/datatables-plugins/filtering/row-based/range_dates.js",
+			"settings":
+			{
+				"buffer_size": 1557,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "postRequests/profile/loadUserProfile.php",
+			"settings":
+			{
+				"buffer_size": 1846,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "postRequests/user/loadCurrentUser.php",
 			"settings":
 			{
-				"buffer_size": 1451,
+				"buffer_size": 1314,
 				"line_ending": "Windows"
 			}
 		},
@@ -651,8 +804,16 @@
 			"file": "includes/Notifications.php",
 			"settings":
 			{
-				"buffer_size": 6042,
+				"buffer_size": 8083,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "postRequests/user/withdrawAbsence.php",
+			"settings":
+			{
+				"buffer_size": 836,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -667,15 +828,7 @@
 			"file": "includes/autoload.php",
 			"settings":
 			{
-				"buffer_size": 952,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "includes/Actions.php",
-			"settings":
-			{
-				"buffer_size": 1380,
+				"buffer_size": 1189,
 				"line_ending": "Windows"
 			}
 		},
@@ -688,18 +841,34 @@
 			}
 		},
 		{
-			"file": "includes/ActionFactory.php",
+			"file": "includes/Actions.php",
 			"settings":
 			{
-				"buffer_size": 15655,
-				"line_ending": "Unix"
+				"buffer_size": 1380,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "includes/ActionPusher.php",
 			"settings":
 			{
-				"buffer_size": 4804,
+				"buffer_size": 5241,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "includes/ActionFactory.php",
+			"settings":
+			{
+				"buffer_size": 17132,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "includes/SpecificActions.php",
+			"settings":
+			{
+				"buffer_size": 13848,
 				"line_ending": "Unix"
 			}
 		},
@@ -715,7 +884,7 @@
 			"file": "angular/users.js",
 			"settings":
 			{
-				"buffer_size": 6674,
+				"buffer_size": 8863,
 				"line_ending": "Windows"
 			}
 		},
@@ -723,7 +892,7 @@
 			"file": "users.php",
 			"settings":
 			{
-				"buffer_size": 8531,
+				"buffer_size": 8058,
 				"line_ending": "Windows"
 			}
 		},
@@ -731,50 +900,143 @@
 			"file": "postRequests/index/getAllThreads.php",
 			"settings":
 			{
-				"buffer_size": 927,
+				"buffer_size": 827,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "tentative.php",
+			"file": "postRequests/index/getThreadsPage.php",
 			"settings":
 			{
-				"buffer_size": 11953,
-				"line_ending": "Windows"
+				"buffer_size": 1152,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "includes/PendingActions.php",
+			"settings":
+			{
+				"buffer_size": 2224,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "postRequests/index/betagetAllThreads.php",
+			"settings":
+			{
+				"buffer_size": 922,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "courts.php",
 			"settings":
 			{
-				"buffer_size": 14666,
+				"buffer_size": 30167,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "thisweek.php",
+			"settings":
+			{
+				"buffer_size": 10816,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "upcoming.php",
+			"settings":
+			{
+				"buffer_size": 6421,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "angular/upcoming.js",
+			"settings":
+			{
+				"buffer_size": 20412,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "bower_components/index.js",
+			"settings":
+			{
+				"buffer_size": 65,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "postRequests/index/getUsersPlaying.php",
+			"settings":
+			{
+				"buffer_size": 718,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/courts.css",
+			"settings":
+			{
+				"buffer_size": 1023,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "postRequests/profile/loadUser.php",
 			"settings":
 			{
-				"buffer_size": 1229,
+				"buffer_size": 1258,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "<?php\nrequire_once $_SERVER['DOCUMENT_ROOT'] . '/includes/autoload.php';\nif (isset($_GET['id']) && (is_numeric($_GET['id']))) {\n    $profile_id = $_GET['id'];\n}\nelse {\n    header('Location: 404.php');\n}\n?>\n<html lang=\"en\" ng-app=\"app\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n    <title>UoftBaddy</title>\n    <!-- STYLES -->\n    <!-- build:css lib/css/main.min.css -->\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/bower_components/bootstrap/dist/css/bootstrap.min.css\">\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/bower_components/font-awesome/css/font-awesome.min.css\">\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/bower_components/rdash-ui/dist/css/rdash.min.css\">\n    <!-- endbuild -->\n    <!-- SCRIPTS -->\n    <!-- build:js lib/js/main.min.js -->\n    <script type=\"text/javascript\" src=\"/bower_components/angular/angular.min.js\"></script>\n    <script type=\"text/javascript\" src=\"/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js\"></script>\n    <script type=\"text/javascript\" src=\"/bower_components/angular-cookies/angular-cookies.min.js\"></script>\n    <script type=\"text/javascript\" src=\"/bower_components/angular-ui-router/release/angular-ui-router.min.js\"></script>\n    <!-- endbuild -->\n    <!-- Custom Fonts -->\n    <link href=\"bower_components/font-awesome/css/font-awesome.min.css\" rel=\"stylesheet\" type=\"text/css\">\n    <!-- jQuery -->\n    <script src=\"/bower_components/jquery/dist/jquery.min.js\"></script>\n    <!-- Calendar-->\n    <link rel=\"stylesheet\" href=\"bower_components/fullcalendar/dist/fullcalendar.css\"/>\n    <!--Calendar-->\n    <script type=\"text/javascript\" src=\"bower_components/moment/min/moment.min.js\"></script>\n    <script type=\"text/javascript\" src=\"bower_components/angular-ui-calendar/src/calendar.js\"></script>\n    <script type=\"text/javascript\" src=\"bower_components/fullcalendar/dist/fullcalendar.min.js\"></script>\n    <script type=\"text/javascript\" src=\"bower_components/fullcalendar/dist/gcal.js\"></script>\n    <script src=\"bower_components/ngDialog/js/ngDialog.js\"></script>\n\n    <!--AngularJS Sanitize-->\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-sanitize.js\">\n    </script>\n\n    <script src=\"bower_components/angular-moment/angular-moment.js\"></script>\n    <!-- Bootstrap Core JavaScript -->\n    <script src=\"/bower_components/bootstrap/dist/js/bootstrap.min.js\"></script>\n\n\n    <!-- Custom Scripts -->\n    <script type=\"text/javascript\" src=\"/angular/profile.js\"></script>\n</head>\n<body ng-controller=\"controller\" ng-init=\"init('<?php echo $profile_id;?>')\">\n    <div id=\"page-wrapper\" ng-class=\"{'open': toggle}\" ng-cloak>\n\n    <?php Renderer::get_sidebar();?>\n        <div id=\"content-wrapper\">\n            <div class=\"page-content\">\n\n                <!-- Header Bar -->\n                <div class=\"row header\">\n                    <div class=\"col-xs-12\">\n                        <div class=\"user pull-right\">\n                            <div class=\"item dropdown\">\n                                <a href=\"#\" class=\"dropdown-toggle\">\n                                    <img ng-src=\"{{user.avatar}}\">\n                                </a>\n                                <ul class=\"dropdown-menu dropdown-menu-right\">\n                                    <li class=\"dropdown-header\">\n                                        {{user.email}}\n                                    </li>\n                                    <li class=\"divider\"></li>\n                                    <li class=\"link\">\n                                        <a ng-href=\"profile.php?id={{user.user_id}}\">\n                                            Profile\n                                        </a>\n                                    </li>\n                                    <li class=\"link\">\n                                        <a href=\"#\">\n                                            Menu Item\n                                        </a>\n                                    </li>\n                                    <li class=\"link\">\n                                        <a href=\"#\">\n                                            Menu Item\n                                        </a>\n                                    </li>\n                                    <li class=\"divider\"></li>\n                                    <li class=\"link\">\n                                        <a href=\"#\">\n                                            Logout\n                                        </a>\n                                    </li>\n                                </ul>\n                            </div>\n                            <div class=\"item dropdown\">\n                             <a href=\"#\" class=\"dropdown-toggle\">\n                                    <i class=\"fa fa-bell-o\"></i>\n                                </a>\n                                <ul class=\"dropdown-menu dropdown-menu-right\">\n                                    <li class=\"dropdown-header\">\n                                        Notifications\n                                    </li>\n                                    <li class=\"divider\"></li>\n                                    <li>\n                                        <a href=\"#\">Server Down!</a>\n                                    </li>\n                                </ul>\n                            </div>\n                        </div>\n                        <div class=\"meta\">\n                            <div class=\"page\">\n                                Dashboard\n                            </div>\n                            <div class=\"breadcrumb-links\">\n                                Home / Dashboard\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- End Header Bar -->\n\n                <!-- Main Content -->\n                <div ui-view>\n                    <div class=\"row\">\n                        <div class=\"col-lg-8\">\n                            <div class=\"row\">\n                                <div class=\"col-lg-12\">\n                                    <rd-widget>\n                                        <rd-widget-header title=\"Profile\">\n                                        </rd-widget-header>\n                                        <rd-widget-body>\n                                            <div class=\"message\">\n                                                <div class=\"title\">{{profile.username}}</div>\n                                                <h4>{{user.reputation}}</h4>\n                                                <small>\n                                                    Joined on {{profile.date_registered | date:'medium'}} and last seen at {{profile.last_seen | date:'medium'}}\n                                                </small>\n                                            </div>\n                                        </rd-widget-body>\n                                    </rd-widget>\n                                    <rd-widget>\n                                        <rd-widget-body>\n                                            <div class=\"message\">\n                                                <p class=\"text-center\" style=\"margin-bottom:10px;\">\n                                                    Play Level: {{profile.level}}\n                                                </p>\n                                                <p class=\"text-center\">\n                                                    Program: {{profile.program}}\n                                                </p>\n                                            </div>\n                                        </rd-widget-body>\n                                    </rd-widget>\n                                </div>  \n                                <div class=\"col-lg-12\">\n                                    <rd-widget ng-repeat=\"action in profile.actions\">\n                                        <rd-widget-body>\n                                            <div class=\"message\">\n                                                <p ng-bind-html=\"action.message\">\n                                                </p>\n                                                <small>\n                                                    {{action.action_message}}\n                                                </smalll>\n                                            </div>\n                                        </rd-widget-body>\n                                    </rd-widget>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"col-lg-4\">\n                            <rd-widget>\n                                <rd-widget-header title=\"Statistics\">\n                                </rd-widget-header>\n                                <rd-widget-body>\n                                    <div class=\"message\">\n                                        <div class=\"title\">Statistics</div>\n                                    </div>\n                                </rd-widget-body>\n                            </rd-widget>\n                        </div>\n                    </div>\n                </div>\n            </div><!-- End Page Content -->\n        </div><!-- End Content Wrapper -->\n    </div><!-- End Page Wrapper -->\n</body>\n</html>",
 			"file": "profile.php",
-			"file_size": 9461,
-			"file_write_time": 130865983920000000,
 			"settings":
 			{
-				"buffer_size": 9463,
+				"buffer_size": 13340,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "editProfile.php",
+			"settings":
+			{
+				"buffer_size": 12479,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "postRequests/user/editProfileFields.php",
+			"settings":
+			{
+				"buffer_size": 1726,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "angular/edit.js",
+			"settings":
+			{
+				"buffer_size": 12178,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 594,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "postRequests/user/getUserActions.php",
 			"settings":
 			{
-				"buffer_size": 938,
+				"buffer_size": 769,
 				"line_ending": "Windows"
 			}
 		},
@@ -782,7 +1044,23 @@
 			"file": "angular/profile.js",
 			"settings":
 			{
-				"buffer_size": 9644,
+				"buffer_size": 14082,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "angular/notifications.js",
+			"settings":
+			{
+				"buffer_size": 12528,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "postRequests/index/getBadmintonDateStats.php",
+			"settings":
+			{
+				"buffer_size": 2464,
 				"line_ending": "Unix"
 			}
 		},
@@ -790,7 +1068,39 @@
 			"file": "angular/date.js",
 			"settings":
 			{
-				"buffer_size": 11976,
+				"buffer_size": 22608,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "html/ngDialog/success_join.html",
+			"settings":
+			{
+				"buffer_size": 323,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "postRequests/date/getMessagesFromDate.php",
+			"settings":
+			{
+				"buffer_size": 1319,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "includes/WebMessage.php",
+			"settings":
+			{
+				"buffer_size": 13027,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "postRequests/user/postReplyMessage.php",
+			"settings":
+			{
+				"buffer_size": 1014,
 				"line_ending": "Windows"
 			}
 		},
@@ -798,7 +1108,31 @@
 			"file": "postRequests/date/getBadmintonDate.php",
 			"settings":
 			{
-				"buffer_size": 1691,
+				"buffer_size": 1725,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "postRequests/user/postMessage.php",
+			"settings":
+			{
+				"buffer_size": 1483,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "bower_components/datatables-plugins/features/alphabetSearch/dataTables.alphabetSearch.min.js",
+			"settings":
+			{
+				"buffer_size": 1718,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "postRequests/user/leaveBadmintonDate.php",
+			"settings":
+			{
+				"buffer_size": 970,
 				"line_ending": "Windows"
 			}
 		},
@@ -814,8 +1148,24 @@
 			"file": "date.php",
 			"settings":
 			{
-				"buffer_size": 7559,
+				"buffer_size": 18477,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "postRequests/user/notifyAbsence.php",
+			"settings":
+			{
+				"buffer_size": 1134,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/date.css",
+			"settings":
+			{
+				"buffer_size": 709,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -827,48 +1177,187 @@
 			}
 		},
 		{
-			"contents": ".affixed {\n    position:fixedvar app = angular./**\n* app Module\n*\n* Description\n*/\nmodule('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment', 'angularSmoothscroll', 'ngScrollSpy']).config(function($provide) {\n    $provide.constant('createConfirmedTime', 'html/ngDialog/create_date.html');\n    $provide.constant('createConfirmedTimePHP', 'postRequests/user/createBadmintonDate.php');\n    $provide.constant('loadBasicUser', 'postRequests/profile/loadUser.php');\n    $provide.constant('createTentativeDate', 'html/ngDialog/create_tentative_date.html');\n    $provide.constant('markUnavailable', 'html/ngDialog/mark_unavailable_date.html');\n    $provide.constant('getAllBadmintonDates', 'postRequests/index/getAllBadmintonDates.php');\n    $provide.constant('getThreads', 'postRequests/index/getAllThreads.php');\n    $provide.constant('postThreadPHP', 'postRequests/user/postThread.php');\n    $provide.constant('postCommentPHP', 'postRequests/user/postThreadComment.php');\n\n\n    $provide.value('convertMySQLToJS', function(arrayInput) {\n        for (var i = 0; i < arrayInput.length; i++) {\n            var t = arrayInput[i].begin_datetime.split(/[- :]/);\n            var start = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);\n            var t = arrayInput[i].end_datetime.split(/[- :]/);\n            var end = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);\n            var title = arrayInput[i].datename;\n            arrayInput[i] = {\n                start: start,\n                end: end,\n                title: title\n            };\n        }\n        return arrayInput;\n    });\n\n    $provide.value('duringHours', function(dateInput) {\n        if (angular.isDate(dateInput)) {\n            var hours = dateInput.getHours();\n            return ((hours > 7) && (hours < 23));\n        }\n        else {\n            return false;\n        }\n    });\n});\n\nfunction rdWidget(){\n    var d={\n        transclude:!0,\n        template:'<div class=\"widget\" ng-transclude></div>',\n        restrict:\"EA\"\n    };\n    return d\n}\nangular.module(\"app\").directive(\"rdWidget\",rdWidget);\n\nfunction rdLoading(){\n    var d=\n    {\n        restrict:\"AE\",\n        template:'<div class=\"loading\"><div class=\"double-bounce1\"></div><div class=\"double-bounce2\"></div></div>'\n    };\n    return d\n}\nangular.module(\"app\").directive(\"rdLoading\",rdLoading);\n\nfunction rdWidgetBody(){\n    var d=\n    {\n        requires:\"^rdWidget\",\n        scope:{\n            loading:\"@?\",\n            classes:\"@?\"\n        },\n        transclude:!0,\n        template:'<div class=\"widget-body\" ng-class=\"classes\"><rd-loading ng-show=\"loading\"></rd-loading><div ng-hide=\"loading\" class=\"widget-content\" ng-transclude></div></div>',\n        restrict:\"E\"\n    };\nreturn d\n}\nangular.module(\"app\").directive(\"rdWidgetBody\",rdWidgetBody);\n\nfunction rdWidgetFooter(){\n    var e=\n    {\n        requires:\"^rdWidget\",\n        transclude:!0,\n        template:'<div class=\"widget-footer\" ng-transclude></div>',\n        restrict:\"E\"\n    };\nreturn e}\nangular.module(\"app\").directive(\"rdWidgetFooter\",rdWidgetFooter);\n\nfunction rdWidgetTitle(){\n    var e=\n    {\n        requires:\"^rdWidget\",\n        scope:{\n            title:\"@\",\n            icon:\"@\"},\n            transclude:!0,\n            template:'<div class=\"widget-header\"><i class=\"fa\" ng-class=\"icon\"></i> {{title}} <div class=\"pull-right\" ng-transclude></div></div>',\n            restrict:\"E\"\n    };\nreturn e\n}\nangular.module(\"app\").directive(\"rdWidgetHeader\",rdWidgetTitle);;\n}",
 			"file": "css/tentative.css",
-			"file_size": 34,
-			"file_write_time": 130862311900000000,
 			"settings":
 			{
-				"buffer_size": 3478,
+				"buffer_size": 1103,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "bower_components/angular-bootstrap-calendar/index.html",
+			"settings":
+			{
+				"buffer_size": 9116,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "notifications.php",
+			"settings":
+			{
+				"buffer_size": 7218,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "html/ngDialog/create_date.html",
 			"settings":
 			{
-				"buffer_size": 1715,
+				"buffer_size": 1848,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "var app = angular./**\n* app Module\n*\n* Description\n*/\nmodule('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment', 'angularSmoothscroll', 'ngScrollSpy'])\n	.config(function($provide) {\n		$provide.constant('createConfirmedTime', 'html/ngDialog/create_date.html');\n		$provide.constant('createConfirmedTimePHP', 'postRequests/user/createBadmintonDate.php');\n		$provide.constant('loadBasicUser', 'postRequests/profile/loadUser.php');\n		$provide.constant('createTentativeDate', 'html/ngDialog/create_tentative_date.html');\n		$provide.constant('markUnavailable', 'html/ngDialog/mark_unavailable_date.html');\n		$provide.constant('getAllBadmintonDates', 'postRequests/index/getAllBadmintonDates.php');\n		$provide.constant('getThreads', 'postRequests/index/getAllFutureThreads.php');\n		$provide.constant('postThreadPHP', 'postRequests/user/postThread.php');\n		$provide.constant('postCommentPHP', 'postRequests/user/postThreadComment.php');\n\n		$provide.constant('getUserDropdown', 'postRequests/user/getUserDropdown.php');\n\n		$provide.value('convertMySQLToJS', function(arrayInput) {\n			for (var i = 0; i < arrayInput.length; i++) {\n				var t = arrayInput[i].begin_datetime.split(/[- :]/);\n				var start = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);\n				var t = arrayInput[i].end_datetime.split(/[- :]/);\n				var end = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);\n				var title = arrayInput[i].datename;\n				arrayInput[i] = {\n					start: start,\n					end: end,\n					title: title\n				};\n			}\n			return arrayInput;\n		});\n\n		$provide.value('duringHours', function(dateInput) {\n			if (angular.isDate(dateInput)) {\n				var hours = dateInput.getHours();\n				return ((hours > 7) && (hours < 23));\n			}\n			else {\n				return false;\n			}\n		});\n	}).service('serviceDate', function() {\n        this.MySQLDatetimeToDateObject = function(MySQLDatetimeString) {\n            var t = MySQLDatetimeString.split(/[- :]/);\n            return new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);\n        }\n    }).service('httpHandler', ['$http', '$q', function($http, $q){\n        /*\n        Dynamicallly Send HTTP request\n         */\n        this.request = function(url, data) {\n            /*\n            (String, JSON) -> Promise Object\n             */\n            var deferred = $q.defer();\n\n            if (url && angular.isObject(data) && !Array.isArray(data)) {\n                var httpRequest = $http({\n                    method: \"post\",\n                    url: url,\n                    data: data,\n                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }\n                });\n                return httpRequest;\n            }\n            else {  \n                deferred.reject('The input parameters are not valid');\n            }\n            return deferred.promise;    \n        }\n    }]).factory('userDropdown', ['httpHandler', 'getUserDropdown', function(httpHandler, getUserDropdown){\n        return {\n            dropdownFields: function() {\n                /*\n                (Null) -> Promise Object\n                Gets the fields for the user dropdown at the site\n                */\n                return httpHandler.request(getUserDropdown, {\n\n                });\n            }\n        }\n    }]).factory('threadHelper', ['serviceDate', 'moment', function(serviceDate, moment){\n    	return {\n    		threadMySQLFieldstoJS: function(threadObject) {\n    			threadObject.date_play = serviceDate.MySQLDatetimeToDateObject(threadObject.date_play),\n    			threadObject.date_posted = serviceDate.MySQLDatetimeToDateObject(threadObject.date_posted);\n    			return threadObject\n    		}\n    	};\n    }]).factory('threadFactory', ['httpHandler', '' function(){\n    	return function name(){\n    		\n    	};\n    }])\n    .directive(\"rdWidget\", function() {\n        var d={\n            transclude:!0,\n            template:'<div class=\"widget\" ng-transclude></div>',\n            restrict:\"EA\"\n        };\n        return d\n    }).directive(\"rdLoading\", function() {\n        var d=\n        {\n            restrict:\"AE\",\n            template:'<div class=\"loading\"><div class=\"double-bounce1\"></div><div class=\"double-bounce2\"></div></div>'\n        };\n        return d\n    }).directive(\"rdWidgetBody\", function() {\n        var d=\n        {\n            requires:\"^rdWidget\",\n            scope:{\n                loading:\"@?\",\n                classes:\"@?\"\n            },\n            transclude:!0,\n            template:'<div class=\"widget-body\" ng-class=\"classes\"><rd-loading ng-show=\"loading\"></rd-loading><div ng-hide=\"loading\" class=\"widget-content\" ng-transclude></div></div>',\n            restrict:\"E\"\n        };\n        return d\n    }).directive(\"rdWidgetFooter\",function (){\n        var e=\n        {\n            requires:\"^rdWidget\",\n            transclude:!0,\n            template:'<div class=\"widget-footer\" ng-transclude></div>',\n            restrict:\"E\"\n        };\n        return e\n    }).directive(\"rdWidgetHeader\", function() {\n        var e=\n        {\n            requires:\"^rdWidget\",\n            scope:{\n                title:\"@\",\n                icon:\"@\"},\n                transclude:!0,\n                template:'<div class=\"widget-header\"><i class=\"fa\" ng-class=\"icon\"></i> {{title}} <div class=\"pull-right\" ng-transclude></div></div>',\n                restrict:\"E\"\n        };\n        return e\n    }).controller('controller', ['$scope', '$http', 'ngDialog', 'createConfirmedTime', 'createConfirmedTimePHP', 'loadBasicUser', '$q', 'createTentativeDate', 'markUnavailable', 'getAllBadmintonDates', 'convertMySQLToJS', 'uiCalendarConfig', 'duringHours', 'getThreads', 'moment', 'postThreadPHP', 'postCommentPHP', 'userDropdown', 'threadHelper', function($scope, $http, ngDialog, createConfirmedTime, createConfirmedTimePHP, loadBasicUser, $q, createTentativeDate, markUnavailable, getAllBadmintonDates, convertMySQLToJS, uiCalendarConfig, duringHours, getThreads, moment, postThreadPHP, postCommentPHP, userDropdown, threadHelper) {\n	$scope.data = {}, //Holding object for scopes\n	$scope.data.animationsEnabled = true;\n	$scope.data.thread_title = ''; //By default\n	$scope.data.thread_text = '';\n\n	$scope.joinThread = function(thread_id) {\n		actionFactory.joinThread(thread_id).then(function(successResponse) {\n			console.log(successResponse);\n		}, function(errorResponse) {\n			console.log(errorResponse);\n		});\n	}\n\n	//Get the user dropdown\n    $scope.getUserDropdown = function() {\n        userDropdown.dropdownFields().then(function(successResponse) {\n            //console.log(successResponse);\n            $scope.data.dropdown = {\n                user: successResponse.data.user,\n                fields: successResponse.data.fields\n            };\n            console.log($scope.data.dropdown);\n        }, function(errorResponse) {\n            console.log(errorMessage);\n        });\n    }\n    $scope.getUserDropdown(); //Get the user dropdown\n\n	$scope.conditionallyJoinThread = function(thread_id) {\n\n	}\n\n	$scope.createConditionals = function(thread_id) {\n	}\n\n	$scope.postComment = function(thread_id) {\n		for (var i = 0; i < $scope.data.threads.length; i++) {\n			if ($scope.data.threads[i].thread_id == thread_id) {\n				if ($scope.data.threads[i].possible_comment) {\n					//String is truthy, submit\n					var promisePostComment = $http({\n						method: \"post\",\n						url: postCommentPHP,\n						data: {\n							thread_id: $scope.data.threads[i].thread_id,\n							comment_text: $scope.data.threads[i].possible_comment,\n							parent_id: null\n						},\n						headers: { 'Content-Type': 'application/x-www-form-urlencoded' }\n					}).then(function(successResponse) {\n						console.log(successResponse);\n						var comment = successResponse.data;\n						$scope.data.threads[i].comments.push(comment);\n\n						//Clear the comment box\n						$scope.data.threads[i].possible_comment = '';\n					}, function(errorResponse) {\n						console.log(errorResponse);\n					});\n					break;\n				}\n			}\n		}\n	}\n\n	$scope.$watch('data.dt', function(newValue, oldValue) {\n		console.log(newValue);\n		if (Object.prototype.toString.call(newValue) === \"[object Date]\") {\n			console.log('hi');\n			//if (Date.parse($scope.data.thread_title) || (!$scope.data.thread_title) || ($scope.data.thread_title.length < 3)) {\n				$scope.data.thread_title = 'Badminton - ' + moment(newValue).format('MMMM Do YYYY');\n			//}\n		}\n	});\n\n	$scope.postThread = function() {\n		//var dateInMySQL = convertMySQLToJS($scope.data.dt);\n		var dateInMySQL = $scope.data.dt.toISOString().substring(0, 10)\n		console.log(dateInMySQL);\n		console.log($scope.data.thread_title);\n		console.log($scope.data.thread_text);\n		var promisePostThread = $http({\n			method: \"post\",\n			url: postThreadPHP,\n			data: {\n				thread_title: $scope.data.thread_title,\n				thread_text: $scope.data.thread_text,\n				date_play: dateInMySQL,\n				type: 1\n			},\n			headers: { 'Content-Type': 'application/x-www-form-urlencoded' }\n		}).then(function(successResponse) {\n			console.log(successResponse);\n			$scope.data.thread_title = '',\n			$scope.data.thread_text = '',\n			$scope.data.dt = new Date();\n		}, function(errorResponse) {\n			console.log(errorResponse);\n		})\n	}\n\n	//Defaults for form code\n	$scope.data.eventName = 'Badminton Date',\n	$scope.data.dt = new Date(),\n	$scope.data.mytime = new Date();\n	$scope.data.endtime = new Date();\n\n	//Datepicker code\n	$scope.today = function() {\n		$scope.dt = new Date();\n	}\n\n	$scope.today(); //Set the default date to today\n\n	$scope.minDate = function() {\n		$scope.minDate = new Date(); //Default is today\n	}\n\n	$scope.minDate(); //Set the defualt min date to today\n\n	$scope.datepicker = {\n		opened: false\n	};\n\n	$scope.open = function($event) {\n		console.log('logged');\n    	$event.preventDefault();\n    	$event.stopPropagation();\n		$scope.datepicker.opened = true;\n	};\n\n	$scope.format = 'yyyy/MM/dd';\n\n	$scope.toggle = true;\n	\n	$scope.toggleSidebar = function() {\n		/*\n		Had to simplify a lot of routing\n		 */\n		$scope.toggle = !$scope.toggle;\n	}\n\n	var promiseGetThreads = $http({\n		method: \"post\",\n		url: getThreads,\n		headers: { 'Content-Type': 'application/x-www-form-urlencoded' }\n	}).then(function(successResponse) {\n		console.log(successResponse);\n		$scope.data.totalThreads = 0;\n		var threads = successResponse.data;\n		$scope.data.threads = {}; //The holding array for the threads\n\n		//Format the threads and get the total\n		angular.forEach(var thread, function(value, key) {\n			for (var i = 0; i < value.length; i++) {\n				value = threadHelper.threadMySQLFieldstoJS(value);\n				value.possible_comment = ''; //For any possible comments\n\n\n				$scope.data.totalThreads++;\n			}\n		});\n\n		$scope.data.threads = threads;\n		for (var i =0; i < $scope.data.threads.length; i++) {\n			var t = $scope.data.threads[i].date_play.split(/[- :]/);\n			$scope.data.threads[i].date_play = new Date(t[0], t[1]-1, t[2], t[3]);\n			var t = $scope.data.threads[i].date_posted.split(/[- :]/);\n			$scope.data.threads[i].date_posted = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);\n\n			//Instantiate the possible comment\n			$scope.data.threads[i].possible_comment = '';\n\n			//Create the native JS array\n			$scope.data.threads[i].comments = Array.prototype.slice.call($scope.data.threads[i].comments);\n		}\n		console.log($scope.data.threads);\n	}, function(errorResponse) {\n		console.log(errorResponse);\n	});\n\n\n	var promiseGetAllDates = $http({\n		method: \"post\",\n		url: getAllBadmintonDates,\n		headers: { 'Content-Type': 'application/x-www-form-urlencoded' }\n	}).then(function(successResponse) {\n		//Convert to JS objects\n		var badmintonDates = convertMySQLToJS(successResponse.data);\n		$scope.eventSources = [\n			{\n				color: '#f00',\n       			textColor: 'yellow',\n				events: badmintonDates\n			}\n		];\n		$scope.json = angular.toJson($scope.data.badmintonDates, true);\n		console.log($scope.eventSources);\n	}, function(errorResponse) {\n		console.log(errorResponse);\n	});\n\n	$scope.changeView = function(view) {\n		uiCalendarConfig.calendars.main.fullCalendar('changeView', view);\n	};\n\n	$scope.init = function(userID) {\n		$scope.userPromise = $q.defer();\n\n		$scope.user = {\n			'user_id': userID\n		}\n\n		if ($scope.user.user_id) {\n			var promiseGetUser = $http({\n				method: \"post\",\n				url: loadBasicUser,\n				data: {\n					profile_id: $scope.user.user_id\n				},\n				headers: { 'Content-Type': 'application/x-www-form-urlencoded' }\n			});\n\n			var promiseChain = promiseGetUser.then(function(successResponse) {\n				$scope.user = successResponse.data;\n				console.log($scope.user);\n			}, function(errorResponse) {\n				$scope.user = {\n					'user_id': null\n				}\n			});\n\n			promiseChain.then(function() {\n				$scope.userPromise.resolve();\n			}, function() {\n				$scope.userPromise.resolve();\n			});\n		}\n		else {\n			$scope.userPromise.resolve();\n		}\n	}\n}]);\n",
+			"file": "login-callback.php",
+			"settings":
+			{
+				"buffer_size": 4076,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "postRequests/user/deleteThreadComment.php",
+			"settings":
+			{
+				"buffer_size": 874,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "fblogin1.php",
+			"settings":
+			{
+				"buffer_size": 3083,
+				"line_ending": "Unix",
+				"name": "$fb = new Facebook\\Facebook(["
+			}
+		},
+		{
+			"file": "angular/login/login.js",
+			"settings":
+			{
+				"buffer_size": 4306,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/fblogin.css",
+			"settings":
+			{
+				"buffer_size": 110,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "angular/tentative.js",
-			"file_size": 13079,
-			"file_write_time": 130866492580000000,
 			"settings":
 			{
-				"buffer_size": 12692,
+				"buffer_size": 27977,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "angular/courts.js",
+			"file": "postRequests/user/getUserNotifications.php",
 			"settings":
 			{
-				"buffer_size": 21212,
+				"buffer_size": 576,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "postRequests/user/getAllUserNotifications.php",
+			"settings":
+			{
+				"buffer_size": 580,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "postRequests/user/getUserGroupedNotifications.php",
+			"settings":
+			{
+				"buffer_size": 626,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tentative.php",
+			"settings":
+			{
+				"buffer_size": 35299,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "postRequests/index/getRandomUsers.php",
+			"settings":
+			{
+				"buffer_size": 548,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "postRequests/index/getAllFutureThreads.php",
+			"settings":
+			{
+				"buffer_size": 1029,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "postRequests/index/getFormatedFutureThreads.php",
+			"settings":
+			{
+				"buffer_size": 911,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "postRequests/index/getNumberOfUsers.php",
+			"settings":
+			{
+				"buffer_size": 341,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/philiptsang/Documents/Code Projects/htdocs/codeTranslator/navbar.php",
+			"settings":
+			{
+				"buffer_size": 4588,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Users/philiptsang/Documents/Code Projects/htdocs/codeTranslator/angular/translations/translations_new.js",
+			"settings":
+			{
+				"buffer_size": 25016,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "postRequests/thread/getThreadPlayers.php",
+			"settings":
+			{
+				"buffer_size": 754,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "postRequests/user/MarkAllAsRead.php",
+			"settings":
+			{
+				"buffer_size": 704,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "postRequests/user/createBadmintonDate.php",
 			"settings":
 			{
-				"buffer_size": 2282,
+				"buffer_size": 2364,
 				"line_ending": "Windows"
 			}
 		},
@@ -876,26 +1365,39 @@
 			"file": "all.php",
 			"settings":
 			{
-				"buffer_size": 8349,
+				"buffer_size": 9677,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "<?php\nrequire_once $_SERVER['DOCUMENT_ROOT'] . '/includes/autoload.php';\n?>\n<html lang=\"en\" ng-app=\"app\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n	<title>UoftBaddy</title>\n    <!-- STYLES -->\n    <!-- build:css lib/css/main.min.css -->\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/bower_components/bootstrap/dist/css/bootstrap.min.css\">\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/bower_components/font-awesome/css/font-awesome.min.css\">\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/bower_components/rdash-ui/dist/css/rdash.min.css\">\n    <!-- endbuild -->\n    <!-- SCRIPTS -->\n    <!-- build:js lib/js/main.min.js -->\n    <script type=\"text/javascript\" src=\"/bower_components/angular/angular.min.js\"></script>\n    <script type=\"text/javascript\" src=\"/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js\"></script>\n    <script type=\"text/javascript\" src=\"/bower_components/angular-cookies/angular-cookies.min.js\"></script>\n    <script type=\"text/javascript\" src=\"/bower_components/angular-ui-router/release/angular-ui-router.min.js\"></script>\n    <!-- endbuild -->\n    <!-- Custom Fonts -->\n    <link href=\"bower_components/font-awesome/css/font-awesome.min.css\" rel=\"stylesheet\" type=\"text/css\">\n    <!-- jQuery -->\n    <script src=\"/bower_components/jquery/dist/jquery.min.js\"></script>\n    <!-- Calendar-->\n    <link rel=\"stylesheet\" href=\"bower_components/fullcalendar/dist/fullcalendar.css\"/>\n    <!--Calendar-->\n    <script type=\"text/javascript\" src=\"bower_components/moment/min/moment.min.js\"></script>\n    <script type=\"text/javascript\" src=\"bower_components/angular-ui-calendar/src/calendar.js\"></script>\n    <script type=\"text/javascript\" src=\"bower_components/fullcalendar/dist/fullcalendar.min.js\"></script>\n    <script type=\"text/javascript\" src=\"bower_components/fullcalendar/dist/gcal.js\"></script>\n    <script src=\"bower_components/ngDialog/js/ngDialog.js\"></script>\n\n\n\n    <!-- Bootstrap Core JavaScript -->\n    <script src=\"/bower_components/bootstrap/dist/js/bootstrap.min.js\"></script>\n\n\n    <!-- Custom Scripts -->\n    <script type=\"text/javascript\" src=\"/angular/index/index.js\"></script>\n</head>\n<body ng-controller=\"controller\" ng-init=\"init('<?php echo $user->user_id;?>'\">\n    <div id=\"page-wrapper\" ng-class=\"{'open': toggle}\" ng-cloak>\n\n    <?php Renderer::get_sidebar();?>\n        <div id=\"content-wrapper\">\n            <div class=\"page-content\">\n\n                <!-- Header Bar -->\n                <div class=\"row header\">\n                    <div class=\"col-xs-12\">\n                        <div class=\"user pull-right\">\n                            <div class=\"item dropdown\">\n                                <a href=\"#\" class=\"dropdown-toggle\">\n                                    <img ng-src=\"{{user.avatar}}\">\n                                </a>\n                                <ul class=\"dropdown-menu dropdown-menu-right\">\n                                    <li class=\"dropdown-header\">\n                                        {{user.email}}\n                                    </li>\n                                    <li class=\"divider\"></li>\n                                    <li class=\"link\">\n                                        <a ng-href=\"profile.php?id={{user.user_id}}\">\n                                            Profile\n                                        </a>\n                                    </li>\n                                    <li class=\"link\">\n                                        <a href=\"#\">\n                                            Menu Item\n                                        </a>\n                                    </li>\n                                    <li class=\"link\">\n                                        <a href=\"#\">\n                                            Menu Item\n                                        </a>\n                                    </li>\n                                    <li class=\"divider\"></li>\n                                    <li class=\"link\">\n                                        <a href=\"#\">\n                                            Logout\n                                        </a>\n                                    </li>\n                                </ul>\n                            </div>\n                            <div class=\"item dropdown\">\n                             <a href=\"#\" class=\"dropdown-toggle\">\n                                    <i class=\"fa fa-bell-o\"></i>\n                                </a>\n                                <ul class=\"dropdown-menu dropdown-menu-right\">\n                                    <li class=\"dropdown-header\">\n                                        Notifications\n                                    </li>\n                                    <li class=\"divider\"></li>\n                                    <li>\n                                        <a href=\"#\">Server Down!</a>\n                                    </li>\n                                </ul>\n                            </div>\n                        </div>\n                        <div class=\"meta\">\n                            <div class=\"page\">sy\n                                Dashboard\n                            </div>\n                            <div class=\"breadcrumb-links\">\n                                Home / Dashboard\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <!-- End Header Bar -->\n\n                <!-- Main Content -->\n                <div ui-view>\n                    <div class=\"row\">\n                        <div class=\"col-lg-12\">\n                            <rd-widget>\n                                <rd-widget-header title=\"UoftBaddy\">    \n                                </rd-widget-header>\n                                <rd-widget-body>\n                                    <div class=\"message\">\n                                        Booking badminton courts at the Univeristy of Toronto normally requires one day in prior if you are booking a popular time slot and courts often quickly fill up, leaving either only 7am available for the next day or the day of. The current main location to play badminton is the <strong>Upper Gym</strong> with around 3 courts and located at the <strong>Faculty of Kinesiology and Physical Education</strong>. Instructions on how to book courts is available at the University of Toronto site <a href=\"http://physical.utoronto.ca/FitnessAndRecreation/Drop_In_Programs/Racquet_Sport_Bookings.aspx\">here</a>. You can request to book a court by calling <a href=\"#\">416-978-3436</a> and can skip the dialog at pressing \"0\" where you will then be redirected to an assistant requesting your University of Toronto Student Number and name.\n                                    </div>\n                                </rd-widget-body>\n                            </rd-widget>\n                        </div>\n                        <div class=\"col-lg-3 col-md-6 col-xs-12\">\n                            <rd-widget>\n                                <rd-widget-body>\n<!--                                     <div class=\"widget-icon green pull-left\">\n                                        <i class=\"fa fa-users\"></i>\n                                    </div> -->\n                                    <div class=\"title\">{{data.TopBar.confirmed_bookings_today}}</div>\n                                    <div class=\"comment\">Confirmed Bookings Today</div>\n                                </rd-widget-body>\n                            </rd-widget>\n                        </div>\n                        <div class=\"col-lg-3 col-md-6 col-xs-12\">\n                            <rd-widget>\n                                <rd-widget-body>\n<!--                                     <div class=\"widget-icon green pull-left\">\n                                        <i class=\"fa fa-users\"></i>\n                                    </div> -->\n                                    <div class=\"title\">{{data.TopBar.confirmed_bookings_tomorrow}}</div>\n                                    <div class=\"comment\">Confirmed Bookings Tomorrow\n                                    <small>{{data.topBar.total_space_tomorrow}} space left (according to user specifications)</small>\n                                    </div>\n                                </rd-widget-body>\n                            </rd-widget>\n                        </div>\n                        <div class=\"col-lg-3 col-md-6 col-xs-12\">\n                            <rd-widget>\n                                <rd-widget-body>\n<!--                                     <div class=\"widget-icon green pull-left\">\n                                        <i class=\"fa fa-users\"></i>\n                                    </div> -->\n                                    <div class=\"title\">{{data.TopBar.looking_to_play_this_week}}</div>\n                                    <div class=\"comment\">Looking To Play This Week</div>\n                                </rd-widget-body>\n                            </rd-widget>\n                        </div>\n<!--                         <div class=\"col-lg-3 col-md-6 col-xs-12\">\n                            <rd-widget>\n                                <rd-widget-body>\n                                    <div class=\"widget-icon green pull-left\">\n                                        <i class=\"fa fa-users\"></i>\n                                    </div>\n                                    <div class=\"title\">{{data.TopBar.confirmed_bookings_today}}</div>\n                                    <div class=\"comment\">Confirmed Bookings Todat</div>\n                                </rd-widget-body>\n                            </rd-widget>\n                        </div> -->\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-lg-8\">\n                            <div ng-if=\"eventSources\">\n                              <button class=\"btn btn-info btn-sm\" ng-click=\"changeView('agendaDay')\">Day</button>\n                              <button class=\"btn btn-info btn-sm\" ng-click=\"changeView('agendaWeek')\">Week</button>\n                              <button class=\"btn btn-info btn-sm\" ng-click=\"changeView('month')\">Month</button>\n                              <div ui-calendar ng-model=\"eventSources\" calendar=\"main\"></div>\n                            </div>\n                        </div>\n                        <div class=\"col-lg-4\">\n                              <h4>Inline</h4>\n    <div style=\"display:inline-block; min-height:290px;\">\n      <datepicker ng-model=\"dt\" min-date=\"minDate\" show-weeks=\"true\" class=\"well well-sm\" custom-class=\"getDayClass(date, mode)\"></datepicker>\n    </div>\n    </div>\n                    </div>\n                </div>\n\n            </div><!-- End Page Content -->\n        </div><!-- End Content Wrapper -->\n    </div><!-- End Page Wrapper -->\n</body>\n</html>",
 			"file": "booking.php",
-			"file_size": 11016,
-			"file_write_time": 130864613260000000,
 			"settings":
 			{
-				"buffer_size": 11022,
+				"buffer_size": 10445,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/booking.css",
+			"settings":
+			{
+				"buffer_size": 704,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "angular/courts.js",
+			"settings":
+			{
+				"buffer_size": 27678,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "sidebar.php",
 			"settings":
 			{
-				"buffer_size": 5732,
+				"buffer_size": 4388,
 				"line_ending": "Windows"
 			}
 		},
@@ -903,7 +1405,15 @@
 			"file": "angular/booking.js",
 			"settings":
 			{
-				"buffer_size": 8210,
+				"buffer_size": 10105,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "angular/feedback.js",
+			"settings":
+			{
+				"buffer_size": 21552,
 				"line_ending": "Unix"
 			}
 		},
@@ -919,7 +1429,15 @@
 			"file": "thread.php",
 			"settings":
 			{
-				"buffer_size": 11661,
+				"buffer_size": 11631,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "includes/Thread.php",
+			"settings":
+			{
+				"buffer_size": 4576,
 				"line_ending": "Windows"
 			}
 		},
@@ -927,15 +1445,23 @@
 			"file": "angular/thread.js",
 			"settings":
 			{
-				"buffer_size": 11740,
+				"buffer_size": 18442,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "postRequests/thread/getThreadParticipants.php",
+			"settings":
+			{
+				"buffer_size": 723,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "postRequests/user/postThreadComment.php",
 			"settings":
 			{
-				"buffer_size": 1275,
+				"buffer_size": 1391,
 				"line_ending": "Windows"
 			}
 		},
@@ -943,7 +1469,7 @@
 			"file": "postRequests/thread/getThread.php",
 			"settings":
 			{
-				"buffer_size": 1399,
+				"buffer_size": 1476,
 				"line_ending": "Windows"
 			}
 		},
@@ -951,7 +1477,15 @@
 			"file": "postRequests/thread/getThreadComments.php",
 			"settings":
 			{
-				"buffer_size": 683,
+				"buffer_size": 701,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/thread.css",
+			"settings":
+			{
+				"buffer_size": 234,
 				"line_ending": "Unix"
 			}
 		},
@@ -967,7 +1501,7 @@
 			"file": "postRequests/user/postThread.php",
 			"settings":
 			{
-				"buffer_size": 1665,
+				"buffer_size": 1481,
 				"line_ending": "Windows"
 			}
 		},
@@ -975,7 +1509,7 @@
 			"file": "includes/BadmintonDate.php",
 			"settings":
 			{
-				"buffer_size": 9615,
+				"buffer_size": 13636,
 				"line_ending": "Windows"
 			}
 		},
@@ -983,7 +1517,7 @@
 			"file": "postRequests/user/getUserDropdown.php",
 			"settings":
 			{
-				"buffer_size": 2010,
+				"buffer_size": 2060,
 				"line_ending": "Unix"
 			}
 		},
@@ -1004,17 +1538,57 @@
 			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Packages/Python/Python.sublime-build",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Packages/Java/Ant.sublime-build",
+					""
+				],
+				[
+					"Packages/Java/JavaC.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Java/JavaC.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
 	],
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 347.0,
-		"last_filter": "Package Control: ",
+		"height": 67.0,
+		"last_filter": "Package Control: inst",
 		"selected_items":
 		[
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"latex ",
+				"LaTeXTools: Reconfigure and migrate settings"
+			],
 			[
 				"Package Control: ",
 				"Package Control: Install Package"
@@ -1070,11 +1644,59 @@
 	},
 	"file_history":
 	[
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/feedback.php",
+		"/Users/philiptsang/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/bower_components/rdash-ui/dist/css/rdash.css",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/tenativebackup.html",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/fblogin.php",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/node_modules/gulp-less/node_modules/less/test/less/import/import-and-relative-paths-test.less",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/bower_components/angular-moment/moment-timezone.js",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/node_modules/gulp-uglify/test/comments.js",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/bower_components/datatables-plugins/features/lengthLinks/dataTables.lengthLinks.css",
+		"/Users/philiptsang/Documents/Y2/CSC207/c5tsangp/E1/E1soln/src/e1soln/E1.java",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/html/ngDialog/notified_absence.html",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/node_modules/gulp-minify-css/test/fixture/index.css",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/css/index.css",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/bower_components/rdash-ui/dist/css/rdash.min.css",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/css/bootstrap/bootstrap.css",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/notifications.php",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/mailFeedback.php",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/html/ngDialog/send_feedback.html",
+		"/Users/philiptsang/Documents/Y2/CSC207/e1.java",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/html/ngDialog/success_edit_profile.html",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/editProfileFields.php",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/bower_components/index.js",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/angular/login/login.js",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/angular/register/register.js",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/session.php",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/css/fblogin.css",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js",
+		"/Users/philiptsang/Library/Application Support/Sublime Text 3/Packages/User/SublimeCodeIntel.sublime-settings",
+		"/Users/philiptsang/Library/Application Support/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/bower_components/datatables-plugins/sorting/date-uk.js",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/node_modules/bower/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/node_modules/lodash/internal/createBaseFor.js",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/tentative.php",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/src/templates/dashboard.html",
+		"/Users/philiptsang/Documents/Y2/CSC236/exercise1/e1.tex",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/css/bootstrap/bootstrap.min.css",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/codeTranslator/angular/translations/translations_new.js",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/codeTranslator/angular/index/index.js",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/angular/edit.js",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/codeTranslator/index.php",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/postRequests/index/getTodayTomorrowCourts.php",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/angular/index/index1.js",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/index.php",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/vars/constants.php",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/login-callback.php",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/css/date.css",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/anime_billboard/css/main.css",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/anime_billboard/anime.php",
+		"/Users/philiptsang/Documents/Code Projects/htdocs/anime_billboard/css/anime.css",
 		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/date.php",
 		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/includes/getUserActions.php",
 		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/includes/ActionRenderer.php",
 		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/includes/AbstractActions.php",
-		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/src/templates/dashboard.html",
 		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/ui/userDropdown.php",
 		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/getUpcomingEventsNumber.php",
 		"/Users/philiptsang/Documents/Code Projects/htdocs/uoftbadminton/angular/getUserDropdown.php",
@@ -1149,55 +1771,7 @@
 		"/C/xamppnew/htdocs/uoftbadminton/all.php",
 		"/C/xamppnew/htdocs/uoftbadminton/tentative.php",
 		"/C/xamppnew/htdocs/uoftbadminton/src/components/angular-moment/angular-moment.js",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/angular/angular.js",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/bower/node_modules/configstore/node_modules/js-yaml/lib/js-yaml/type.js",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/fullcalendar/dist/lang-all.js",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/moment/min/moment.min.js",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/morrisjs/examples/months-no-smooth.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/gulp-less/node_modules/less/test/less/errors/mixin-not-matched.less",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/angular-bootstrap-calendar/src/templates/calendarMonthCellEvents.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/gulp-minify-html/node_modules/minimize/node_modules/htmlparser2/test/Events/21-entity_in_attribute.json",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/ngScrollSpy/demo/pagemenu.html",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/ngScrollSpy/demo/vert.html",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/ngScrollSpy/demo/horz.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/bower/node_modules/handlebars/coverage/lcov-report/spec/javascript-compiler.js.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/bower/node_modules/handlebars/coverage/lcov-report/spec/partials.js.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/bower/node_modules/handlebars/coverage/lcov-report/dist/cjs/handlebars/runtime.js.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/gulp-usemin/node_modules/gulp-concat/node_modules/gulp-util/node_modules/vinyl/node_modules/clone/test-apart-ctx.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/bower/node_modules/handlebars/coverage/lcov-report/spec/runtime.js.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/gulp-watch/node_modules/gulp-util/node_modules/vinyl/node_modules/clone/test-apart-ctx.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/gulp-uglify/node_modules/gulp-util/node_modules/vinyl/node_modules/clone/test-apart-ctx.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/gulp-minify-css/node_modules/gulp-util/node_modules/vinyl/node_modules/clone/test-apart-ctx.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/gulp-less/node_modules/gulp-util/node_modules/vinyl/node_modules/clone/test-apart-ctx.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/gulp-concat/node_modules/gulp-util/node_modules/vinyl/node_modules/clone/test-apart-ctx.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/gulp/node_modules/gulp-util/node_modules/vinyl/node_modules/clone/test-apart-ctx.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/gulp-usemin/test/fixtures/build-remove-no-trailing-whitespace.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/gulp-usemin/test/expected/build-remove-no-trailing-whitespace.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/bower/node_modules/handlebars/coverage/lcov-report/spec/env/runtime.js.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/bower/node_modules/handlebars/coverage/lcov-report/spec/track-ids.js.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/bower/node_modules/handlebars/coverage/lcov-report/spec/tokenizer.js.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/bower/node_modules/handlebars/coverage/lcov-report/spec/ast.js.html",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/bower/node_modules/mout/time/convert.js",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/bootstrap/less/mixins/nav-vertical-align.less",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/bower/lib/commands/version.js",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/bower/node_modules/inquirer/node_modules/cli-color/node_modules/es5-ext/error/valid-error.js",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/angular-ui-router/src/view.js",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/bower/node_modules/github/api/v3.0.0/authorization.js",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/bower/node_modules/handlebars/node_modules/optimist/readme.markdown",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/jquery/src/var/hasOwn.js",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/holderjs/holder.js",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/bower/node_modules/mout/object/deepMatches.js",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/datatables-plugins/sorting/date-eu.js",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/bootstrap/js/affix.js",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/moment/src/lib/utils/abs-floor.js",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/gulp-less/node_modules/vinyl-sourcemaps-apply/node_modules/source-map/build/suffix-source-map.jsm",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/bower/node_modules/tar-fs/test/fixtures/c/.npmignore",
-		"/C/xamppnew/htdocs/uoftbadminton/node_modules/gulp-usemin/test/expected/data/css/min-style.css",
-		"/C/xamppnew/htdocs/uoftbadminton/bower_components/datatables/media/css/dataTables.bootstrap.min.css",
-		"/C/xamppnew/htdocs/uoftbadminton/includes/Database.php",
-		"/C/xamppnew/htdocs/uoftbadminton/includes/Threads.php",
-		"/C/xamppnew/htdocs/uoftbadminton/postRequests/index/getAllThreads.php"
+		"/C/xamppnew/htdocs/uoftbadminton/bower_components/angular/angular.js"
 	],
 	"find":
 	{
@@ -1216,134 +1790,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"$scope.data = ",
-			"username",
-			"dropdown-toggle",
-			"<i class",
-			"', ",
-			"}]).",
-			"<i>",
-			"abstract class",
-			"date.js",
-			"init",
-			"ConfirmedBadmintondATE",
-			"fetch",
-			"loadbasicuser",
-			"=\"('<?",
-			"dropdownfields",
-			"postedthread",
-			"header",
-			"getuserevents",
-			"loadbasicuser",
-			"loaduser",
-			"header",
-			"calendar",
-			"header",
+			"currentusernotif",
+			"getusernotifications",
+			"getindexstats",
+			"$scope.data.stats",
+			"data.stats.bo",
+			"hour",
+			"courtstats",
+			"target=\"",
+			"tentative.ph",
+			"action_mine_me",
+			"mine_messages",
+			"mine",
+			"postedcommentonthread",
+			"data.allthreads",
 			"moment",
-			"calendar",
-			"route",
-			"css",
-			"GETTHREADS",
+			"$scope.data.allthreads = ",
+			"$scope.data.allthreads",
 			"getthreads",
-			"postedthread",
-			"threadaction",
-			"warning",
-			"open",
-			"template",
-			"templates",
-			">\n",
-			"  ",
-			"calendar",
-			"toggle",
-			"ctrl",
-			"header",
-			"controller",
-			"notifications",
-			"sidebar-title",
-			"post_comm",
-			"vprintf",
-			"sprintf",
-			"conversationfactory",
-			"join_conversation",
-			"action_date",
-			"log_action",
-			"proposedbadmin",
-			"join_badmin",
-			"action_key_value",
-			"join_badminton_date",
-			"admin",
-			";\n",
-			"echo",
-			"allow",
-			"class conver",
-			"admin",
-			"class conver",
-			"reply",
-			"in_conversation",
-			"echo",
+			"allthreads",
+			"getuseractions",
+			"({\n",
+			"getthreadcomments",
+			"threadfactory",
+			"getthread",
+			"comment",
+			"servicedate",
+			"postcomment",
+			"ng-show=\"navbar.tentative\"",
+			"ratio",
+			"ngdialog",
+			"$scope.profile",
+			"editprof",
+			"amtimeago",
+			"attr.amtimeago",
+			"amtimeago",
+			"am-time-ago",
+			"post_thread",
+			"am",
+			"id=\"",
+			"date",
+			"title",
+			"id=\"",
+			"discussion",
+			"ng-show=\"navbar.discussion",
+			"postthread",
+			"threadcomments",
+			"comments",
+			"postcommentphp",
+			"postcomm",
+			"postcomment",
+			"allthreadplayers",
+			"currentusern",
+			"notificationsfactory",
+			"post_comment",
+			"postcomment",
+			"getthreadspage",
+			"allthreads",
+			"postcommentphp",
+			"currentuser",
+			"currentusernoti",
+			"notificationsfactory",
+			"joined",
+			"getallbadminton",
+			"gettodaytom",
+			"badminton_date",
+			"get_fields",
+			"placeholder",
+			"withdraw",
+			"withdrawg",
+			"withdraw",
+			"notifiedAbsenceHTML",
+			"withdrawabsence",
+			"type_contract",
 			"absence",
-			"join_badminton_date",
-			"small",
-			"join_badmint",
-			"convesation",
-			"join_badmin",
-			"join_badminton_date",
-			"join_badmin",
-			"createbadmin",
-			"fullcal",
-			"calend",
-			"group",
-			"currentuser",
-			"chat",
-			"currentuser",
-			"ng-contr",
-			"dashboard",
-			"morris",
-			"dats",
-			"anonymoususer",
-			"token",
-			"notify_absen",
-			"notify_absnece",
-			"group",
-			"create",
-			"));\n",
-			"t1",
-			"paraphrase",
-			"found",
-			"style=\"",
-			"search_results",
-			"match",
-			"ecoh",
-			"require",
-			"$from_function",
-			"$from_functoin",
-			"echo",
-			"selectable",
-			"11",
-			"construct",
-			"constru",
-			"echo",
-			"to_lang",
-			"require_once",
-			"header",
-			"User",
-			"require",
-			"ng-class",
-			"require",
-			"oldValue",
-			"new",
-			"tab-heading=\"new\"",
-			"new",
-			"views",
-			"print",
-			"autoload",
-			"?>",
-			"array.",
-			"change_reputation",
-			"}\n",
-			"search funct",
-			"search functon",
-			"translations"
+			"leave_date",
+			"notificationsfactory",
+			"dropdown-menu",
+			"currentusernot",
+			"currentusernotifications",
+			"currentusernot",
+			"currentusernotifications",
+			"yyyy",
+			"get_username",
+			"post_thread",
+			"getusernotifications",
+			"index.ph",
+			"userdropdown",
+			"index.js",
+			"notificationsfactory",
+			"class=\"title",
+			"mwl-calendar",
+			"tomorrowdAY",
+			"tomorrow",
+			"h3",
+			"notificationsfacto",
+			"calendar",
+			"ngdialog",
+			"threadfACTORY",
+			"$scope.data.threads",
+			"ng-show=\"navbar.tentative",
+			"img ng-src",
+			"contorller",
+			"notificationsfactory",
+			"blurredhome",
+			"currentday",
+			"background",
+			"new date",
+			"servicedate",
+			"courts",
+			"peo",
+			"courtsfactory",
+			"getusersplaying",
+			"calendar",
+			"attempteditonself",
+			"5",
+			"$scope.data.playingLevels",
+			"getthreads",
+			"getfuture",
+			"looking to play",
+			"$scope.date",
+			"currentusernoti",
+			"joined",
+			"leavebadmintondate",
+			":",
+			"ngdialog",
+			":",
+			"leave_date",
+			"has already passed"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1367,147 +1941,331 @@
 	"groups":
 	[
 		{
-			"selected": 48,
+			"selected": 12,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.php",
+					"file": "index1.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9056,
+						"buffer_size": 9094,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1948,
-								1948
+								9094,
+								9094
 							]
 						],
 						"settings":
 						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 114,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16509,
+						"regions":
+						{
+						},
+						"selection":
+						[
 							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"side_bar_folders_auto_load_folder": 1,
-							"sublime_auto_complete": true,
+								6442,
+								6442
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true,
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 421.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 37,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 2,
+					"file": "postRequests/index/getTotalandNewUsers.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 648,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								95,
+								95
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "postRequests/index/getNewUsers.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 654,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								95,
+								6
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "css/bootstrap/bootstrap.min.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 126330,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								48293,
+								48298
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 334901.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 87,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "postRequests/index/getNumberOfPeopleLookingToPlay.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 477,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								95,
+								6
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "logout.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 263,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								257,
+								257
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 101,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "postRequests/index/getCourtStats.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 745,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								562,
+								562
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "postRequests/index/getTodayTomorrowCourts.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2195,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1578,
+								1578
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 56,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "postRequests/index/getAthelticCentreSchedule.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1112,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1112,
+								1112
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 85,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "css/index.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1419,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								716,
+								718
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 130.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
 					"file": "includes/Renderer.php",
 					"semi_transient": false,
 					"settings":
@@ -1525,47 +2283,78 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 39,
+					"stack_index": 119,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 12,
 					"file": "angular/index/index.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10065,
+						"buffer_size": 23411,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8880,
-								8880
+								5061,
+								5061
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3527.0,
+						"translation.y": 1584.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 32,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 13,
+					"file": "postRequests/user/MarkNotificationAsRead.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 817,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								284,
+								284
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 66,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
 					"file": "ui/userDropdown.php",
 					"semi_transient": false,
 					"settings":
@@ -1577,8 +2366,8 @@
 						"selection":
 						[
 							[
-								46,
-								0
+								356,
+								357
 							]
 						],
 						"settings":
@@ -1591,11 +2380,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 82,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 15,
 					"file": "postRequests/index/getTopBar.php",
 					"semi_transient": false,
 					"settings":
@@ -1726,24 +2515,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 42,
+					"stack_index": 81,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 16,
 					"file": "postRequests/user/joinBadmintonDate.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 915,
+						"buffer_size": 916,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								597,
-								597
+								268,
+								268
 							]
 						],
 						"settings":
@@ -1756,11 +2545,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 36,
+					"stack_index": 64,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 17,
 					"file": "postRequests/user/joinThread.php",
 					"semi_transient": false,
 					"settings":
@@ -1778,17 +2567,18 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 35,
+					"stack_index": 68,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 18,
 					"file": "postRequests/user/conditionalJoinThread.php",
 					"semi_transient": false,
 					"settings":
@@ -1806,17 +2596,18 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 40,
+					"stack_index": 122,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 19,
 					"file": "date.bak",
 					"semi_transient": false,
 					"settings":
@@ -1843,28 +2634,29 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 57,
+					"stack_index": 105,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 20,
 					"file": "ui/sidebar.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2270,
+						"buffer_size": 2723,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1931,
-								1931
+								1838,
+								1838
 							]
 						],
 						"settings":
 						{
+							"auto_complete": false,
 							"codeintel": true,
 							"codeintel_config":
 							{
@@ -1975,14 +2767,134 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 147.0,
+						"translation.y": 329.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 21,
+					"file": "about.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9019,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6203,
+								6203
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1439.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 93,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "postRequests/stats/getThisWeekStats.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 787,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 79,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "angular/thisweek.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13857,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								548,
+								448
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 77,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "php/addSchedule.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1346,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								513,
+								513
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<?php",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 70.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 92,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
 					"file": "angular/profile/profile.js",
 					"semi_transient": false,
 					"settings":
@@ -2007,11 +2919,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 121,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 26,
 					"file": "postRequests/user/getAllUsers.php",
 					"semi_transient": false,
 					"settings":
@@ -2036,11 +2948,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 53,
+					"stack_index": 104,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 27,
 					"file": "angular/users/users.js",
 					"semi_transient": false,
 					"settings":
@@ -2065,24 +2977,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 54,
+					"stack_index": 124,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 28,
 					"file": "angular/all.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12604,
+						"buffer_size": 14123,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								421,
-								168
+								5244,
+								5244
 							]
 						],
 						"settings":
@@ -2096,24 +3008,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 80,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 29,
 					"file": "includes/User.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 32613,
+						"buffer_size": 47072,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2604,
-								2604
+								5282,
+								5282
 							]
 						],
 						"settings":
@@ -2228,27 +3140,145 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 938.0,
+						"translation.y": 1951.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 31,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
-					"file": "postRequests/user/loadCurrentUser.php",
+					"buffer": 30,
+					"file": "bower_components/angular-moment/angular-moment.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1451,
+						"buffer_size": 19478,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1237,
-								1237
+								5609,
+								5609
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 46,
+					"type": "text"
+				},
+				{
+					"buffer": 31,
+					"file": "src/templates/dashboard.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5128,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5077,
+								5052
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 45,
+					"type": "text"
+				},
+				{
+					"buffer": 32,
+					"file": "bower_components/datatables-plugins/filtering/row-based/range_dates.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1557,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 71,
+					"type": "text"
+				},
+				{
+					"buffer": 33,
+					"file": "postRequests/profile/loadUserProfile.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1846,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1248,
+								1248
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 34,
+					"file": "postRequests/user/loadCurrentUser.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1314,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								484,
+								484
 							]
 						],
 						"settings":
@@ -2261,24 +3291,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 44,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 35,
 					"file": "includes/Notifications.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6042,
+						"buffer_size": 8083,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1318,
-								1318
+								4190,
+								4204
 							]
 						],
 						"settings":
@@ -2389,17 +3419,47 @@
 							"side_bar_folders_auto_load_folder": 1,
 							"sublime_auto_complete": true,
 							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 65,
+					"type": "text"
+				},
+				{
+					"buffer": 36,
+					"file": "postRequests/user/withdrawAbsence.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 836,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								302,
+								302
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 69,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 37,
 					"file": "includes/Comment.php",
 					"semi_transient": false,
 					"settings":
@@ -2425,24 +3485,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 52,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 38,
 					"file": "includes/autoload.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 952,
+						"buffer_size": 1189,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								321,
-								321
+								811,
+								811
 							]
 						],
 						"settings":
@@ -2560,146 +3620,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 72,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
-					"file": "includes/Actions.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1380,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1097,
-								1097
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"side_bar_folders_auto_load_folder": 1,
-							"sublime_auto_complete": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 22,
-					"type": "text"
-				},
-				{
-					"buffer": 20,
+					"buffer": 39,
 					"file": "includes/ActionFrame.php",
 					"semi_transient": false,
 					"settings":
@@ -2723,68 +3648,234 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 74,
 					"type": "text"
 				},
 				{
-					"buffer": 21,
-					"file": "includes/ActionFactory.php",
+					"buffer": 40,
+					"file": "includes/Actions.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15655,
+						"buffer_size": 1380,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9085,
-								9085
+								694,
+								694
 							]
 						],
 						"settings":
 						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"side_bar_folders_auto_load_folder": 1,
+							"sublime_auto_complete": true,
 							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
 							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3460.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 22,
-					"file": "includes/ActionPusher.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4804,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3908,
-								3908
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 73,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 41,
+					"file": "includes/ActionPusher.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5241,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1191,
+								1198
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 215.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 30,
+					"type": "text"
+				},
+				{
+					"buffer": 42,
+					"file": "includes/ActionFactory.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17132,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10389,
+								10389
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 28,
+					"type": "text"
+				},
+				{
+					"buffer": 43,
+					"file": "includes/SpecificActions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13848,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6000,
+								6000
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2518.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 32,
+					"type": "text"
+				},
+				{
+					"buffer": 44,
 					"file": "postRequests/index/fetchSiteWideActivity.php",
 					"semi_transient": false,
 					"settings":
@@ -2808,54 +3899,55 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 41,
+					"stack_index": 123,
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 45,
 					"file": "angular/users.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6674,
+						"buffer_size": 8863,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6443,
-								6443
+								7094,
+								7094
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
 						},
-						"translation.x": 1.0,
-						"translation.y": 0.0,
+						"translation.x": 0.0,
+						"translation.y": 1918.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 47,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 25,
+					"buffer": 46,
 					"file": "users.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8531,
+						"buffer_size": 8058,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6137,
-								6137
+								4635,
+								4635
 							]
 						],
 						"settings":
@@ -2865,27 +3957,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 714.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 46,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 26,
+					"buffer": 47,
 					"file": "postRequests/index/getAllThreads.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 927,
+						"buffer_size": 827,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								482,
-								482
+								0,
+								0
 							]
 						],
 						"settings":
@@ -3001,59 +4093,115 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 52,
+					"stack_index": 116,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
-					"file": "tentative.php",
+					"buffer": 48,
+					"file": "postRequests/index/getThreadsPage.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11953,
+						"buffer_size": 1152,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4944,
-								4944
+								1012,
+								1012
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1319.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 41,
 					"type": "text"
 				},
 				{
-					"buffer": 28,
-					"file": "courts.php",
+					"buffer": 49,
+					"file": "includes/PendingActions.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14666,
+						"buffer_size": 2224,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9850,
-								9865
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 113,
+					"type": "text"
+				},
+				{
+					"buffer": 50,
+					"file": "postRequests/index/betagetAllThreads.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 922,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								828,
+								828
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 115,
+					"type": "text"
+				},
+				{
+					"buffer": 51,
+					"file": "courts.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 30167,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5173,
+								5173
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
 							"codeintel": true,
 							"codeintel_config":
 							{
@@ -3165,19 +4313,109 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2273.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 29,
-					"file": "postRequests/profile/loadUser.php",
+					"buffer": 52,
+					"file": "thisweek.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1229,
+						"buffer_size": 10816,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5130,
+								5130
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 78,
+					"type": "text"
+				},
+				{
+					"buffer": 53,
+					"file": "upcoming.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5153,
+								5153
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 89,
+					"type": "text"
+				},
+				{
+					"buffer": 54,
+					"file": "angular/upcoming.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20412,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16721,
+								16721
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6628.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 90,
+					"type": "text"
+				},
+				{
+					"buffer": 55,
+					"file": "bower_components/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 65,
 						"regions":
 						{
 						},
@@ -3185,7 +4423,93 @@
 						[
 							[
 								0,
-								0
+								65
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 56,
+					"file": "postRequests/index/getUsersPlaying.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 718,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								220,
+								220
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 102,
+					"type": "text"
+				},
+				{
+					"buffer": 57,
+					"file": "css/courts.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1023,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								583,
+								583
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 58,
+					"file": "postRequests/profile/loadUser.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1258,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								646,
+								646
 							]
 						],
 						"settings":
@@ -3197,24 +4521,56 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 103,
 					"type": "text"
 				},
 				{
-					"buffer": 30,
+					"buffer": 59,
 					"file": "profile.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9463,
+						"buffer_size": 13340,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7862,
-								7862
+								12773,
+								12891
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2622.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 60,
+					"file": "editProfile.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12479,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7933,
+								7933
 							]
 						],
 						"settings":
@@ -3225,27 +4581,27 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1992.0,
+						"translation.y": 1601.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 34,
 					"type": "text"
 				},
 				{
-					"buffer": 31,
-					"file": "postRequests/user/getUserActions.php",
+					"buffer": 61,
+					"file": "postRequests/user/editProfileFields.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 938,
+						"buffer_size": 1726,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								317,
-								317
+								913,
+								913
 							]
 						],
 						"settings":
@@ -3258,24 +4614,113 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 36,
+					"type": "text"
+				},
+				{
+					"buffer": 62,
+					"file": "angular/edit.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12178,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2275,
+								2275
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 163.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
+					"buffer": 63,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 594,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								341,
+								341
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 111,
+					"type": "text"
+				},
+				{
+					"buffer": 64,
+					"file": "postRequests/user/getUserActions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 769,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								268,
+								268
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 29,
+					"type": "text"
+				},
+				{
+					"buffer": 65,
 					"file": "angular/profile.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9644,
+						"buffer_size": 14082,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3382,
-								3382
+								13030,
+								13030
 							]
 						],
 						"settings":
@@ -3286,58 +4731,208 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 547.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 33,
+					"buffer": 66,
+					"file": "angular/notifications.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12528,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10319,
+								10319
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3216.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 60,
+					"type": "text"
+				},
+				{
+					"buffer": 67,
+					"file": "postRequests/index/getBadmintonDateStats.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2464,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								971,
+								971
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 403.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 68,
 					"file": "angular/date.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11976,
+						"buffer_size": 22608,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7438,
-								7438
+								21590,
+								21590
 							]
 						],
 						"settings":
 						{
+							"auto_complete": false,
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true,
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2559.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 54,
 					"type": "text"
 				},
 				{
-					"buffer": 34,
-					"file": "postRequests/date/getBadmintonDate.php",
+					"buffer": 69,
+					"file": "html/ngDialog/success_join.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1691,
+						"buffer_size": 323,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1224,
-								1224
+								323,
+								323
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 88,
+					"type": "text"
+				},
+				{
+					"buffer": 70,
+					"file": "postRequests/date/getMessagesFromDate.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1319,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								269,
+								269
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 106,
+					"type": "text"
+				},
+				{
+					"buffer": 71,
+					"file": "includes/WebMessage.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13027,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9046,
+								9049
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3421.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 53,
+					"type": "text"
+				},
+				{
+					"buffer": 72,
+					"file": "postRequests/user/postReplyMessage.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1014,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								558,
+								558
 							]
 						],
 						"settings":
@@ -3349,11 +4944,127 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 30,
+					"stack_index": 117,
 					"type": "text"
 				},
 				{
-					"buffer": 35,
+					"buffer": 73,
+					"file": "postRequests/date/getBadmintonDate.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1725,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1230,
+								1230
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 48,
+					"type": "text"
+				},
+				{
+					"buffer": 74,
+					"file": "postRequests/user/postMessage.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1483,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								817,
+								817
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 67,
+					"type": "text"
+				},
+				{
+					"buffer": 75,
+					"file": "bower_components/datatables-plugins/features/alphabetSearch/dataTables.alphabetSearch.min.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1718,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 49,
+					"type": "text"
+				},
+				{
+					"buffer": 76,
+					"file": "postRequests/user/leaveBadmintonDate.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 970,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								268,
+								268
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 75,
+					"type": "text"
+				},
+				{
+					"buffer": 77,
 					"file": "includes/Database.php",
 					"semi_transient": false,
 					"settings":
@@ -3378,42 +5089,101 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 118,
 					"type": "text"
 				},
 				{
-					"buffer": 36,
+					"buffer": 78,
 					"file": "date.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7559,
+						"buffer_size": 18477,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6799,
-								6799
+								5196,
+								5196
 							]
 						],
 						"settings":
 						{
+							"auto_complete": false,
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true,
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1473.0,
+						"translation.y": 766.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 37,
+					"buffer": 79,
+					"file": "postRequests/user/notifyAbsence.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1134,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								848,
+								848
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 70,
+					"type": "text"
+				},
+				{
+					"buffer": 80,
+					"file": "css/date.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 709,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								709,
+								709
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 57,
+					"type": "text"
+				},
+				{
+					"buffer": 81,
 					"file": "angular/yrevents/yrevents.js",
 					"semi_transient": false,
 					"settings":
@@ -3435,31 +5205,32 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 282.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 31,
+					"stack_index": 58,
 					"type": "text"
 				},
 				{
-					"buffer": 38,
+					"buffer": 82,
 					"file": "css/tentative.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3478,
+						"buffer_size": 1103,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3475,
-								3475
+								668,
+								668
 							]
 						],
 						"settings":
 						{
+							"auto_complete": false,
 							"codeintel": true,
 							"codeintel_config":
 							{
@@ -3573,28 +5344,90 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 51,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 39,
-					"file": "html/ngDialog/create_date.html",
+					"buffer": 83,
+					"file": "bower_components/angular-bootstrap-calendar/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1715,
+						"buffer_size": 9116,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								896,
-								896
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 84,
+					"type": "text"
+				},
+				{
+					"buffer": 84,
+					"file": "notifications.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7218,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3050,
+								3050
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 59,
+					"type": "text"
+				},
+				{
+					"buffer": 85,
+					"file": "html/ngDialog/create_date.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1848,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1398,
+								1398
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
 							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -3602,29 +5435,29 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 49,
+					"stack_index": 98,
 					"type": "text"
 				},
 				{
-					"buffer": 40,
-					"file": "angular/tentative.js",
+					"buffer": 86,
+					"file": "login-callback.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12692,
+						"buffer_size": 4076,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3665,
-								3665
+								0,
+								4076
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false,
 							"word_wrap": true
 						},
@@ -3632,55 +5465,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 51,
 					"type": "text"
 				},
 				{
-					"buffer": 41,
-					"file": "angular/courts.js",
+					"buffer": 87,
+					"file": "postRequests/user/deleteThreadComment.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 21212,
+						"buffer_size": 874,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2896,
-								2082
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 42,
-					"file": "postRequests/user/createBadmintonDate.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2282,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								609,
-								609
+								572,
+								588
 							]
 						],
 						"settings":
@@ -3692,24 +5494,231 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 48,
+					"stack_index": 50,
 					"type": "text"
 				},
 				{
-					"buffer": 43,
-					"file": "all.php",
+					"buffer": 88,
+					"file": "fblogin1.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8349,
+						"buffer_size": 3083,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4655,
-								4655
+								751,
+								751
+							]
+						],
+						"settings":
+						{
+							"auto_name": "$fb = new Facebook\\Facebook([",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 83,
+					"type": "text"
+				},
+				{
+					"buffer": 89,
+					"file": "angular/login/login.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4306,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 100,
+					"type": "text"
+				},
+				{
+					"buffer": 90,
+					"file": "css/fblogin.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								110,
+								110
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 26,
+					"type": "text"
+				},
+				{
+					"buffer": 91,
+					"file": "angular/tentative.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 27977,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								142,
+								142
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 25,
+					"type": "text"
+				},
+				{
+					"buffer": 92,
+					"file": "postRequests/user/getUserNotifications.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 576,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								162,
+								6
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 35,
+					"type": "text"
+				},
+				{
+					"buffer": 93,
+					"file": "postRequests/user/getAllUserNotifications.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 580,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								580,
+								580
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 61,
+					"type": "text"
+				},
+				{
+					"buffer": 94,
+					"file": "postRequests/user/getUserGroupedNotifications.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 626,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								333,
+								333
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 76,
+					"type": "text"
+				},
+				{
+					"buffer": 95,
+					"file": "tentative.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 35299,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5042,
+								5042
 							]
 						],
 						"settings":
@@ -3720,31 +5729,321 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1149.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 44,
-					"file": "booking.php",
+					"buffer": 96,
+					"file": "postRequests/index/getRandomUsers.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11022,
+						"buffer_size": 548,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5204,
-								5204
+								548,
+								548
 							]
 						],
 						"settings":
 						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 95,
+					"type": "text"
+				},
+				{
+					"buffer": 97,
+					"file": "postRequests/index/getAllFutureThreads.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1029,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								95,
+								6
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 96,
+					"type": "text"
+				},
+				{
+					"buffer": 98,
+					"file": "postRequests/index/getFormatedFutureThreads.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 911,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								95,
+								6
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 63,
+					"type": "text"
+				},
+				{
+					"buffer": 99,
+					"file": "postRequests/index/getNumberOfUsers.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 341,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								341,
+								341
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 108,
+					"type": "text"
+				},
+				{
+					"buffer": 100,
+					"file": "/Users/philiptsang/Documents/Code Projects/htdocs/codeTranslator/navbar.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4588,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								853,
+								761
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 6.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 109,
+					"type": "text"
+				},
+				{
+					"buffer": 101,
+					"file": "/Users/philiptsang/Documents/Code Projects/htdocs/codeTranslator/angular/translations/translations_new.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25016,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2165,
+								2167
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 110,
+					"type": "text"
+				},
+				{
+					"buffer": 102,
+					"file": "postRequests/thread/getThreadPlayers.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 754,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								754,
+								754
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 47,
+					"type": "text"
+				},
+				{
+					"buffer": 103,
+					"file": "postRequests/user/MarkAllAsRead.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 704,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								704,
+								704
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 62,
+					"type": "text"
+				},
+				{
+					"buffer": 104,
+					"file": "postRequests/user/createBadmintonDate.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2364,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1436,
+								1436
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 97,
+					"type": "text"
+				},
+				{
+					"buffer": 105,
+					"file": "all.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9677,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6840,
+								6840
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1644.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 106,
+					"file": "booking.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10445,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3398,
+								3398
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
 							"auto_name": "",
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 4,
@@ -3752,27 +6051,89 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1337.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 43,
+					"stack_index": 86,
 					"type": "text"
 				},
 				{
-					"buffer": 45,
-					"file": "sidebar.php",
+					"buffer": 107,
+					"file": "css/booking.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5732,
+						"buffer_size": 704,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1829,
-								1829
+								409,
+								409
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 112,
+					"type": "text"
+				},
+				{
+					"buffer": 108,
+					"file": "angular/courts.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 27678,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21841,
+								21841
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 109,
+					"file": "sidebar.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4388,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4232,
+								4232
 							]
 						],
 						"settings":
@@ -3785,24 +6146,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 44,
+					"stack_index": 99,
 					"type": "text"
 				},
 				{
-					"buffer": 46,
+					"buffer": 110,
 					"file": "angular/booking.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8210,
+						"buffer_size": 10105,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3540,
-								3540
+								5360,
+								5360
 							]
 						],
 						"settings":
@@ -3812,14 +6173,43 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1406.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 45,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 47,
+					"buffer": 111,
+					"file": "angular/feedback.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21552,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11395,
+								11395
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3814.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 94,
+					"type": "text"
+				},
+				{
+					"buffer": 112,
 					"file": "postRequests/user/getUserEvents.php",
 					"semi_transient": false,
 					"settings":
@@ -3845,24 +6235,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 120,
 					"type": "text"
 				},
 				{
-					"buffer": 48,
+					"buffer": 113,
 					"file": "thread.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11661,
+						"buffer_size": 11631,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1174,
-								1174
+								11437,
+								9620
 							]
 						],
 						"settings":
@@ -3977,27 +6367,56 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2049.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 33,
 					"type": "text"
 				},
 				{
-					"buffer": 49,
-					"file": "angular/thread.js",
+					"buffer": 114,
+					"file": "includes/Thread.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11740,
+						"buffer_size": 4576,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11734,
-								11734
+								4518,
+								4521
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1320.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 39,
+					"type": "text"
+				},
+				{
+					"buffer": 115,
+					"file": "angular/thread.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18442,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								455,
+								464
 							]
 						],
 						"settings":
@@ -4113,27 +6532,27 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3912.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 33,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
-					"buffer": 50,
-					"file": "postRequests/user/postThreadComment.php",
+					"buffer": 116,
+					"file": "postRequests/thread/getThreadParticipants.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1275,
+						"buffer_size": 723,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								288,
+								288
 							]
 						],
 						"settings":
@@ -4145,24 +6564,53 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 34,
+					"stack_index": 107,
 					"type": "text"
 				},
 				{
-					"buffer": 51,
-					"file": "postRequests/thread/getThread.php",
+					"buffer": 117,
+					"file": "postRequests/user/postThreadComment.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1399,
+						"buffer_size": 1391,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1057,
-								1057
+								906,
+								906
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 38,
+					"type": "text"
+				},
+				{
+					"buffer": 118,
+					"file": "postRequests/thread/getThread.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1476,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								306,
+								306
 							]
 						],
 						"settings":
@@ -4281,39 +6729,68 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 40,
 					"type": "text"
 				},
 				{
-					"buffer": 52,
+					"buffer": 119,
 					"file": "postRequests/thread/getThreadComments.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 683,
+						"buffer_size": 701,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								448,
-								448
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 43,
 					"type": "text"
 				},
 				{
-					"buffer": 53,
+					"buffer": 120,
+					"file": "css/thread.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 234,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								234,
+								234
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 42,
+					"type": "text"
+				},
+				{
+					"buffer": 121,
 					"file": "postRequests/user/editThread.php",
 					"semi_transient": false,
 					"settings":
@@ -4444,24 +6921,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 55,
+					"stack_index": 37,
 					"type": "text"
 				},
 				{
-					"buffer": 54,
+					"buffer": 122,
 					"file": "postRequests/user/postThread.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1665,
+						"buffer_size": 1481,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1081,
-								1081
+								372,
+								329
 							]
 						],
 						"settings":
@@ -4578,52 +7055,54 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 50,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
-					"buffer": 55,
+					"buffer": 123,
 					"file": "includes/BadmintonDate.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9615,
+						"buffer_size": 13636,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6465,
-								6465
+								9012,
+								9012
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2318.0,
+						"translation.y": 3327.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 55,
 					"type": "text"
 				},
 				{
-					"buffer": 56,
+					"buffer": 124,
 					"file": "postRequests/user/getUserDropdown.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2010,
+						"buffer_size": 2060,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1084,
-								1084
+								551,
+								551
 							]
 						],
 						"settings":
@@ -4635,11 +7114,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 38,
+					"stack_index": 91,
 					"type": "text"
 				},
 				{
-					"buffer": 57,
+					"buffer": 125,
 					"file": "src/js/dashboard.js",
 					"semi_transient": false,
 					"settings":
@@ -4665,11 +7144,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 58,
+					"stack_index": 126,
 					"type": "text"
 				},
 				{
-					"buffer": 58,
+					"buffer": 126,
 					"file": "yrevents.php",
 					"semi_transient": false,
 					"settings":
@@ -4696,7 +7175,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 56,
+					"stack_index": 125,
 					"type": "text"
 				}
 			]
@@ -4704,7 +7183,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -4735,13 +7214,13 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 27.0
+		"height": 24.0
 	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "",
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
 	"project": "/C/xampp/htdocs/Shufflr.sublime-project",
 	"replace":
 	{
@@ -4755,71 +7234,47 @@
 		"selected_items":
 		[
 			[
-				"thread.php",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/thread.php"
+				"index.js",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/index/index.js"
 			],
 			[
-				"getthr",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/thread/getThreadComments.php"
+				"index.ph",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/index.php"
 			],
 			[
-				"getthre",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/thread/getThread.php"
+				"gettotaland",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/index/getTotalandNewUsers.php"
 			],
 			[
-				"tentat",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/tentative.js"
+				"courts.css",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/css/courts.css"
 			],
 			[
-				"all.js",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/all.js"
+				"tentative.css",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/css/tentative.css"
 			],
 			[
-				"actionfac",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/includes/ActionFactory.php"
+				"index.css",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/css/index.css"
 			],
 			[
-				"user.php",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/includes/User.php"
+				"",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/index/index.js"
 			],
 			[
-				"tenta",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/tentative.php"
+				"idnex.css",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/css/index.css"
 			],
 			[
-				"profile.php",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/profile.php"
+				"loaduserpr",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/profile/loadUserProfile.php"
 			],
 			[
-				"date.php",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/date.php"
+				"profile.s",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/profile.js"
 			],
 			[
-				"courts.php",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/courts.php"
-			],
-			[
-				"userdrop",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/ui/userDropdown.php"
-			],
-			[
-				"courts",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/courts.php"
-			],
-			[
-				"courts.js",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/courts.js"
-			],
-			[
-				"tent",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/tentative.php"
-			],
-			[
-				"ten",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/tentative.php"
-			],
-			[
-				"prof",
+				"profile.ph",
 				"~/Documents/Code Projects/htdocs/uoftbadminton/profile.php"
 			],
 			[
@@ -4827,444 +7282,468 @@
 				"~/Documents/Code Projects/htdocs/uoftbadminton/all.php"
 			],
 			[
-				"pro",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/profile.php"
-			],
-			[
-				"profile",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/profile.php"
-			],
-			[
 				"courts.ph",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/courts.php"
+				"courts.php"
 			],
 			[
-				"date.js",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/date.js"
-			],
-			[
-				"all.php",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/all.php"
-			],
-			[
-				"profile.ph",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/profile.php"
-			],
-			[
-				"profi",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/profile.php"
-			],
-			[
-				"al",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/all.php"
-			],
-			[
-				"all",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/all.js"
-			],
-			[
-				"loaduser",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/profile/loadUser.php"
-			],
-			[
-				"profil.ejs",
-				"angular/profile.js"
-			],
-			[
-				"specif",
-				"includes/SpecificActions.php"
-			],
-			[
-				"profile.js",
-				"angular/profile.js"
-			],
-			[
-				"autoload",
-				"includes/autoload.php"
-			],
-			[
-				"specificactions",
-				"includes/SpecificActions.php"
-			],
-			[
-				"actionframe",
-				"includes/ActionFrame.php"
-			],
-			[
-				"actionfra",
-				"includes/ActionFrame.php"
-			],
-			[
-				"actions.ph",
-				"includes/Actions.php"
-			],
-			[
-				"getuseractions",
-				"postRequests/user/getUserActions.php"
-			],
-			[
-				"getuer",
-				"includes/getUserActions.php"
-			],
-			[
-				"actions",
-				"includes/Actions.php"
-			],
-			[
-				"specific",
-				"includes/SpecificActions.php"
-			],
-			[
-				"actionpusher",
-				"includes/ActionPusher.php"
-			],
-			[
-				"profile.",
-				"profile.php"
-			],
-			[
-				"profilejs",
-				"angular/profile.js"
-			],
-			[
-				"profiole.js",
-				"angular/profile/profile.js"
-			],
-			[
-				"prfile.ph",
-				"profile.php"
-			],
-			[
-				"sideb",
-				"ui/sidebar.php"
-			],
-			[
-				"dashboard.html",
-				"src/templates/dashboard.html"
-			],
-			[
-				"badminton",
-				"includes/BadmintonDate.php"
-			],
-			[
-				"getbadmin",
-				"postRequests/date/getBadmintonDate.php"
-			],
-			[
-				"date.ph",
-				"date.php"
-			],
-			[
-				"yrevents",
-				"angular/yrevents/yrevents.js"
-			],
-			[
-				"data.php",
-				"includes/Database.php"
-			],
-			[
-				"ate.php",
-				"date.php"
-			],
-			[
-				"getuserevent",
-				"postRequests/user/getUserEvents.php"
-			],
-			[
-				"thread.ph",
-				"thread.php"
-			],
-			[
-				"profle",
-				"profile.php"
-			],
-			[
-				"actions.p",
-				"includes/Actions.php"
-			],
-			[
-				"getuseraction",
-				"postRequests/user/getUserActions.php"
-			],
-			[
-				"userdop",
-				"ui/userDropdown.php"
-			],
-			[
-				"index.js",
-				"angular/index/index.js"
-			],
-			[
-				"getthread",
-				"postRequests/thread/getThread.php"
-			],
-			[
-				"thread.js",
-				"angular/thread.js"
-			],
-			[
-				"loaduser.ph",
-				"postRequests/profile/loadUser.php"
-			],
-			[
-				"thr",
-				"angular/thread.js"
-			],
-			[
-				"thread",
-				"thread.php"
-			],
-			[
-				"postcomment",
-				"postRequests/user/postThreadComment.php"
-			],
-			[
-				"user.ph",
-				"includes/User.php"
-			],
-			[
-				"jointhr",
-				"postRequests/user/joinThread.php"
-			],
-			[
-				"joinbadmint",
-				"postRequests/user/joinBadmintonDate.php"
-			],
-			[
-				"index.ph",
-				"index.php"
-			],
-			[
-				"getuserdrop",
-				"postRequests/user/getUserDropdown.php"
-			],
-			[
-				"userdropd",
-				"ui/userDropdown.php"
-			],
-			[
-				"ui/user",
-				"ui/userDropdown.php"
-			],
-			[
-				"render",
-				"includes/Renderer.php"
-			],
-			[
-				"redner",
-				"includes/Renderer.php"
-			],
-			[
-				"court.js",
-				"angular/courts.js"
-			],
-			[
-				"joint",
-				"postRequests/user/joinThread.php"
-			],
-			[
-				"condi",
-				"postRequests/user/conditionalJoinThread.php"
-			],
-			[
-				"badmint",
-				"includes/BadmintonDate.php"
-			],
-			[
-				"",
-				"ui/userDropdown.php"
-			],
-			[
-				"getuser",
-				"postRequests/user/getUserDropdown.php"
-			],
-			[
-				"userdropdow",
-				"ui/userDropdown.php"
-			],
-			[
-				"upcom",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/getUpcomingEventsNumber.php"
-			],
-			[
-				"getupcoming",
-				"postRequests/user/getUpcomingEventsNumber.php"
-			],
-			[
-				"upcomin",
-				"postRequests/user/getUpcomingEventsNumber.php"
-			],
-			[
-				"badm",
-				"includes/BadmintonDate.php"
-			],
-			[
-				"index.",
-				"index.php"
-			],
-			[
-				"rend",
-				"includes/Renderer.php"
-			],
-			[
-				"rendere",
-				"includes/Renderer.php"
-			],
-			[
-				"getuserdop",
-				"postRequests/user/getUserDropdown.php"
-			],
-			[
-				"booking",
-				"booking.php"
-			],
-			[
-				"sidebar.",
-				"ui/sidebar.php"
-			],
-			[
-				"book",
-				"booking.php"
-			],
-			[
-				"bookin.js",
-				"angular/booking.js"
-			],
-			[
-				"getuserve",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/getUserEvents.php"
-			],
-			[
-				"actions.",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/includes/Actions.php"
-			],
-			[
-				"fetc",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/index/fetchSiteWideActivity.php"
-			],
-			[
-				"action",
-				"~/Documents/Code Projects/htdocs/uoftbadminton/includes/Actions.php"
-			],
-			[
-				"getuserdr",
-				"angular/getUserDropdown.php"
-			],
-			[
-				"index.php",
-				"index.php"
-			],
-			[
-				"indexp.ph",
-				"postRequests/index/getTopBar.php"
-			],
-			[
-				"action.js",
-				"node_modules/bower/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/lib/action.js"
-			],
-			[
-				"actions.js",
-				"node_modules/bower/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/node_modules/lodash/object/functions.js"
-			],
-			[
-				"proifle.js",
-				"angular/profile.js"
-			],
-			[
-				"users.php",
-				"users.php"
-			],
-			[
-				"users.ph",
-				"users.php"
+				"feedback",
+				"feedback.php"
 			],
 			[
 				"users.js",
 				"angular/users.js"
 			],
 			[
-				"user",
-				"includes\\User.php"
-			],
-			[
-				"createdate",
-				"postRequests\\user\\createBadmintonDate.php"
-			],
-			[
-				"tentat.",
-				"angular\\tentative.js"
-			],
-			[
-				"getusereve",
-				"postRequests\\user\\getUserEvents.php"
-			],
-			[
-				"getuserevents",
-				"postRequests\\user\\getUserEvents.php"
-			],
-			[
-				"yrevents.js",
-				"angular\\yrevents\\yrevents.js"
-			],
-			[
-				"create",
-				"html\\ngDialog\\create_date.html"
-			],
-			[
-				"courtsjs",
-				"angular\\courts.js"
-			],
-			[
-				"create_date",
-				"html\\ngDialog\\create_date.html"
-			],
-			[
-				"posth",
-				"postRequests\\user\\postThread.php"
-			],
-			[
-				"tentative.js",
-				"angular\\tentative.js"
-			],
-			[
-				"loaduser.",
-				"postRequests\\profile\\loadUser.php"
-			],
-			[
-				"court.sjs",
-				"angular\\courts.js"
-			],
-			[
-				"court",
-				"courts.php"
+				"users.ph",
+				"users.php"
 			],
 			[
 				"sidebar",
-				"ui\\sidebar.php"
+				"ui/sidebar.php"
+			],
+			[
+				"date.ph",
+				"date.php"
+			],
+			[
+				"al.ph",
+				"all.php"
+			],
+			[
+				"tentative.ph",
+				"tentative.php"
+			],
+			[
+				"edit.js",
+				"angular/edit.js"
+			],
+			[
+				"index.ss",
+				"css/index.css"
+			],
+			[
+				"indx.js",
+				"bower_components/index.js"
+			],
+			[
+				"getnew",
+				"postRequests/index/getNewUsers.php"
+			],
+			[
+				"getbadmintondates",
+				"postRequests/index/getBadmintonDateStats.php"
+			],
+			[
+				"getbadmintondate",
+				"postRequests/index/getBadmintonDateStats.php"
+			],
+			[
+				"getcourts",
+				"postRequests/index/getCourtStats.php"
+			],
+			[
+				"post.ph",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/postThread.php"
+			],
+			[
+				"tentative.js",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/tentative.js"
+			],
+			[
+				"tentativ.js",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/tentative.js"
+			],
+			[
+				"tentativ.ph",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/tentative.php"
+			],
+			[
+				"thread.js",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/thread.js"
+			],
+			[
+				"actionfac",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/includes/ActionFactory.php"
+			],
+			[
+				"getuseractions",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/getUserActions.php"
+			],
+			[
+				"ationac",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/includes/ActionFactory.php"
+			],
+			[
+				"actionpusher",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/includes/ActionPusher.php"
+			],
+			[
+				"actionfa",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/includes/ActionFactory.php"
+			],
+			[
+				"user.ph",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/includes/User.php"
+			],
+			[
+				"specif",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/includes/SpecificActions.php"
+			],
+			[
+				"thread.ph",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/thread.php"
+			],
+			[
+				"postthre",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/postThread.php"
+			],
+			[
+				"tenttie.ph",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/tentative.php"
+			],
+			[
+				"tentatiev.js",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/tentative.js"
+			],
+			[
+				"tentative.php",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/tentative.php"
+			],
+			[
+				"loaduserr",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/profile/loadUserProfile.php"
+			],
+			[
+				"profile.js",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/profile.js"
+			],
+			[
+				"getuseract",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/getUserActions.php"
+			],
+			[
+				"prof",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/profile.php"
+			],
+			[
+				"inex.ph",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/index.php"
+			],
+			[
+				"loaduser",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/profile/loadUserProfile.php"
+			],
+			[
+				"proifle.js",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/profile.js"
+			],
+			[
+				"edit",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/editProfile.php"
+			],
+			[
+				"getuser",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/getUserNotifications.php"
+			],
+			[
+				"editprof",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/editProfileFields.php"
+			],
+			[
+				"editpro",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/editProfileFields.php"
+			],
+			[
+				"edit.ph",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/editProfile.php"
+			],
+			[
+				"editpr",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/editProfileFields.php"
+			],
+			[
+				"editprofil",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/editProfileFields.php"
+			],
+			[
+				"postthread",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/postThreadComment.php"
+			],
+			[
+				"posthre",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/postThreadComment.php"
+			],
+			[
+				"getthr",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/thread/getThread.php"
+			],
+			[
+				"getthread",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/index/getThreadsPage.php"
+			],
+			[
+				"getthre",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/thread/getThread.php"
+			],
+			[
+				"getthread.ph",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/thread/getThread.php"
+			],
+			[
+				"thread.h",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/includes/Thread.php"
+			],
+			[
+				"getthred",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/thread/getThread.php"
+			],
+			[
+				"thread.s",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/thread.js"
+			],
+			[
+				"tentative.cs",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/css/tentative.css"
+			],
+			[
+				"profie.",
+				"angular/profile.js"
+			],
+			[
+				"profile.h",
+				"profile.php"
+			],
+			[
+				"proifle",
+				"profile.php"
+			],
+			[
+				"e",
+				"editProfile.php"
+			],
+			[
+				"loadcurr",
+				"postRequests/user/loadCurrentUser.php"
+			],
+			[
+				"editpor",
+				"editProfile.php"
+			],
+			[
+				"edit.sj",
+				"angular/edit.js"
+			],
+			[
+				"prfile",
+				"profile.php"
+			],
+			[
+				"tent",
+				"tentative.php"
+			],
+			[
+				"profi",
+				"profile.php"
+			],
+			[
+				"profil.ej",
+				"angular/profile.js"
 			],
 			[
 				"proifle.ph",
 				"profile.php"
 			],
 			[
-				"getaluser",
-				"postRequests\\user\\getAllUsers.php"
+				"profile",
+				"profile.php"
 			],
 			[
-				"dashboar.html",
-				"src\\templates\\dashboard.html"
+				"profil.ejs",
+				"angular/profile.js"
 			],
 			[
-				"profi.ejs",
-				"angular\\profile\\profile.js"
+				"loadcurrentuser",
+				"postRequests/user/loadCurrentUser.php"
 			],
 			[
-				"users",
-				"users.php"
+				"loaduserprf",
+				"postRequests/profile/loadUserProfile.php"
 			],
 			[
-				"index",
-				"index.php"
+				"editprofielfiel",
+				"postRequests/user/editProfileFields.php"
+			],
+			[
+				"courts.js",
+				"angular/courts.js"
+			],
+			[
+				"tenatve",
+				"tentative.php"
+			],
+			[
+				"dash",
+				"src/templates/dashboard.html"
+			],
+			[
+				"angular-mo",
+				"bower_components/angular-moment/angular-moment.js"
+			],
+			[
+				"tentative",
+				"tentative.php"
+			],
+			[
+				"tentat",
+				"angular/tentative.js"
+			],
+			[
+				"angularmom",
+				"bower_components/angular-moment/angular-moment.js"
+			],
+			[
+				"user",
+				"includes/User.php"
+			],
+			[
+				"posthread",
+				"postRequests/user/postThread.php"
+			],
+			[
+				"tenative.js",
+				"angular/tentative.js"
+			],
+			[
+				"postthread.ph",
+				"postRequests/user/postThread.php"
+			],
+			[
+				"rdash.cs",
+				"bower_components/rdash-ui/dist/css/rdash.css"
+			],
+			[
+				"tenat",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/tentative.php"
+			],
+			[
+				"tentaitve.css",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/css/tentative.css"
+			],
+			[
+				"te",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/tentative.js"
+			],
+			[
+				"thread",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/includes/Thread.php"
+			],
+			[
+				"ten",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/tentative.php"
+			],
+			[
+				"tentativej",
+				"angular/tentative.js"
+			],
+			[
+				"tentative.j",
+				"angular/tentative.js"
+			],
+			[
+				"getthreadplayers",
+				"postRequests/thread/getThreadPlayers.php"
+			],
+			[
+				"tenative.ph",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/tentative.php"
+			],
+			[
+				"delete.js",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/bower_components/datatables-plugins/features/alphabetSearch/dataTables.alphabetSearch.min.js"
+			],
+			[
+				"deletehtrea",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/deleteThreadComment.php"
+			],
+			[
+				"tenta",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/tentative.js"
+			],
+			[
+				"de",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/deleteThreadComment.php"
+			],
+			[
+				"deleteth",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/deleteThreadComment.php"
+			],
+			[
+				"gethre",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/thread/getThread.php"
+			],
+			[
+				"login.hp",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/fblogin.php"
+			],
+			[
+				"login-ca",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/login-callback.php"
+			],
+			[
+				"tentaitve.js",
+				"angular/tentative.js"
+			],
+			[
+				"psthread",
+				"postRequests/user/postThreadComment.php"
+			],
+			[
+				"posthrad",
+				"postRequests/user/postThread.php"
+			],
+			[
+				"tenative.hs",
+				"node_modules/gulp-less/node_modules/less/test/less/import/import-and-relative-paths-test.less"
+			],
+			[
+				"tenative",
+				"tentative.php"
+			],
+			[
+				"comment",
+				"includes/Comment.php"
+			],
+			[
+				"comments",
+				"node_modules/gulp-uglify/test/comments.js"
+			],
+			[
+				"getthreads",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/index/getThreadsPage.php"
+			],
+			[
+				"thread.hp",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/includes/Thread.php"
+			],
+			[
+				"webs",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/includes/WebMessage.php"
+			],
+			[
+				"tentiave.ph",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/tentative.php"
+			],
+			[
+				"tentiav.js",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/tentative.js"
+			],
+			[
+				"postcom",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/postRequests/user/postThreadComment.php"
+			],
+			[
+				"date.js",
+				"~/Documents/Code Projects/htdocs/uoftbadminton/angular/date.js"
 			]
 		],
 		"width": 0.0
@@ -5277,7 +7756,7 @@
 		[
 			[
 				"",
-				"C:\\xamppnew\\htdocs\\codeTranslator\\codeTranslatorBeta.sublime-workspace"
+				"~/Documents/Y2/CSC236/Assignment1/CSC236-Assignment1.sublime-workspace"
 			]
 		],
 		"width": 380.0

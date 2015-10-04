@@ -8,7 +8,6 @@ WHERE DATE(t1.begin_datetime) = CURDATE()";
 $result = $mysqli->query($sql)
 or die ($mysqli->error);
 $today_courts = $result->fetch_row()[0];
-
 $sql = "SELECT COUNT(t1.date_id)
 FROM badminton_dates as t1 
 WHERE DATE(t1.begin_datetime) = DATE_ADD(CURDATE(), INTERVAL 1 DAY)";

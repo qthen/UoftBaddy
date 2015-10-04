@@ -33,6 +33,22 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment', 'angu
             }
             return deferred.promise;    
         }
+    }]).factory('notificationsFactory', ['httpHandler', 'getUserNotifications', 'markNotificationAsRead', function(httpHandler, getUserNotifications, markNotificationAsRead) {
+        return {
+            CurrentUserNotifications: function() {
+                return httpHandler.request(getUserNotifications, {});
+            },
+            MarkAsRead: function(notificationObject) {
+                /*
+                (Notification) -> Promise Object
+                Marks the notification as read in the database
+                */
+                console.log(notificationObject);
+                return httpHandler.request(markNotificationAsRead, {
+                    notification_id: notificationObject.notification_id
+                });;
+            }
+        }
     }])
     .factory('dateFactory', ['moment', 'serviceDate', function(moment, serviceDate) {
         var factoryDate = {};
@@ -92,6 +108,8 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment', 'angu
         $provide.constant('getCreatedEvents', 'postRequests/user/getCreatedUserEvents.php');
 
         $provide.constant('getUserDropdown', 'postRequests/user/getUserDropdown.php');
+        $provide.constant('getUserNotifications', 'postRequests/user/getUserNotifications.php');
+        $provide.constant('markNotificationAsRead', 'postRequests/user/MarkNotificationAsRead.php');
 
          $provide.value('MySQLtoJS', function(datetimeString) {
             var t = datetimeString.split(/[- :]/);
@@ -172,11 +190,24 @@ return e
 angular.module("app").directive("rdWidgetHeader",rdWidgetTitle);
 
 
-app.controller('controller', ['$scope', '$http', 'ngDialog', 'createConfirmedTime', 'createConfirmedTimePHP', 'loadBasicUser', '$q', 'moment', 'getUserEvents', 'getCreatedEvents', 'dateFactory', 'userDropdown', function($scope, $http, ngDialog, createConfirmedTime, createConfirmedTimePHP, loadBasicUser, $q, moment, getUserEvents, getCreatedEvents, dateFactory, userDropdown) {
+app.controller('controller', ['$scope', '$http', 'ngDialog', 'createConfirmedTime', 'createConfirmedTimePHP', 'loadBasicUser', '$q', 'moment', 'getUserEvents', 'getCreatedEvents', 'dateFactory', 'userDropdown', 'notificationsFactory', function($scope, $http, ngDialog, createConfirmedTime, createConfirmedTimePHP, loadBasicUser, $q, moment, getUserEvents, getCreatedEvents, dateFactory, userDropdown, notificationsFactory) {
     $scope.data = {}, //Holding object for scopes
     $scope.data.animationsEnabled = true;
     $scope.data.badmintonDates = [
     ];
+
+    notificationsFactory.CurrentUserNotifications().then(function(successResponse) {
+        console.log(successResponse);
+        $scope.data.notifications = successResponse.data;
+        $scope.data.newNotifications = 0;
+        for (var i =0; i < $scope.data.notifications.length; i++) {
+            if ($scope.data.notifications[i].read_status == 0) {
+                $scope.data.newNotifications++;
+            }
+        }
+    }, function(errorResponse) {
+        console.log(errorResponse);
+    });
 
     $scope.getUserDropdown = function() {
         userDropdown.dropdownFields().then(function(successResponse) {

@@ -240,17 +240,20 @@ class Conversation {
 		Attempts to fetch the messages in this conversation
 		 */
 		if ($this->conversation_id) {
-			$sql = "SELECT t1.message_id, t1.message_text, t1.date_posted, t1.author_id as `user_id`, t1.type, t2.username, t2.email, t2.reputation, t2.avatar
+			$sql = "SELECT t1.message_id, t1.message_text, t1.date_posted, t1.author_id as `user_id`, t1.type, t2.username, t2.email, t2.reputation, t2.avatar, t2.avatar_link
 			FROM `conversation_messages` as t1 
 			LEFT JOIN `users` as t2 
 			ON t2.user_id = t1.author_id
 			WHERE t1.conversation_id = '$this->conversation_id'
 			ORDER BY t1.date_posted DESC";
+			//echo $sql;
 			$result = $this->dbc->query($sql)
 			or die ($this->dbc->error);
 			$this->messages = array();
 			while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				//print_r($row);
 				$row['author'] = new ProfileUser($row);
+				//var_dump($row['author']);
 				$message = new Message($row);
 				$this->messages[] = $message;
 			}

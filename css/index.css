@@ -1,3 +1,17 @@
+@media screen and (max-width:1000px) {
+    .uoftBanner {
+        visibility: hidden;
+        height:1px;
+        display: none;
+    }
+    .notification {
+        font-size:12px;
+        width:250px;
+        word-break:break-all;
+        overflow: scroll;">
+    }
+}
+
 .affixed {
     position:fixed;
 }
@@ -18,18 +32,34 @@ display: inline-block;
 vertical-align: top;
 }
 
-.uoftBanner {
+.uoftBannerOne {
     background-image: url("/ui/uoft.jpg");
     background-size: cover;
     position:relative;
     height:300px;
 }
 
+.uoftBannerTwo {
+    background-image: url("/ui/winter.jpg");
+    background-size: cover;
+    position:relative;
+    height:300px;
+}
+
+.uoftBannerThree {
+    background-image: url("/ui/rotman.jpg");
+    background-size: cover;
+    position:relative;
+    height:300px;
+}
+
+
 .uoftTitle {
     position:absolute;
 /*    background-color: rgba(0, 0, 0, 0.4);*/
     color: white;
-    top: 10px;
+    top: 5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
     left: 25px;
 }
 
@@ -38,6 +68,7 @@ vertical-align: top;
 /*    background-color: rgba(0, 0, 0, 0.4);*/
     color: white;
     top:100px;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
     right:150px;
 }
 

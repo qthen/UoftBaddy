@@ -1,16 +1,18 @@
 <?php
 header("Content-Type: application/json"); //Set header for outputing the JSON information
-require_once $_SERVER['DOCUMENT_ROOT'] . 'autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/autoload.php';
 $request = file_get_contents('php://input');
 $data = json_decode($request);
 $date_id = $data->date_id;
+//$date_id = 16;
 try {
 	$user = User::get_current_user();
 	if (is_numeric($date_id) && ($user instanceof CurrentUser)) {
-		$date = new SomeDate(array(
+		$date = new PublicProposedDate(array(
 			'date_id' => $date_id)
 		);
 		$date->get_times();
+		$date->get_datename();
 		$result = $user->leave_date($date);
 		if ($result) {
 			http_response_code(200);

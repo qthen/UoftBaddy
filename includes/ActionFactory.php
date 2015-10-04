@@ -9,6 +9,9 @@ class ActionFactory {
 		'JoinDiscussion' => array(
 			'conversation_id', 
 		),
+		'WithdrawAbsence' => array(
+			'date_id'
+		),
 		'JoinBadmintonDate' => array(
 			'date_id'
 		),
@@ -37,7 +40,8 @@ class ActionFactory {
 		'LeaveBadmintonDate' => 5,
 		'PostedCommentOnThread' => 6,
 		'PostedThread' => 7,
-		'JoinSite' => 8
+		'JoinSite' => 8,
+		'WithdrawAbsence' => 9
 	);
 
 	public static function fetch_sitewide_activity() {
@@ -89,7 +93,12 @@ class ActionFactory {
 								$action->message = sprintf(ActionHelper::$action_messages[$class_name], $action->trigger->user_id, $action->trigger->username, $action->thread->thread_id);
 								break;
 							case 'PostedCommentOnThread':
-								$action->message = sprintf(ActionHelper::$action_messages[$class_name], $action->trigger->user_id, $action->trigger->username, $action->trigger->thread_id);
+								if ($action->trigger->mine($action->thread)) {
+									$action->message = sprintf(ActionHelper::$action_mine_messages[$class_name], $action->trigger->user_id, $action->trigger->username, $action->trigger->thread_id);
+								}
+								else {
+									$action->message = sprintf(ActionHelper::$action_messages[$class_name], $action->trigger->user_id, $action->trigger->username, $action->trigger->thread_id);
+								}
 								break;
 							case 'JoinSite':
 								//Get the difference ago
@@ -256,10 +265,15 @@ class ActionFactory {
 							//Generate a quick message
 							switch ($class_name) {
 								case 'PostedThread':
-									$action->message = sprintf(ActionHelper::$action_messages[$class_name], $action->trigger->user_id, $action->trigger->username, $action->thread->thread_id, $action->thread->thread_title);
+									$action->message = sprintf(ActionHelper::$action_messages[$class_name], $action->trigger->user_id, $action->trigger->username, $action->thread->thread_id);
 									break;
 								case 'PostedCommentOnThread':
-									$action->message = sprintf(ActionHelper::$action_messages[$class_name], $action->trigger->user_id, $action->trigger->username, $action->trigger->thread_id, $action->thread->thread_title);
+									if ($user->mine($action->thread)) {
+										$action->message = sprintf(ActionHelper::$action_mine_messages[$class_name], $action->trigger->user_id, $action->trigger->username, $action->trigger->thread_id);
+									}
+									else {
+										$action->message = sprintf(ActionHelper::$action_messages[$class_name], $action->trigger->user_id, $action->trigger->username, $action->trigger->thread_id, $action->thread->thread_title);
+									}
 									break;
 								case 'JoinSite':
 									//Get the difference ago
@@ -404,7 +418,11 @@ class ActionHelper extends ActionFactory {
 		'PostedCommentOnThread' => '<a href="profile.php?id=%s">%s</a> commented on your <a href="thread.php?id=%s">thread</a>',
 		'JoinSite' => '<a href="profile.php?id=%s">%s</a> joined the site %s ago',
 		'ProposeBadmintonDate' => '<a href="profile.php?id=%s">%s</a> created badminton event - <a href="date.php?id=%s">%s</a>',
-		'JoinBadmintonDate' => '<a href="profile.php?id=%s">%s</a> joined badminton event - <a href="date.php?id=%s">%s</a>'
+		'JoinBadmintonDate' => '<a href="profile.php?id=%s">%s</a> joined badminton event - <a href="date.php?id=%s">%s</a>',
+	);
+
+	public static $action_mine_messages = array(
+		'PostedCommentOnThread' => '<a href="profile.php?id=%s">%s</a> commented on his own <a href="thread.php?id=%s">thread</a>'
 	);
 }
 

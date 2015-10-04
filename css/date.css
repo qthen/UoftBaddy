@@ -27,10 +27,25 @@
 	position:relative;
 }
 
-.title {
+/*.title {
 	position:absolute;
 	background-color: rgba(0, 0, 0, 0.4);
 	color: white;
 	bottom: 0px;
 	right: 50px;
+}*/
+.authorAvatar {
+display:inline-block;
+height:50px;
+}
+.authorAvatar img{
+display: inline-block;
+}
+/*.authorAvatar a {
+display: inline-block;  
+vertical-align: top;
+}*/
+.authorAvatar span {
+display: inline-block;
+vertical-align: top;
 }

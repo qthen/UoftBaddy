@@ -10,12 +10,51 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'ngSanitize', 'angular
         $provide.constant('loadBasicUser', 'postRequests/user/loadCurrentUser.php');
         $provide.constant('createTentativeDate', 'html/ngDialog/create_tentative_date.html');
         $provide.constant('markUnavailable', 'html/ngDialog/mark_unavailable_date.html');
-        //$provide.constant('loadUser', 'postRequests/user/loadCurrentUser.php');
+        $provide.constant('loadUser', 'postRequests/profile/loadUser.php');
         $provide.constant('getUserActions', 'postRequests/user/getUserActions.php');
         $provide.constant('getUserEvents', 'postRequests/user/getUserEvents.php');
         $provide.constant('getCreatedEvents', 'postRequests/user/getCreatedUserEvents.php');
         $provide.constant('getUserDropdown', 'postRequests/user/getUserDropdown.php');
-        $provide.constant('editProfile', 'postRequests/user/editProfileFields.php');
+        $provide.constant('editProfileFields', 'postRequests/user/editProfileFields.php');
+        $provide.constant('SuccessfullyEdittedProfileDialog', 'html/ngDialog/success_edit_profile.html');
+        $provide.constant('PlayingLevelChoices', [
+            {
+                choice_id: 0,
+                choice_name: 'Unspecified'
+            },
+            {
+                'choice_id': 1,
+                'choice_name': 'Beginner'
+            },
+            {
+                'choice_id': 2,
+                'choice_name': 'Casual Intermediate'
+            },
+            {
+                'choice_id': 3,
+                'choice_name': 'Frequent Intermediate'
+            },
+            {
+                'choice_id': 4,
+                'choice_name': 'Low-Level Advanced'
+            },
+            {
+                'choice_id': 5,
+                'choice_name': 'Intermediate Advanced'
+            },
+            {
+                'choice_id': 6,
+                'choice_name': 'High-Level Advanced'
+            },
+            {
+                'choice_id': 7,
+                'choice_name': 'Provincially Ranked'
+            },
+            {
+                'choice_id': 8,
+                'choice_name': 'Internationally Ranked'
+            }
+        ]);
         $provide.value('MySQLtoJS', function(datetimeString) {
             var t = datetimeString.split(/[- :]/);
             var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
@@ -61,26 +100,54 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'ngSanitize', 'angular
                 */
                 return httpHandler.request(getUserDropdown, {
 
-                });
+                }); 
             }
         }
-    }]).service('editService', ['httpHandler', 'editProfile', function(httpHandler, editProfile){
-    	this.editCurrentUserProfile = function(editObject) {
-    		/*
-    		(Object for edits) -> Promise
-    		*/
-    		return httpHandler.request(editProfile, editObject);
-    	}
-    	
-    }]).factory('profileFactory', ['$http', 'httpHandler', 'loadBasicUser', function($http, httpHandler, loadBasicUser){
+    }]).service('actionHelper', ['moment', function(moment){
+        this.formatActionMessage = function(actionObject) {
+            /*
+            (actionObject) -> ActionObject
+            Formats the action object for display on the site
+            */
+            switch (actionObject.class) {
+                case 'JoinSite':
+                    actionObject.action_message = 'Joined the site on ' + moment(actionObject.date_action).format('MMMM Do YYYY, h:mm a');
+                    break;
+                case 'PostedThread':
+                    actionObject.action_message = 'Posted on ' + moment(actionObject.date_action).format('MMMM Do YYYY, h:mm a');
+                    break;
+                case 'PostedCommentOnThread':
+                    actionObject.action_message = 'Comment on ' + moment(actionObject.date_action).format('MMMM Do YYYY, h:mm a');
+                    break;
+                case 'ProposeBadmintonDate':
+                    actionObject.action_message = 'Created on ' + moment(actionObject.date_action).format('MMMM Do YYYY, h:mm a');
+                    break;
+                case 'LeaveBadmintonDate':
+                    actionObject.action_message = 'Left on ' + moment(actionObject.date_action).format('MMMM Do YYYY, h:mm a');
+                    break;
+                case 'JoinBadmintonDate':
+                    actionObject.action_message = 'Joined event on ' + moment(actionObject.date_action).format('MMMM Do YYYY, h:mm a');
+                    break;
+            }
+            return actionObject;
+        }
+        
+    }]).service('ProfileEdit', ['httpHandler', 'editProfileFields', function(httpHandler, editProfileFields){
+        this.AttemptEditOnSelf = function(EdittedProfile) {
+            /*
+            (EditedProfile) -> Promise
+            */
+            console.log(EdittedProfile);
+            return httpHandler.request(editProfileFields, EdittedProfile);
+        }
+    }]).factory('profileFactory', ['$http', 'httpHandler', 'loadBasicUser', 'getUserActions', function($http, httpHandler, loadBasicUser, getUserActions){
         return {
-            barebonesProfile: function () {
+            barebonesProfile: function (profile_id) {
                 /*
                 (int) -> Promise Object
                 Loads the barbones profile based on the MySQL database
                  */
-                return httpHandler.request(loadBasicUser, {
-                });
+                return httpHandler.request(loadBasicUser, {});
             },
             userActions: function(profile_id) {
                 /*
@@ -100,6 +167,17 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'ngSanitize', 'angular
                     profileObject.last_seen = serviceDate.MySQLDatetimeToDateObject(profileObject.last_seen);
                 }
                 return profileObject;
+            },
+            actionMySQLFieldstoJS: function(ArrayofActions) {
+                if (Array.isArray(ArrayofActions)) {
+                    for (var i = 0; i < ArrayofActions.length; i++) {
+                        //console.log(ArrayofActions[i]);
+                        ArrayofActions[i].date_action = serviceDate.MySQLDatetimeToDateObject(ArrayofActions[i].date_action);
+                        //Generate the message too
+                        ArrayofActions[i] = actionHelper.formatActionMessage(ArrayofActions[i]);
+                    }
+                }
+                return ArrayofActions;
             }
         }
     }]).directive("rdWidget", function() {
@@ -150,19 +228,58 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'ngSanitize', 'angular
                 restrict:"E"
         };
         return e
-    }).controller('controller', ['$scope', 'profileFactory', 'profileHelper', 'userDropdown', 'editService', function($scope, profileFactory, profileHelper, userDropdown, editService) {
+    }).controller('controller', ['$scope', '$http', 'profileFactory', 'profileHelper', 'userDropdown', 'ProfileEdit', '$window', 'ngDialog', 'SuccessfullyEdittedProfileDialog', 'PlayingLevelChoices', function($scope, $http, profileFactory, profileHelper, userDropdown, ProfileEdit, $window, ngDialog, SuccessfullyEdittedProfileDialog, PlayingLevelChoices) {
+    $scope.data = {}, //Holding object for scopes
+    $scope.data.animationsEnabled = true;
+    $scope.data.badmintonDates = [
+    ];
 
-    $scope.user = {};
+    $scope.data.playingLevels = PlayingLevelChoices;
+    console.log($scope.data.playingLevels);
 
-    $scope.getUserProfile = function() {
-    	profileFactory.barebonesProfile().then(function(successResponse) {
-    		$scope.user = successResponse.data;
-    	}, function(errorResponse) {
-    		console.log(errorResponse);
-    		$scope.errorMessage = 'No user found';
-    	});
+    function EdittedProfile(ProgramOfStudy, IntCommuter, Bio, Accolades, PlayingLevelInt) {
+        this.bio = Bio;
+        this.program = ProgramOfStudy;
+        this.commuter = IntCommuter;
+        this.level = PlayingLevelInt;
+        if (!this.level || this.level == 'Not Disclosed') {
+            this.level = 0;
+        }
+        this.accolades = Accolades;
     }
-    $scope.getUserProfile();
+
+    $scope.editProfile = function() {
+        /*
+        Attempts to send a request edit on the currently logged in user
+        */
+        var NewProfile = new EdittedProfile($scope.profile.program, $scope.profile.int_commuter, $scope.profile.bio, $scope.profile.accolades, $scope.profile.level);
+
+        var AttemptEdit = ProfileEdit.AttemptEditOnSelf(NewProfile).then(function(successResponse) {
+            console.log(successResponse);
+            var dialog =  ngDialog.open({
+                template: SuccessfullyEdittedProfileDialog
+            });
+            dialog.closePromise.then(function() {
+                $window.location.href = '/profile.php?id=' + $scope.profile.user_id;
+            })
+        }, function(errorResponse) {
+            console.log(errorResponse);
+        });
+    }
+
+    //Sidebar code
+    $scope.toggle = true;
+
+    $scope.toggleSidebar = function() {
+        $scope.toggle = !$scope.toggle;
+    }
+
+    profileFactory.barebonesProfile().then(function(successResponse) {
+        $scope.profile = successResponse.data;
+        console.log($scope.profile);
+    }, function(errorResponse) {
+        console.log(errorResponse);
+    });
 
     $scope.getUserDropdown = function() {
         userDropdown.dropdownFields().then(function(successResponse) {

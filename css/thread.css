@@ -1,0 +1,15 @@
+.authorAvatar {
+display:inline-block;
+height:50px;
+}
+.authorAvatar img{
+display: inline-block;
+}
+/*.authorAvatar a {
+display: inline-block;  
+vertical-align: top;
+}*/
+.authorAvatar span {
+display: inline-block;
+vertical-align: top;
+}

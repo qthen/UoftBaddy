@@ -295,6 +295,48 @@ class ProposeBadmintonDate extends BadmintonDateAction {
 	}
 }
 
+class WithdrawAbsence extends BadmintonDateAction {
+	/*
+	Class for an action of leaving a badminton date
+	 */
+	private $dbc;
+	public $withdrawer, $badminton_date;
+
+	public static $defaults = array(
+		'withdrawer' => null,
+		'badminton_date' => null,
+		'action_id' => null,
+		'trigger' => null,
+		'date_action' => null
+	);
+
+	public function __construct(array $args = array()) {
+		$defaults = self::$defaults;
+		$args = array_merge($defaults, $args);
+		$this->dbc = Database::connection();
+		$this->action_id = (is_numeric($args['action_id'])) ? $args['action_id'] : null;
+		$this->withdrawer = (is_a($args['withdrawer'], 'User')) ? $args['withdrawer'] : null;
+		$this->badminton_date = (is_a($args['badminton_date'], 'BadmintonDate')) ? $args['badminton_date'] : null;
+		$this->date_action = $args['date_action'];
+		$this->trigger = (is_a($args['trigger'], 'User')) ? $args['trigger'] : null;
+	}
+
+	public function log_action() {
+		/*
+		(Null) -> Int 
+		Attempts to log self into the database and returns the insert id
+		 */
+		if ($this->withdrawer->user_id && $this->badminton_date->date_id) {
+			$sql = "INSERT INTO `actions` (user_id, date_action, type) VALUES ('{$this->withdrawer->user_id}', NOW(), '" . ActionFactory::$action_type_contract['WithdrawAbsence'] . "')";
+			$result = $this->dbc->query($sql)
+			or die ($this->dbc->error);
+			return true;
+		}
+		else {
+			throw new UnexpectedValueException('UnexpectedValueException occured on request log_action');
+		}
+	}	
+}
 
 class LeaveBadmintonDate extends BadmintonDateAction {
 	/*
@@ -327,8 +369,8 @@ class LeaveBadmintonDate extends BadmintonDateAction {
 		(Null) -> Int 
 		Attempts to log self into the database and returns the insert id
 		 */
-		if ($this->joiner->user_id && $this->badminton_date->date_id) {
-			$sql = "INSERT INTO `actions` (user_id, date_action, type) VALUES ('$this->leaver->user_id', NOW(), '" . ActionFactory::$action_type_contract['LeaveBadmintonDate'] . "')";
+		if ($this->leaver->user_id && $this->badminton_date->date_id) {
+			$sql = "INSERT INTO `actions` (user_id, date_action, type) VALUES ('{$this->leaver->user_id}', NOW(), '" . ActionFactory::$action_type_contract['LeaveBadmintonDate'] . "')";
 			$result = $this->dbc->query($sql)
 			or die ($this->dbc->error);
 			return true;

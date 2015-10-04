@@ -13,7 +13,7 @@ $profile_id = $data->profile_id;
 try {
 	if (is_numeric($profile_id)) {
 		$mysqli = Database::connection();
-		$sql = "SELECT user_id, username, reputation, date_registered, avatar_link, last_seen, email, avatar, commuter, program, level, avatar_link, bio FROM `users` WHERE user_id = '$profile_id'";
+		$sql = "SELECT user_id, username, reputation, date_registered, avatar_link, last_seen, email, avatar, commuter, program, level, avatar_link, bio, accolades FROM `users` WHERE user_id = '$profile_id'";
 		$result = $mysqli->query($sql)
 		or die ($mysqli->error);
 		if ($result->num_rows == 1) {
@@ -24,6 +24,13 @@ try {
 			$profile->get_number_of_hosted_events();
 
 			$denominator = ($profile->number_of_leaves == 0) ? 1 : $profile->number_of_leaves;
+			if ($profile->number_of_joins != 0) {
+				$profile->absence_ratio = ($profile->number_of_leaves / $profile->number_of_joins);
+				$profile->absence_ratio = round($profile->absence_ratio, 3);
+			}
+			else {
+				$profile->absence_ratio = 'N/A';
+			}
 			$profile->join_leave_ratio = $profile->number_of_joins / $denominator;
 			
 			http_response_code(200);

@@ -125,7 +125,7 @@ class Thread {
 		*/
 		if ($this->thread_id) {
 			$this->comments = array();
-			$sql = "SELECT t1.comment_id, t1.comment_text, t1.author_id as `user_id`, t2.username, t1.date_posted
+			$sql = "SELECT t1.comment_id, t1.comment_text, t1.author_id as `user_id`, t2.username, t1.date_posted, t2.avatar_link
 			FROM `thread_comments` as t1 
 			LEFT JOIN `users` as t2 
 			ON t2.user_id = t1.author_id 
@@ -135,7 +135,9 @@ class Thread {
 			while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 				$row['author'] = new ProfileUser(array(
 					'user_id' => $row['user_id'],
-					'username' => $row['username'])
+					'username' => $row['username'],
+					'avatar_link' => $row['avatar_link'],
+					'date_posted' => $row['date_posted'])
 				);
 				$row['thread'] = clone $this;
 				$thread_comment = new ThreadComment($row);

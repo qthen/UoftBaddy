@@ -54,48 +54,32 @@ $user = User::get_current_user();
                         <div class="user pull-right">
                             <div class="item dropdown">
                                 <a href="#" class="dropdown-toggle">
-                                    <img ng-src="{{user.avatar}}">
+                                    <img ng-src="{{user.avatar_link}}"> 
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li class="dropdown-header">
-                                        {{user.email}}
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li class="link">
-                                        <a ng-href="profile.php?id={{user.user_id}}">
-                                            Profile
-                                        </a>
-                                    </li>
-                                    <li class="link">
-                                        <a href="#">
-                                            Menu Item
-                                        </a>
-                                    </li>
-                                    <li class="link">
-                                        <a href="#">
-                                            Menu Item
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li class="link">
-                                        <a href="#">
-                                            Logout
-                                        </a>
-                                    </li>
-                                </ul>
+                                <?php Renderer::get_user_dropdown();?>
                             </div>
                             <div class="item dropdown">
-                             <a href="#" class="dropdown-toggle">
-                                    <i class="fa fa-bell-o"></i>
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="fa fa-bell-o"><span class="badge" style="font-size:12px;position:absolute;top:10;color:white;background-color:#D9230F;" ng-show="data.newNotifications > 0">{{data.newNotifications}}</span></i>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-right">
+                                <ul class="dropdown-menu dropdown-menu-right notification">
                                     <li class="dropdown-header">
                                         Notifications
+                                        <span class="badge">{{data.newNotifications}}</span>
                                     </li>
                                     <li class="divider"></li>
-                                    <li>
-                                        <a href="#">Server Down!</a>
+                                    <li ng-repeat="notification in data.notifications" ng-style="notification.style">
+                                        <a href ng-click="propogateRead(notification)">
+                                            {{notification.message}}
+                                        </a>
                                     </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">
+                                        <a href="notifications.php">
+                                            See All
+                                        </a>
+                                    </li>
+                                    </ul>
                                 </ul>
                             </div>
                         </div>

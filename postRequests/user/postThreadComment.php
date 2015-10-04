@@ -23,7 +23,10 @@ try {
 		);
 		$result_post = $user->post_thread_comment($thread, $comment);
 		if ($result_post) {
+			$user->get_fields();
 			http_response_code(200);
+			$result_post->comment_text = $data->comment_text;
+			$result_post->author = clone $user;
 			echo json_encode($result_post, JSON_PRETTY_PRINT);
 		}
 		else {

@@ -2,9 +2,14 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/autoload.php';
 if (isset($_GET['id']) && (is_numeric($_GET['id']))) {
     $profile_id = $_GET['id'];
+    $user = User::get_current_user();
 }
 else {
     header('Location: 404.php');
+}
+$user = User::get_current_user();
+if ($user instanceof AnonymousUser) {
+    header('Location: /fblogin.php');
 }
 ?>
 <html lang="en" ng-app="app">
@@ -12,7 +17,7 @@ else {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>UoftBaddy</title>
+    <title>UoftBaddy - {{profile.username}}</title>
     <!-- STYLES -->
     <!-- build:css lib/css/main.min.css -->
     <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -51,7 +56,7 @@ else {
     <!-- Custom Scripts -->
     <script type="text/javascript" src="/angular/profile.js"></script>
 </head>
-<body ng-controller="controller" ng-init="init('<?php echo $profile_id;?>')">
+<body ng-controller="controller" ng-init="init('<?php echo $profile_id;?>', '<?php echo $user->user_id;?>')">
     <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
 
     <?php Renderer::get_sidebar();?>
@@ -59,36 +64,45 @@ else {
             <div class="page-content">
 
                 <!-- Header Bar -->
+                <!-- Header Bar -->
                 <div class="row header">
                     <div class="col-xs-12">
                         <div class="user pull-right">
                             <div class="item dropdown">
                                 <a href="#" class="dropdown-toggle">
-                                    <img ng-src="{{profile.avatar}}">
+                                    <img ng-src="{{profile.avatar_link}}"> 
                                 </a>
                                 <?php Renderer::get_user_dropdown();?>
                             </div>
                             <div class="item dropdown">
-                             <a href="#" class="dropdown-toggle">
-                                    <i class="fa fa-bell-o"></i>
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="fa fa-bell-o"><span class="badge" style="font-size:12px;position:absolute;top:10;color:white;background-color:#D9230F;" ng-show="data.newNotifications > 0">{{data.newNotifications}}</span></i>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-right">
+                                <ul class="dropdown-menu dropdown-menu-right notification">
                                     <li class="dropdown-header">
                                         Notifications
+                                        <span class="badge">{{data.newNotifications}}</span>
                                     </li>
                                     <li class="divider"></li>
-                                    <li>
-                                        <a href="#">Server Down!</a>
+                                    <li ng-repeat="notification in data.notifications" ng-style="notification.style">
+                                        <a href ng-click="propogateRead(notification)">
+                                            {{notification.message}}
+                                        </a>
                                     </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">
+                                        See All
+                                    </li>
+                                    </ul>
                                 </ul>
                             </div>
                         </div>
-                        <div class="meta">
+                        <div class="meta" style="margin:0px;padding:0px;">   
                             <div class="page">
-                                Home
+                                UoftBaddy
                             </div>
                             <div class="breadcrumb-links">
-                                Home
+                                Home / {{profile.username}}'s profile
                             </div>
                         </div>
                     </div>
@@ -99,95 +113,123 @@ else {
                 <div ui-view>
                     <div class="row">
                         <div class="col-lg-8">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <rd-widget>
-                                        <rd-widget-header title="Profile">
-                                        </rd-widget-header>
-                                        <rd-widget-body>
-                                            <div class="row">
-                                                <div class="col-lg-3">
-                                                    <img class="img-responsive pull-left" ng-src="{{profile.avatar_link}}" style="height:150px;">
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <h3 style="display:inline-block;" style="padding-top:0px;margin-top:0px;">
-                                                        {{profile.username}}
-                                                    </h3>
-                                                    <h4>{{user.reputation}}</h4>
-                                                    <small>
-                                                        Joined on {{profile.date_registered | date:'medium'}} and last seen at {{profile.last_seen | date:'medium'}}
-                                                    </small>
-                                                </div>
+                            <div style="margin-bottom:10px;">
+                                <rd-widget>
+                                    <rd-widget-header title="Profile">
+                                        <a href="editProfile.php" ng-if="user.user_id == profile.user_id">Edit Profile</a>
+                                    </rd-widget-header>
+                                    <rd-widget-body>
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <img class="img-responsive pull-left" ng-src="{{profile.avatar_link}}" style="height:150px;">
                                             </div>
-                                        </rd-widget-body>
-                                    </rd-widget>
-                                    <rd-widget>
-                                        <rd-widget-body>
-                                            <div class="message">
-                                                <p ng-show="profile.bio">
-                                                    {{profile.bio}}
-                                                </p>
-                                                <p ng-show="!profile.bio">
-                                                    No summary to show
-                                                </p>
-                                                <p class="text-center" style="margin-bottom:10px;">
-                                                    Play Level: {{profile.level}}
-                                                </p>
-                                                <p class="text-center">
-                                                    Program: {{profile.program}}
-                                                </p>
-                                            </div>
-                                        </rd-widget-body>
-                                    </rd-widget>
-                                </div>
-                                <div class="col-lg-12">
-                                    <rd-widget>
-                                        <rd-widget-header title="Timeline">
-                                        </rd-widget-header>
-                                        <rd-widget-body>
-                                            <div class="message" ng-repeat="action in profile.actions">
-                                                <p ng-bind-html="action.message">
-                                                </p>
+                                            <div class="col-lg-8">
+                                                <h3 style="padding-top:0px;margin-top:0px;">
+                                                    {{profile.username}}
+                                                </h3>
                                                 <small>
-                                                    {{action.action_message}}
-                                                </smalll>
-                                                <hr>
+                                                    {{profile.accolades}}
+                                                </small>
+                                                <h4>{{user.reputation}}</h4>
+                                                <small>
+                                                    Joined on {{profile.date_registered | date:'medium'}}
+                                                </small>
+                                                <br/>
+                                                <small>
+                                                     Last seen at {{profile.last_seen | date:'medium'}}
+                                                </small>
                                             </div>
-                                            <div class="message" ng-show="profile.actions.length == 0">
-                                                <p class="text-center">
-                                                    No activity yet
-                                                </p>
-                                            </div>
-                                        </rd-widget-body>
-                                    </rd-widget>
-                                </div>
+                                        </div>
+                                    </rd-widget-body>
+                                </rd-widget>
+                            </div>
+                            <div style="margin-bottom:10px;">
+                                <rd-widget>
+                                    <rd-widget-body>
+                                        <div class="message">
+                                            <p ng-show="profile.bio">
+                                                {{profile.bio}}
+                                            </p>
+                                            <p ng-show="!profile.bio">
+                                                This user has no uploaded summary
+                                            </p>
+                                        </div>
+                                    </rd-widget-body>
+                                </rd-widget>
+                            </div>
+                            <div>
+                                <rd-widget>
+                                    <rd-widget-header title="Timeline">
+                                    </rd-widget-header>
+                                    <rd-widget-body>
+                                        <rd-loading ng-show="!profile.actions"></rd-loading>
+                                        <div class="message" ng-repeat="action in profile.actions">
+                                            <p ng-bind-html="action.message">
+                                            </p>
+                                            <small>
+                                                {{action.action_message}}
+                                            </smalll>
+                                            <hr>
+                                        </div>
+                                        <div class="message" ng-show="profile.actions.length == 0">
+                                            <p class="text-center">
+                                                No activity yet
+                                            </p>
+                                        </div>
+                                    </rd-widget-body>
+                                </rd-widget>
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <rd-widget>
-                                <rd-widget-header title="Statistics">
-                                </rd-widget-header>
-                                <rd-widget-body>
-                                    <div class="message">
-                                        <div class="title">{{profile.reputation}} <h4 style="display:inline;">Reputation</h4></div>
-                                    </div>
-                                    <div class="message">
-                                        <p class="text-center">
-                                            Joined around {{profile.number_of_joins}} confirmed court bookings
-                                        </p>
-                                    </div>
-                                    <div class="message">
-                                        <p class="text-center">
-                                            Has left about {{profile.number_of_leaves}} confirmed court bookings after committing (but notified leave 24 hours in advance)
-                                        </p>
-                                    </div>
-                                    <div class="message">
-                                        <p class="text-center">
-                                            Join/Leave Ratio is {{profile.join_leave_ratio | limitTo: 3}} (24 hours in advance)
-                                        </p>
-                                    </div>
-                                </rd-widget-body>
-                            </rd-widget>
+                            <div style="margin-bottom:10px;">
+                                <rd-widget>
+                                    <rd-widget-header title="About">
+                                    </rd-widget-header>
+                                    <rd-widget-body>
+                                        <div class="message">
+                                            <div style="margin-bottom:10px;">
+                                                <h4 style="display:inline-block;margin-right:5px;margin-top:0px;">
+                                                    Play Level:
+                                                </h4>{{profile.literalPlaying}}
+                                            </div>
+                                            <div>
+                                                <h4 style="display:inline-block;margin-right:5px;">
+                                                    Program:
+                                                </h4>
+                                                {{profile.program}}
+                                            </div>
+                                        </div>
+                                    </rd-widget-body>
+                                </rd-widget>
+                            </div>
+                            <div style="margin-bottom:10px;">
+                                <rd-widget>
+                                    <rd-widget-header title="Statistics">
+                                    </rd-widget-header>
+                                    <rd-widget-body>
+<!--                                         <div class="message">
+                                            <div class="title">{{profile.reputation}} <h4 style="display:inline;">Reputation</h4><a href="upcoming.php">
+                                                <i class="fa fa-question"></i>
+                                            </a></div>
+                                        </div> -->
+                                        <div class="message">
+                                            <p class="text-center">
+                                                Joined around {{profile.number_of_joins}} confirmed court bookings
+                                            </p>
+                                        </div>
+                                        <div class="message">
+                                            <p class="text-center">
+                                                Has notified absence about {{profile.number_of_leaves}} confirmed court bookings after committing to join
+                                            </p>
+                                        </div>
+                                        <div class="message">
+                                            <p class="text-center">
+                                                Absent Ratio is {{profile.absence_ratio | limitTo: 3}} for every join
+                                            </p>
+                                        </div>
+                                    </rd-widget-body>
+                                </rd-widget>
+                            </div>
                         </div>
                     </div>
                 </div>

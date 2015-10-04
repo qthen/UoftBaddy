@@ -12,8 +12,35 @@ class NotificationFactory {
 		'ApproveJoinRequest' => 2,
 		'JoinBadmintonDate' => 3,
 		'ProposeBadmintonDate' => 4,
-		'LeaveBadmintonDate' => 5
+		'LeaveBadmintonDate' => 5,
+		'WithdrawAbsence' => 6
 	);
+}
+
+
+class Notification {
+	/*
+	Some sort of notification in the database that has not been read
+	*/
+	public $a_href, $message, $date_notified, $read_status, $notification_id;
+
+	public static $defaults = array(
+		'notification_id' => null,
+		'a_href' => null,
+		'message' => null,
+		'date_notified' => null,
+		'read_status' => 1);
+
+	public function __construct(array $args = array()) {
+		$defaults = self::$defaults;
+		$args = array_merge($defaults, $args);
+
+		$this->notification_id = $args['notification_id'];
+		$this->read_status = $args['read_status'];
+		$this->message = $args['message'];
+		$this->date_notified = $args['date_notified'];
+		$this->a_href = $args['a_href'];
+	}
 }
 
 
@@ -26,8 +53,9 @@ class NotificationPusher {
 		'JoinDiscussion' => '%s has requested to join this conversation "%s"',
 		'ApproveJoinRequest' => '%s has approved %s request to join the discussion',
 		'JoinBadmintonDate' => '%s has joined your badminton date "%s"',
-		'LeaveBadmintonDate' => '%s has left your badminton date "%s"',
-		'PostedCommentOnThread' => '%s has posted a comment in a thread you are in'
+		'LeaveBadmintonDate' => '%s can no longer attend your badminton date "%s"',
+		'PostedCommentOnThread' => '%s has posted a comment in a thread you are in',
+		'WithdrawAbsence' => '%s has withdrawn their absence and can now attend your badminton date %s'
 	);
 	
 	public static function push_notification(Action $action) {
@@ -39,6 +67,7 @@ class NotificationPusher {
 				break;
 			case 'JoinBadmintonDate':
 			case 'LeaveBadmintonDate':
+			case 'WithdrawAbsence':
 				BadmintonDateNotificationPusher::push_notification($action);
 				break;
 			case 'PostedCommentOnThread':
@@ -61,8 +90,8 @@ class ThreadNotificationPusher {
 		$class = get_class($action);
 		switch ($class) {
 			case 'PostedCommentOnThread':
-				$message = sprintf(NotificationPusher::$notification_messages[$class], $action->commenter->email);
-				$a_href = $action->thread->thread_id;
+				$message = sprintf(NotificationPusher::$notification_messages[$class], $action->commenter->username);
+				$a_href = 'therad.php?id=' . $action->thread->thread_id;
 				list($message, $a_href) = Database::sanitize(array($message, $a_href));
 				$participants = $action->thread->get_all_participants();
 				foreach ($participants as $participant) {
@@ -93,14 +122,16 @@ class BadmintonDateNotificationPusher {
 		$class = get_class($action);
 		switch ($class) {
 			case 'JoinBadmintonDate':
+				$action->badminton_date->get_datename();
 				$message = sprintf(NotificationPusher::$notification_messages[$class], $action->joiner->username, $action->badminton_date->datename);
 				$a_href = $action->badminton_date->date_id;
 				list($message, $a_href) = Database::sanitize(array($message, $a_href));
 				$action->badminton_date->get_attendees(array(
 					$action->joiner)
 				);
-				print_r($action->badminton_date->attendees);
+				//print_r($action->badminton_date->attendees);
 				foreach ($action->badminton_date->attendees as $attendant) {
+					$a_href = "date.php?id=$a_href";
 					$insert = "INSERT INTO `notifications` (message, user_id, type, a_href, read_status, date_notified) VALUES ('$message', '$attendant->user_id', '" . NotificationFactory::$notification_type_contract[$class] . "', '$a_href', '" . NotificationFactory::UNREAD . "', NOW())";
 					$result = $mysqli->query($insert)
 					or die ($mysqli->error);
@@ -113,9 +144,27 @@ class BadmintonDateNotificationPusher {
 				list($message, $a_href) = Database::sanitize(array($message, $a_href));
 				$action->badminton_date->get_attendees();
 				foreach ($action->badminton_date->attendees as $attendant) {
-					$insert = "INSERT INTO `notifications` (message, user_id, type, a_href, read_status, date_notified) VALUES ('$message', '$attendant->user_id', '" . NotificationFactory::$notification_type_contract[$class] . "', '$a_href', '" . NotificationFactory::UNREAD . "', NOW())";
-					$result = $mysqli->query($insert)
-					or die ($mysqli->error);
+					if ($attendant->user_id != $action->leaver->user_id) {
+						$a_href = "date.php?id=$a_href";
+						$insert = "INSERT INTO `notifications` (message, user_id, type, a_href, read_status, date_notified) VALUES ('$message', '$attendant->user_id', '" . NotificationFactory::$notification_type_contract[$class] . "', '$a_href', '" . NotificationFactory::UNREAD . "', NOW())";
+						$result = $mysqli->query($insert)
+						or die ($mysqli->error);
+					}
+				}
+				return true;
+				break;
+			case 'WithdrawAbsence':
+				$message = sprintf(NotificationPusher::$notification_messages[$class], $action->withdrawer->username, $action->badminton_date->datename);
+				$a_href = $action->badminton_date->date_id;
+				list($message, $a_href) = Database::sanitize(array($message, $a_href));
+				$action->badminton_date->get_attendees();
+				foreach ($action->badminton_date->attendees as $attendant) {
+					if ($attendant->user_id != $action->withdrawer->user_id) {
+						$a_href = "date.php?id=$a_href";
+						$insert = "INSERT INTO `notifications` (message, user_id, type, a_href, read_status, date_notified) VALUES ('$message', '$attendant->user_id', '" . NotificationFactory::$notification_type_contract[$class] . "', '$a_href', '" . NotificationFactory::UNREAD . "', NOW())";
+						$result = $mysqli->query($insert)
+						or die ($mysqli->error);
+					}
 				}
 				return true;
 				break;

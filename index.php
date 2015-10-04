@@ -1,13 +1,16 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/autoload.php';
 $user = User::get_current_user();
+if ($user instanceof AnonymousUser) {
+    header('Location: /fblogin.php');
+}
 ?>
 <html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Looking To Play</title>
+    <title>The UofTBaddy Project</title>
     <!-- STYLES -->
     <!-- build:css lib/css/main.min.css -->
     <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -51,42 +54,53 @@ $user = User::get_current_user();
             <div class="page-content">
 
                 <!-- Header Bar -->
-<!--                 <div class="row header" style="margin:0px;padding:0px;">    
-                    <div class="col-xs-12">
+                <!-- Header Bar -->
+                <div class="row header" style="margin:0px;padding:0px;">    
+                    <div class="col-xs-12" style="margin-bottom:0px;">
                         <div class="user pull-right">
                             <div class="item dropdown">
                                 <a href="#" class="dropdown-toggle">
-                                    <img ng-src="{{user.avatar}}">
+                                    <img ng-src="{{user.avatar_link}}"> 
                                 </a>
                                 <?php Renderer::get_user_dropdown();?>
                             </div>
                             <div class="item dropdown">
-                             <a href="#" class="dropdown-toggle">
-                                    <i class="fa fa-bell-o"></i>
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="fa fa-bell-o"><span class="badge" style="font-size:12px;position:absolute;top:10;color:white;background-color:#D9230F;" ng-show="data.newNotifications > 0">{{data.newNotifications}}</span></i>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-right">
+                                <ul class="dropdown-menu dropdown-menu-right notification">
                                     <li class="dropdown-header">
                                         Notifications
+                                        <span class="badge">{{data.newNotifications}}</span>
                                     </li>
                                     <li class="divider"></li>
-                                    <li>
-                                        <a href="#">Server Down!</a>
+                                    <li ng-repeat="notification in data.notifications" ng-style="notification.style">
+                                        <a href ng-click="propogateRead(notification)">
+                                            {{notification.message}}
+                                        </a>
                                     </li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">
+                                        <a href="notifications.php">
+                                            See All
+                                        </a>
+                                    </li>
+                                    </ul>
                                 </ul>
                             </div>
                         </div>
-                        <div class="meta">
+                        <div class="meta" style="margin:0px;padding:0px;">   
                             <div class="page">
-                                Home
+                                UoftBaddy
                             </div>
                             <div class="breadcrumb-links">
                                 Home
                             </div>
                         </div>
                     </div>
-                </div> -->
+                </div>
                 <!-- End Header Bar -->
-                <div class="col-lg-12 uoftBanner" style="margin-bottom:10px;padding:0px;">
+                <div ng-class="data.uoftBannerClass" style="margin-bottom:10px;padding:0px;">
                     <div class="uoftTitle">
                         <h1>
                             UoftBaddy
@@ -100,10 +114,10 @@ $user = User::get_current_user();
                     </div>
                     <div class="stats">
                         <h3 style="margin-right:5px;">
-                            247 total users
+                            {{data.userStats.total_users}} total users
                         </h3>
                         <h4>
-                            26 signed up today
+                            {{data.userStats.new_users_today}} signed up today
                         </h4>
                     </div>
                     <div class="credits">
@@ -137,34 +151,54 @@ $user = User::get_current_user();
                                         </small>                    
                                     </p>
                                 </div>
-                                <hr>
-                                <div class="message">
-                                    <a href="news.php?id=1">
-                                        <h3>UoftBaddy launches!</h3>
-                                    </a>
-                                    <p class="text-center">
-                                        <small>This is an experiment to see how many people need this sort of serivce. Any feedback helps</small>
-                                    </p>
-                                    <p>
-                                        As somebody who avidly plays badminton, I was a bit disappointed at the way badminton courts are allocated at UofT. Firstly, almost all courts are booked by the time the clock reaches 8. For many commuters and students who don't know many friends who enjoy playing badminton, this is quite difficult to get involved (especially since athletic fees are a mandatory part of our tuitition at the school, I believe we have the right to use it to our advantage).
-                                        <br/><br/>
-                                        Commuters encounter a schedule problem since booking courts must be done within a pretty small time-limit (24 hours in advance) and for the most part, their schedule is unchangeable during the day and plans must be made the day before. It's hard to plan as a commuter especially since our schedules aren't as flexibly as those living close by to the univeristy. Considering the fact that University of Toronto is a commuter school (almost 40% of students commute every day in some form), and the competition to get a single badminton court at University of Toronot (which only normally houses 3 courts for a massive school population), and lack of time to find new partners to play with, playing badminton even irregularly becomes quite diffcult, and a dependable regularity becomes almost an impossibility.
-                                        <br/><br/>
-                                        For those living near the school, there are no services to find partners to play with unlike <a href="#">SquashOrbit</a> for squash. The facebook group for UofT Badminton is largely inefficient (not to mention that commuters can practically ignore any request to play the day of). 
-                                    </p>
-                                </div>
                             </rd-widget-body>
                         </rd-widget>
+                        <div style="margin-top:10px;">
+                            <rd-widget>
+                                <rd-widget-body>
+                                    <div class="message">
+                                        <a href="news.php?id=1">
+                                            <h3>UoftBaddy launches!</h3>
+                                        </a>
+                                        <p class="text-center">
+                                            <small>This is an experiment to see how many people need this sort of serivce. Any feedback helps</small>
+                                        </p>
+                                        <p>
+                                            As somebody who avidly plays badminton, I was a bit disappointed at the way badminton courts are allocated at UofT. Firstly, almost all courts are booked by the time the clock reaches 8. For many commuters and students who don't know many friends who enjoy playing badminton, this is quite difficult to get involved (especially since athletic fees are a mandatory part of our tuitition at the school, I believe we have the right to use it to our advantage).
+                                            <br/><br/>
+                                            Commuters encounter a schedule problem since booking courts must be done within a pretty small time-limit (24 hours in advance) and for the most part, their schedule is unchangeable during the day and plans must be made the day before. It's hard to plan as a commuter especially since our schedules aren't as flexibly as those living close by to the univeristy. Considering the fact that University of Toronto is a commuter school (almost 40% of students commute every day in some form), and the competition to get a single badminton court at University of Toronot (which only normally houses 3 courts for a massive school population), and lack of time to find new partners to play with, playing badminton even irregularly becomes quite diffcult, and a dependable regularity becomes almost an impossibility.
+                                            <br/><br/>
+                                            For those living near the school, there are no services to find partners to play with unlike <a href="#">SquashOrbit</a> for squash. The facebook group for UofT Badminton is largely inefficient (not to mention that commuters can practically ignore any request to play the day of). 
+                                        </p>
+                                    </div>
+                                </rd-widget-body>
+                            </rd-widget>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4" style="margin-bottom:10px;">
                     <rd-widget>
+                        <rd-widget-header title="Badminton Courts Info">
+                        </rd-widget-header>
                         <rd-widget-body>
                             <div class="widget-icon green pull-left">
                                 <i class="fa fa-calendar-o"></i>
                             </div>
-                            <div class="title">{{data.courtsToday + data.courtsTomorrow}}</div>
-                            <div class="comment">courts today and tomorrow</div>
+                            <div class="title">{{data.courtsToday}}</div>
+                            <div class="comment">courts today</div>
+                            <span style="float:right;">
+                                <small>
+                                    <a href="courts.php">
+                                        View schedule <i class="fa fa-calendar"></i>
+                                    </a>
+                                </small>
+                            </span>
+                            <hr>
+                            <div class="widget-icon green pull-left">
+                                <i class="fa fa-calendar-o"></i>
+                            </div>
+                            <div class="title">{{data.courtsTomorrow}}</div>
+                            <div class="comment">courts tomorrow</div>
                             <span style="float:right;">
                                 <small>
                                     <a href="courts.php">
@@ -174,8 +208,12 @@ $user = User::get_current_user();
                             </span>
                         </rd-widget-body>
                     </rd-widget>
+                </div>
+                <div class="col-lg-4" style="margin-bottom:10px;">
                     <rd-widget>
-                        <rd-widget-body>
+                        <rd-widget-header title="Looking To Play">
+                        </rd-widget-header>
+                        <rd-widget-body>   
                             <div class="widget-icon blue pull-left">
                                 <i class="fa fa-users"></i>
                             </div>
@@ -190,6 +228,30 @@ $user = User::get_current_user();
                             </span>
                         </rd-widget-body>
                     </rd-widget>
+                </div>
+                <div class="col-lg-4" style="margin-bottom:10px;">
+                    <rd-widget>
+                        <rd-widget-header title="New Members">
+                        </rd-widget-header>
+                        <rd-widget-body>
+                            <div class="message" ng-repeat="user in data.newMembers" style="margin-bottom:5px;">
+                                <div class="authorAvatar">
+                                   <img ng-src="{{user.avatar_link}}" class="img-responsive" style="width:auto;height:50px;">
+                                    <span>
+                                        <a ng-href="profile.php?id={{user.user_id}}">
+                                            {{user.username}}
+                                        </a>
+                                        <br/>
+                                        <small>
+                                            Joined <span am-time-ago="user.date_registered"></span>
+                                        </small>
+                                    </span>
+                                </div>
+                            </div>  
+                        </rd-widget-body>
+                    </rd-widget>
+                </div>
+                <div class="col-lg-4">
 <!--                     <rd-widget>
                         <rd-widget-header title="Courts Today">
                         </rd-widget-header>
@@ -197,9 +259,9 @@ $user = User::get_current_user();
                             <div class="message">
 
                     </rd-widget> -->
-
+<!-- 
                     <rd-widget>
-                        <rd-widget-header title="Average Time Slots">
+                        <rd-widget-header title="Cumulative Bookings By Time Slots">
                         </rd-widget-header>
                         <rd-widget-body>
                             <div class="message" ng-repeat="slot in data.stats.bookings_by_hours">
@@ -209,7 +271,7 @@ $user = User::get_current_user();
                                 </p>    
                             </div>
                         </rd-widget-body>
-                    </rd-widget>
+                    </rd-widget> -->
                 </div>  
             </div><!-- End Page Content -->
         </div><!-- End Content Wrapper -->

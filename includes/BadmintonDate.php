@@ -10,7 +10,7 @@ abstract class BadmintonDate {
 	private $dbc;
 	public $date_id, $datename, $datetime, $creator, $attendees, $cancelled, $confirmed, $db_type, $location;
 
-	const LEAVE_DEADLINE = 86400; //In seconds
+	const LEAVE_DEADLINE = 1; //In seconds
     const CONFIRMED = 1;
     const TENTATIVE = 0; //For beta purposes
 
@@ -82,6 +82,32 @@ abstract class BadmintonDate {
             throw new UnexpectedValueException('UnexpectedValueException occured on method call beta_thread_to_date');
         }
     }
+
+    final public function has_space() {
+    	/*
+    	(Null) -> Bool
+    	Checks if the current badminton date has space to be joined or re-joined
+    	*/
+    	if ($this->date_id) {
+    		$sql = "SELECT max_attendants FROM `badminton_dates` WHERE date_id = '$this->date_id'";
+    		$result = $this->dbc->query($sql)
+    		or die ($this->dbc->error);
+    		if ($result->num_rows == 1) {
+    			$max_attendants = $result->fetch_row()[0];
+    			$sql = "SELECT COUNT(*) FROM `joins` WHERE date_id = '$this->date_id'";
+    			$result = $this->dbc->query($sql)
+    			or die ($this->dbc->error);
+    			return (intval($result->fetch_row()[0]) < intval($max_attendants));
+    		}
+    		else {
+    			throw new OutOfRangeException('OutOfRangeException occured on method call ' . __METHOD__ . ' because the date id does not exist in the database');
+    		}
+    	}
+    	else {
+    		throw new UnexpectedValueException('UnexpectedValueException occured on methd call ' . __METHOD__ . ' because the date id is invalid');
+    	}
+    }
+
 
 	public function can_be_left() {
 		/*
@@ -179,14 +205,50 @@ abstract class BadmintonDate {
 		}
 	}
 
-	public function get_attendees($users_to_exclude = array()) {
+	public function get_absences($users_to_exclude = array()) {
 		/*
 		(Null) -> Null
 		Attempts to get all attendees
 		 */
 		if ($this->date_id) {
             $this->dbc = Database::connection();
-			$sql = "SELECT t1.user_id, t2.username, t2.avatar, t2.reputation, t2.email
+			$sql = "SELECT t1.user_id, t2.username, t2.avatar, t2.reputation, t2.email, t2.avatar_link, t1.date_joined
+			FROM `joins` as t1
+			INNER JOIN `users` as t2
+			ON t2.user_id = t1.user_id
+			WHERE t1.date_id = '$this->date_id'
+			AND t1.status = '" . User::LEFT_STATUS . "'";
+			foreach ($users_to_exclude as $user) {
+				if (is_a($user, 'User')) {
+					$sql .= ' AND t1.user_id != ' . $user->user_id;
+				}
+			}
+			//echo $sql;
+			$result = $this->dbc->query($sql)
+			or die ($this->dbc->error);
+			$this->absences = array();
+			while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				$user = new User($row);
+				$user->date_joined = $row['date_joined'];
+				array_push($this->absences, $user);
+			}
+			//Set the number of attendees to match the attendeants
+			$this->number_of_attendants = count($this->attendees);
+			$this->full = (count($this->attendees) >= $this->max_attendants);
+		}
+		else {
+			throw new UnexpectedValueException('UnexpectedValueException occured on method call get_attendees');
+		}
+	}
+
+	public function get_all_joins($users_to_exclude = array()) {
+		/*
+		(Null) -> Null
+		Attempts to get all attendees
+		 */
+		if ($this->date_id) {
+            $this->dbc = Database::connection();
+			$sql = "SELECT t1.user_id, t2.username, t2.avatar, t2.reputation, t2.email, t2.avatar_link, t1.date_joined, t1.status
 			FROM `joins` as t1
 			INNER JOIN `users` as t2
 			ON t2.user_id = t1.user_id
@@ -199,9 +261,53 @@ abstract class BadmintonDate {
 			//echo $sql;
 			$result = $this->dbc->query($sql)
 			or die ($this->dbc->error);
+			$this->joins = array();
+			while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				$user = new User($row);
+				$user->date_joined = $row['date_joined'];
+				if ($row['status'] == User::LEFT_STATUS) {
+					$user->absent = true;
+					$user->joined = true;
+				}
+				else {
+					$user->joined = true;
+					$user->absent = false;
+				}
+				array_push($this->joins, $user);
+			}
+			//Set the number of attendees to match the attendeants
+			$this->number_of_joins = count($this->attendees);
+		}
+		else {
+			throw new UnexpectedValueException('UnexpectedValueException occured on method call get_attendees');
+		}
+	}
+
+	public function get_attendees($users_to_exclude = array()) {
+		/*
+		(Null) -> Null
+		Attempts to get all attendees
+		 */
+		if ($this->date_id) {
+            $this->dbc = Database::connection();
+			$sql = "SELECT t1.user_id, t2.username, t2.avatar, t2.reputation, t2.email, t2.avatar_link, t1.date_joined
+			FROM `joins` as t1
+			INNER JOIN `users` as t2
+			ON t2.user_id = t1.user_id
+			WHERE t1.date_id = '$this->date_id'
+			AND t1.status = '" . User::JOINED_STATUS . "'";
+			foreach ($users_to_exclude as $user) {
+				if (is_a($user, 'User')) {
+					$sql .= ' AND t1.user_id != ' . $user->user_id;
+				}
+			}
+			//echo $sql;
+			$result = $this->dbc->query($sql)
+			or die ($this->dbc->error);
 			$this->attendees = array();
 			while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 				$user = new User($row);
+				$user->date_joined = $row['date_joined'];
 				array_push($this->attendees, $user);
 			}
 			//Set the number of attendees to match the attendeants
@@ -220,12 +326,13 @@ abstract class BadmintonDate {
 				$this->db_type = UNCONFIRMED_DATE;
 				break;
 			case 'ConfirmedBadmintonDate':
+			case 'SomeDate':
 				$this->db_type = CONFIRMED_DATE;
 				break;
 			case 'UnavailableDate':
 				$this->db_type = UNAVAILABLE_DATE;
 			default:
-				throw new OutOfRangeException('OutOfRangeException when assignedthe db type to the object');
+				throw new OutOfRangeException('OutOfRangeException when assigned the db type to the object');
 		}
 	}
 }
@@ -321,5 +428,7 @@ class ConfirmedBadmintonDate extends BadmintonDate {
         $this->begin_datetime = $args['begin_datetime'];
         $this->end_datetime = $args['end_datetime'];
         $this->datename = $args['datename'];
+        $this->max_attendants = (is_numeric($args['max_attendants'])) ? $args['max_attendants'] : 4;
+        $this->summary = $args['summary'];
 	}
 }

@@ -48,7 +48,9 @@ class User {
 		'level' => 1,
 		'program' => 'Unspecified',
 		'avatar_link' => null,
-		'bio' => null
+		'bio' => null,
+		'accolades' => '',
+		'playing_level' => 1
 	);
 
 	public function __construct(array $args = array()) {
@@ -79,15 +81,107 @@ class User {
 		else {
 			$this->commuter = false;
 		}
-		if (in_array($args['level'], self::$level_contracts)) {
-			$this->level = self::$levels_contracts[$args['level']];
-		}
-		else {
-			$this->level = 'Not disclosed';
-		}
+		$this->int_commuter = $args['commuter'];
+		$this->level = $args['level'];
 		$this->program = $args['program'];
+		if (!$this->program) {
+			$this->program = 'Unspecified';
+		}
 		$this->avatar_link = $args['avatar_link'];
 		$this->bio = $args['bio'];
+		if (!$this->bio) {
+			$this->bio = 'No description about this user';
+		}
+		$this->playing_level = $args['playing_level'];
+		$this->accolades = $args['accolades'];
+	}
+
+	final public function mark_notification_as_read(Notification $notification) {
+		/*
+		(Notification) -> Bool
+		*/
+		if ($this->user_id && $notification->notification_id) {
+			if ($this->notification_is_mine($notification)) {
+				$sql = "UPDATE `notifications` SET read_status = '" . NotificationFactory::READ . "' WHERE notification_id = '$notification->notification_id' LIMIT 1";
+				$result = $this->dbc->query($sql)
+				or die ($this->dbc->error);
+				return true;
+			}
+			else {
+				throw new OutOfBoundsException('OutOfBoundsException occured on method call ' . __METHOD__ . ' because the notifications is not yours');
+			}
+		}
+		else {
+			throw new UnexpectedValueException('UnexpectedValueException occued on method call ' . __METHOD__ , ' because the user id or notificiation is invalid');
+		}
+	}
+
+	final public function notification_is_mine(Notification $notification) {
+		/*
+		(Notification) -> Bool
+		Checks to see if the notification was received by the user in the database
+		*/
+		if ($this->user_id && $notification->notification_id) {
+			$sql = "SELECT notification_id, user_id FROM `notifications` WHERE notification_id = '$notification->notification_id'";
+			$result = $this->dbc->query($sql)
+			or die ($this->dbc->error);
+			if ($result->num_rows == 1) {
+				return ($result->fetch_row()[1] == $this->user_id);
+			}
+			else {
+				throw new OutOfRangeException('OutOfRangeException occured on method call notifcation_is_mine because the notification does not exist');
+			}
+		}
+		else {
+			throw new UnexpectedValueException('UnexpectedValueException occured on method call ' . __METHOD__ . ' because the input paramteres are incorrect');
+		}
+	}
+
+	public function delete_thread_comment(ThreadComment $comment) {
+		/*
+		(ThreadComment) -> Bool
+		Attempts to delete a thread comment in the database
+		*/
+		if ($this->user_id) {
+			if ($this->mine($comment)) {
+				$sql = "DELETE FROM `thread_comments` WHERE comment_id = '$comment->comment_id'";
+				$result = $this->dbc->query($sql)
+				or die ($this->dbc->error);
+				return true;
+			}
+			else {
+				throw new OutOfBoundsException('OutOfBoundsException since this comment either does not exist or is not yours');
+			}
+		}
+		else {
+			throw new UnexpectedValueException('UnexpectedValueException occured on request, the current user id is invalid');
+		}
+	}
+
+	public function mine($object) {
+		/*
+		(Mixed) -> Bool
+		Given some object, checks if it is mine, return false if the object does not exist
+		*/
+		if ($object instanceof ThreadComment) {
+			$sql = "SELECT author_id FROM `thread_comments` WHERE comment_id = '$object->comment_id'";
+		}
+		if ($object instanceof Thread) {
+			$sql = "SELECT author_id FROM `threads` WHERE thread_id = '$object->thread_id'";
+		}
+		if ($sql) {
+			$result = $this->dbc->query($sql)
+			or die ($this->dbc->error);
+			if ($result->num_rows == 1) {
+				return $result->fetch_row()[0] == $this->user_id;
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
 	}
 
 	public function get_fields() {
@@ -96,10 +190,10 @@ class User {
 		Gets user email
 		 */
 		if ($this->user_id) {
-			$sql = "SELECT email, username FROM users WHERE user_id = '$this->user_id'";
+			$sql = "SELECT avatar_link, username FROM users WHERE user_id = '$this->user_id'";
 			$result = $this->dbc->query($sql)
 			or die ($this->dbc->error);
-			list($this->email, $this->username) = mysqli_fetch_array($result, MYSQLI_NUM);
+			list($this->avatar_link, $this->username) = mysqli_fetch_array($result, MYSQLI_NUM);
 		}
 		else {
 			throw new UnexpectedValueException('UnexpectedValueException occured on method call get_fields');
@@ -380,9 +474,14 @@ class CurrentUser extends User {
 		Attempts to edit the current user's profile based on the new specifications, assumes sanitized variables
 		 */
 		if ($this->user_id) {
-			$sql = "UPDATE `users` SET program = '$editted_profile->program' AND level = '$editted_profile->level' AND commuter = '$editted_profile->commuter'";
+			$sql = "UPDATE `users` SET program = '$editted_profile->program', level = '$editted_profile->level', commuter = '$editted_profile->int_commuter', bio = '$editted_profile->bio', accolades = '$editted_profile->accolades' WHERE user_id = '$this->user_id' LIMIT 1";
+			//echo $sql;
 			$result = $this->dbc->query($sql)
 			or die ($this->dbc->error);
+			return true;
+		}
+		else {
+			throw new UnexpectedValueException('UnexpectedValueException occured on method call edit_self since the user id is invalid');
 		}
 	}
 
@@ -408,7 +507,9 @@ class CurrentUser extends User {
 			or die ($this->dbc->error);
 			$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 			$row['message_id'] = $message_id;
+			$this->get_fields();
 			$row['author'] = clone $this;
+
 			$message = new Message($row);
 
 			//Update the conversation
@@ -550,10 +651,10 @@ class CurrentUser extends User {
 		 */
 		if ($this->user_id && $thread->thread_text && $thread->type) {
 			if ($thread->type == 1) {
-				$sql = "INSERT INTO `threads` (thread_text, author_id, date_posted, type, date_play) VALUES ('$thread->thread_text', '$this->user_id', NOW(), '$thread->type', '$thread->date_play')";
+				$sql = "INSERT INTO `threads` (thread_text, author_id, date_posted, type, date_play) VALUES ('$thread->thread_text', '$this->user_id', DATE_ADD(NOW(), INTERVAL 1 HOUR), '$thread->type', '$thread->date_play')";
 			}
 			else {
-				$sql = "INSERT INTO `threads` (thread_text, author_id, date_posted, type) VALUES ('$thread->thread_text', '$this->user_id', NOW(), '$thread->type')";
+				$sql = "INSERT INTO `threads` (thread_text, author_id, date_posted, type) VALUES ('$thread->thread_text', '$this->user_id', DATE_ADD(NOW(), INTERVAL 1 HOUR), '$thread->type')";
 			}
 			$result = $this->dbc->query($sql)
 			or die ($this->dbc->error);
@@ -572,20 +673,42 @@ class CurrentUser extends User {
 		}
 	}
 
+	final public function get_username() {
+		/*
+		(Null) -> Null
+		Attempts to get the property username for the current user
+		*/
+		if ($this->user_id) {
+			$sql = "SELECT username FROM `users` WHERE user_id = '$this->user_id'";
+			$result = $this->dbc->query($sql)
+			or die ($this->dbc->error);;
+			if ($result->num_rows == 1) {
+				$this->username = $result->fetch_row()[0];
+			}
+			else {
+				throw new OutOfRangeException('OutOfRangeException exception occured on method call get_username because the user id does not exist');
+			}
+		}
+		else {
+			throw new UnexpectedValueException('UnexpectedValueException occured because the user id is invalid');
+		}
+	}
+
 	final public function post_thread_comment(Thread $thread, ThreadComment $comment) {
 		/*
 		(Thread, ThreadComment) -> ThreadComment
 		Attempts to post a comment on a thread
 		 */
 		if ($this->user_id && $thread->thread_id && $comment->comment_text) {
-			$sql = "INSERT INTO `thread_comments` (thread_id, comment_text, date_posted, author_id, parent_id) VALUES('$thread->thread_id', '$comment->comment_text', NOW(), '$this->user_id', null)";
+			$sql = "INSERT INTO `thread_comments` (thread_id, comment_text, date_posted, author_id, parent_id) VALUES('$thread->thread_id', '$comment->comment_text', DATE_ADD(NOW(), INTERVAL 1 HOUR), '$this->user_id', null)";
 			//echo $sql;
 			$result = $this->dbc->query($sql)
 			or die ($this->dbc->error);
 			$id = $this->dbc->insert_id;
 			$comment->comment_id = $id;
-			
 
+			$this->get_username();
+			
 			//Create the action
 			$action = new PostedCommentOnThread(array(
 				'commenter' => clone $this,
@@ -643,15 +766,16 @@ class CurrentUser extends User {
 		(User) -> Bool
 		Checks if the current user has joined the badminton date
 		 */
-		if ($badminton_date->date_id && $user->user_id) {
+		if ($badminton_date->date_id && $this->user_id) {
 			$mysqli = Database::connection();
-			$sql = "SELECT user_id FROM joins WHERE user_id = '$this->user_id' AND date_id = '$date->date_id'";
+			$sql = "SELECT user_id FROM joins WHERE user_id = '$this->user_id' AND date_id = '$badminton_date->date_id'";
+			//echo $sql;
 			$result = $mysqli->query($sql)
 			or die ($mysqli->error);
 			return ($result->num_rows == 1);
 		}
 		else {
-			return false;
+			throw new UnexpectedValueException('UnexpectedValueException occured on method call in_date since the date_id is invalid or the user id is invalid');
 		}
 	}
 
@@ -797,26 +921,26 @@ class CurrentUser extends User {
 				//Push the pending action to evaluate the hoster, only if the current user is not the creator of the badminton date
 				if ($this->user_id != $badminton_date->creator->user_id) {
 					NotificationPusher::push_notification($action);
-					$sql = "SELECT end_datetime FROM badminton_date WHERE date_id = '$badminton_date->date_id'";
-					$result = $this->dbc->query($sql)
-					or die ($this->dbc->error);
-					if ($result->num_rows == 1){
-						$end_datetime = mysqli_fetch_row($result)[0];
-						//Issue the pending endorsement
-						$sql = "INSERT INTO `pending_actions` (date_issued, awaiting_user, active) VALUES ('$end_datetime', '$this->user_id', '" . self::ACTIVE . "')";
-						$result = $this->dbc->query($sql)
-						or die ($this->dbc->error);
+						// $sql = "SELECT end_datetime FROM badminton_date WHERE date_id = '$badminton_date->date_id'";
+						// $result = $this->dbc->query($sql)
+						// or die ($this->dbc->error);
+						// if ($result->num_rows == 1){
+						// 	$end_datetime = mysqli_fetch_row($result)[0];
+						// 	//Issue the pending endorsement
+						// 	$sql = "INSERT INTO `pending_actions` (date_issued, awaiting_user, active) VALUES ('$end_datetime', '$this->user_id', '" . self::ACTIVE . "')";
+						// 	$result = $this->dbc->query($sql)
+						// 	or die ($this->dbc->error);
 
-						$token_id = $this->dbc->insert_id;
-						$badminton_date->get_creator();
-						$sql = "INSERT INTO `pending_user_endorsements` (token_id, user_to_endorse, date_id) VALUES ('$token_id', '{$badminton_date->creator->user_id}', '$badminton_date->date_id')";
-						$result = $this->dbc->query($sql)
-						or die ($this->dbc->error);
-						return true;
-					}
-					else {
-						throw new OutOfRangeException('OutOfRangeException occured on method call ' . __METHOD__ . ' because the date id does not exist');
-					}
+						// 	$token_id = $this->dbc->insert_id;
+						// 	$badminton_date->get_creator();
+						// 	$sql = "INSERT INTO `pending_user_endorsements` (token_id, user_to_endorse, date_id) VALUES ('$token_id', '{$badminton_date->creator->user_id}', '$badminton_date->date_id')";
+						// 	$result = $this->dbc->query($sql)
+						// 	or die ($this->dbc->error);
+						// 	return true;
+						// }
+						// else {
+						// 	throw new OutOfRangeException('OutOfRangeException occured on method call ' . __METHOD__ . ' because the date id does not exist');
+						// }
 				}
 				else {
 					return true;
@@ -890,52 +1014,133 @@ class CurrentUser extends User {
 		if ($this->user_id) {
 			$sql = "SELECT notification_id, message, user_id, type, a_href, read_status, date_notified
 			FROM `notifications`
-			WHERE read_status = '" . NotificationFactory::UNREAD . "'";
+			WHERE user_id = '$this->user_id'
+			ORDER BY date_notified DESC
+			LIMIT 8";
 			$result = $this->dbc->query($sql)
 			or die ($this->dbc->error);
 			$notifications = array();
 			while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-				$notification = '<a href="' . $row['a_href'] . '">' . $row['message'] . '</a>';
+				$notification = new Notification($row);
 				array_push($notifications, $notification);
 			}
 			return $notifications;
 		}
 	}
 
+	final public function get_all_notifications() {
+		/*
+		(Null) -> Array of Notifiations
+		Attempts to get the notifications for this user
+		 */
+		if ($this->user_id) {
+			$sql = "SELECT notification_id, message, user_id, type, a_href, read_status, date_notified
+			FROM `notifications`
+			WHERE user_id = '$this->user_id'
+			ORDER BY date_notified DESC";
+			$result = $this->dbc->query($sql)
+			or die ($this->dbc->error);
+			$notifications = array();
+			while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				$notification = new Notification($row);
+				array_push($notifications, $notification);
+			}
+			return $notifications;
+		}
+	}
+
+	final public function withdraw_absence(BadmintonDate $badminton_date) {
+		/*
+		Attempts to withdraw the absence from the badminton date
+		*/
+		if ($this->user_id && $badminton_date->date_id) {
+			if ($this->in_date($badminton_date)) {
+				$badminton_date->get_times();
+				$badminton_date->get_datename(); //To get the required information for the action
+				if (strtotime($badminton_date->begin_datetime) > time()) {
+					if ($badminton_date->has_space()) {
+						$sql = "UPDATE `joins` SET status = '" . self::JOINED_STATUS . "' WHERE date_id = '$badminton_date->date_id' AND user_id = '$this->user_id' LIMIT 1";
+						$result = $this->dbc->query($sql)
+						or die ($this->dbc->error);
+						//echo $sql;	
+
+						$action = new WithdrawAbsence(array(
+							'withdrawer' => clone $this,
+							'badminton_date' => $badminton_date)
+						);
+						//echo 'logged';
+
+						$affected_rows = $this->dbc->affected_rows;
+
+						if ($affected_rows == 1) {
+							//New row was inserted
+							//Push the action
+							ActionPusher::push_action($action);
+
+							//Push notifications to the group
+							NotificationPusher::push_notification($action);			
+						}
+						return true;
+					}
+					else {
+						throw new NoSpaceLeftException('No space left in the badminton date you are trying to join, you can try commenting in the conversation of the date and see what can be resolved');
+					}
+				}
+				else {
+					throw new OutOfBoundsException('OutOfBoundsException occured on method call leave_date, the date has already passed and cannot be left');
+				}
+			}
+			else {
+				throw new OutOfRangeException('OutOfRangeException occured on method call leave_date since the current user is not even in the badminton date');
+			}
+		}
+		else {
+			throw new UnexpectedValueException('UnexpectedValueException occured on request on method call leave_date, invalid parameters');
+		}
+
+	}
+
 	final public function leave_date(BadmintonDate $badminton_date) {
 		/*
 		(BadmintonDate) -> Bool
 		Attempts for the current user to leave the badminton date
+		For now this is the notify absence function
 		 */
 		if ($this->user_id && $badminton_date->date_id) {
 			if ($this->in_date($badminton_date)) {
-				if ($badminton_date->can_be_left()) {
-					$sql = "UPDATE `joins` SET status = '" . self::LEFT_STATUS . "' WHERE date_id = '$badminton_date->date_id' AND user_id = '$this->user_id'";
-					$result = $this->dbc->query($sql)
-					or die ($this->dbc->error);
-					$action = new LeaveBadmintonDate(array(
-						'leaver' => clone $this,
-						'badminton_date' => $badminton_date)
-					);
+				if (strtotime($badminton_date->begin_datetime) > time()) {
+					if ($badminton_date->can_be_left()) {
+						$sql = "UPDATE `joins` SET status = '" . self::LEFT_STATUS . "' WHERE date_id = '$badminton_date->date_id' AND user_id = '$this->user_id' LIMIT 1";
+						$result = $this->dbc->query($sql)
+						or die ($this->dbc->error);
+						//echo $sql;	
+						$action = new LeaveBadmintonDate(array(
+							'leaver' => clone $this,
+							'badminton_date' => $badminton_date)
+						);
 
-					$affected_rows = $this->dbc->affected_rows;
+						$affected_rows = $this->dbc->affected_rows;
 
-					if ($affected_rows == 1) {
-						//New row was inserted
-						//Push the action
-						ActionFactory::push_action($action);
+						if ($affected_rows == 1) {
+							//New row was inserted
+							//Push the action
+							ActionPusher::push_action($action);
 
-						//Push notifications to the group
-						NotificationFactory::push_notification($action);			
+							//Push notifications to the group
+							NotificationPusher::push_notification($action);			
+						}
+						return true;
 					}
-					return true;
+					else {
+						return false;
+					}
 				}
 				else {
-					return false;
+					throw new OutOfBoundsException('OutOfBoundsException occured on method call leave_date, the date has already passed and cannot be left');
 				}
 			}
 			else {
-				return true;
+				throw new OutOfRangeException('OutOfRangeException occured on method call leave_date since the current user is not even in the badminton date');
 			}
 		}
 		else {
@@ -1065,7 +1270,7 @@ class CurrentUser extends User {
 		Attempts to create a new badminton date into the database, assumes sanitized input already
 		 */
 		if ((strtotime($badminton_date->begin_datetime) > time()) && (strtotime($badminton_date->end_datetime) > time())) {
-			$sql = "INSERT INTO badminton_dates (datename, begin_datetime, end_datetime, creator_id, confirmed, summary) VALUES ('$badminton_date->datename', '$badminton_date->begin_datetime', '$badminton_date->end_datetime', '$this->user_id', '" . BadmintonDate::CONFIRMED . "', '$badminton_date->summary')
+			$sql = "INSERT INTO badminton_dates (datename, begin_datetime, end_datetime, creator_id, confirmed, summary, max_attendants) VALUES ('$badminton_date->datename', '$badminton_date->begin_datetime', '$badminton_date->end_datetime', '$this->user_id', '" . BadmintonDate::CONFIRMED . "', '$badminton_date->summary', '$badminton_date->max_attendants')
 			ON DUPLICATE KEY UPDATE date_id = date_id";
 			$result = $this->dbc->query($sql)
 			or die ($this->dbc->error);

@@ -7,7 +7,7 @@ try {
     if ($user instanceof CurrentUser) {
         $profile_id = $user->user_id;
         $mysqli = Database::connection();
-        $sql = "SELECT user_id, username, reputation, date_registered, last_seen, email, avatar, commuter, level, program, avatar_link FROM `users` WHERE user_id = '$profile_id'";
+        $sql = "SELECT user_id, username, reputation, date_registered, last_seen, email, commuter, level, program, avatar_link, bio, accolades FROM `users` WHERE user_id = '$profile_id'";
         $result = $mysqli->query($sql)
         or die ($mysqli->error);
         if ($result->num_rows == 1) {

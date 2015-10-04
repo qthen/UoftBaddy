@@ -1,5 +1,9 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/autoload.php';
+$user = User::get_current_user();
+if ($user instanceof AnonymousUser) {
+    header('Location: /fblogin.php');
+}
 ?>
 <html lang="en" ng-app="app">
 <head>
@@ -36,15 +40,16 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/autoload.php';
     <script src="bower_components/ngDialog/js/ngDialog.js"></script>
 
 
-
+    <!-- Angular Moment -->
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 
     <!-- Custom Scripts -->
-    <script type="text/javascript" src="/angular/index/index.js"></script>
+    <script type="text/javascript" src="/angular/booking.js"></script>
 </head>
-<body ng-controller="controller" ng-init="init('<?php echo $user->user_id;?>'">
+<body ng-controller="controller" ng-init="init('<?php echo $user->user_id;?>')">
     <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
 
     <?php Renderer::get_sidebar();?>
@@ -52,62 +57,40 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/autoload.php';
             <div class="page-content">
 
                 <!-- Header Bar -->
-                <div class="row header">
-                    <div class="col-xs-12">
+                <!-- Header Bar -->
+                <div class="row header" style="margin:0px;padding:0px;">    
+                    <div class="col-xs-12" style="margin-bottom:0px;">
                         <div class="user pull-right">
                             <div class="item dropdown">
                                 <a href="#" class="dropdown-toggle">
-                                    <img ng-src="{{user.avatar}}">
+                                    <img ng-src="{{user.avatar_link}}"> 
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li class="dropdown-header">
-                                        {{user.email}}
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li class="link">
-                                        <a ng-href="profile.php?id={{user.user_id}}">
-                                            Profile
-                                        </a>
-                                    </li>
-                                    <li class="link">
-                                        <a href="#">
-                                            Menu Item
-                                        </a>
-                                    </li>
-                                    <li class="link">
-                                        <a href="#">
-                                            Menu Item
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li class="link">
-                                        <a href="#">
-                                            Logout
-                                        </a>
-                                    </li>
-                                </ul>
+                                <?php Renderer::get_user_dropdown();?>
                             </div>
                             <div class="item dropdown">
                              <a href="#" class="dropdown-toggle">
-                                    <i class="fa fa-bell-o"></i>
+                                    <i class="fa fa-bell-o"><span class="badge" style="font-size:12px;position:absolute;top:10;color:white;background-color:#D9230F;" ng-show="data.newNotifications > 0">{{data.newNotifications}}</span></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li class="dropdown-header">
                                         Notifications
+                                        <span class="badge">{{data.notifications.length}}</span>
                                     </li>
                                     <li class="divider"></li>
-                                    <li>
-                                        <a href="#">Server Down!</a>
+                                    <li ng-repeat="notification in data.notifications">
+                                        <a ng-href="{{notification.a_href}}">
+                                            {{notification.message}}
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="meta">
-                            <div class="page">sy
-                                Dashboard
+                        <div class="meta" style="margin:0px;padding:0px;">   
+                            <div class="page">
+                                UoftBaddy
                             </div>
                             <div class="breadcrumb-links">
-                                Home / Dashboard
+                                Discussion
                             </div>
                         </div>
                     </div>
@@ -178,41 +161,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/autoload.php';
                                     </div>
                                 </rd-widget-body>
                             </rd-widget>
-                        <div class="col-lg-3 col-md-6 col-xs-12">
-                            <rd-widget>
-                                <rd-widget-body>
-<!--                                     <div class="widget-icon green pull-left">
-                                        <i class="fa fa-users"></i>
-                                    </div> -->
-                                    <div class="title">{{data.TopBar.confirmed_bookings_today}}</div>
-                                    <div class="comment">Confirmed Bookings Today</div>
-                                </rd-widget-body>
-                            </rd-widget>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-xs-12">
-                            <rd-widget>
-                                <rd-widget-body>
-<!--                                     <div class="widget-icon green pull-left">
-                                        <i class="fa fa-users"></i>
-                                    </div> -->
-                                    <div class="title">{{data.TopBar.confirmed_bookings_tomorrow}}</div>
-                                    <div class="comment">Confirmed Bookings Tomorrow
-                                    <small>{{data.topBar.total_space_tomorrow}} space left (according to user specifications)</small>
-                                    </div>
-                                </rd-widget-body>
-                            </rd-widget>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-xs-12">
-                            <rd-widget>
-                                <rd-widget-body>
-<!--                                     <div class="widget-icon green pull-left">
-                                        <i class="fa fa-users"></i>
-                                    </div> -->
-                                    <div class="title">{{data.TopBar.looking_to_play_this_week}}</div>
-                                    <div class="comment">Looking To Play This Week</div>
-                                </rd-widget-body>
-                            </rd-widget>
-                        </div>
+
 <!--                         <div class="col-lg-3 col-md-6 col-xs-12">
                             <rd-widget>
                                 <rd-widget-body>
@@ -224,22 +173,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/autoload.php';
                                 </rd-widget-body>
                             </rd-widget>
                         </div> -->
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div ng-if="eventSources">
-                              <button class="btn btn-info btn-sm" ng-click="changeView('agendaDay')">Day</button>
-                              <button class="btn btn-info btn-sm" ng-click="changeView('agendaWeek')">Week</button>
-                              <button class="btn btn-info btn-sm" ng-click="changeView('month')">Month</button>
-                              <div ui-calendar ng-model="eventSources" calendar="main"></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                              <h4>Inline</h4>
-    <div style="display:inline-block; min-height:290px;">
-      <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
-    </div>
-    </div>
                     </div>
                 </div>
 

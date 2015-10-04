@@ -19,6 +19,11 @@ module('app', ['ui.bootstrap', 'angularMoment', 'ngDialog'])
         $provide.constant('closeConversation', 'postRequests/user/closeConversation.php');
 
         $provide.constant('ngDialogCloseConversation', 'html/ngDialog/close_conversation.html');
+        $provide.constant('getUserNotifications', 'postRequests/user/getUserNotifications.php');
+        $provide.constant('markNotificationAsRead', 'postRequests/user/MarkNotificationAsRead.php');
+        $provide.constant('leaveBadmintonDate', 'postRequests/user/leaveBadmintonDate.php');
+        $provide.constant('withdrawAbsence', 'postRequests/user/withdrawAbsence.php');
+        $provide.constant('notifiedAbsenceHTML', 'html/ngDialog/notified_absence.html');
 
         $provide.value('MySQLtoJS', function(datetimeString) {
             var t = datetimeString.split(/[- :]/);
@@ -54,6 +59,22 @@ module('app', ['ui.bootstrap', 'angularMoment', 'ngDialog'])
             }
             return deferred.promise;    
         }
+    }]).factory('notificationsFactory', ['httpHandler', 'getUserNotifications', 'markNotificationAsRead', function(httpHandler, getUserNotifications, markNotificationAsRead) {
+        return {
+            CurrentUserNotifications: function() {
+                return httpHandler.request(getUserNotifications, {});
+            },
+            MarkAsRead: function(notificationObject) {
+                /*
+                (Notification) -> Promise Object
+                Marks the notification as read in the database
+                */
+                console.log(notificationObject);
+                return httpHandler.request(markNotificationAsRead, {
+                    notification_id: notificationObject.notification_id
+                });;
+            }
+        }
     }]).factory('uiFactory', ['httpHandler', 'loadUIUser', function(httpHandler, loadUIUser) {
         return {
             headerUser: function(user_id) {
@@ -79,8 +100,10 @@ module('app', ['ui.bootstrap', 'angularMoment', 'ngDialog'])
             /*
             (Conversation, String) -> Promise
             */
+            console.log(conversationObject);
+            console.log(commentText);
             return httpHandler.request(postCommentInConversation, {
-                comment_text: commentText,
+                message_text: commentText,
                 conversation_id: conversationObject.conversation_id
             });
         }
@@ -103,7 +126,7 @@ module('app', ['ui.bootstrap', 'angularMoment', 'ngDialog'])
                 conversation_id: ConversationObject.conversation_id
             });
         }
-    }]).factory('dateHelper', ['serviceDate', 'moment', function(serviceDate, moment){
+    }]).factory('dateHelper', ['serviceDate', 'moment', 'httpHandler', 'leaveBadmintonDate', 'withdrawAbsence', function(serviceDate, moment, httpHandler, leaveBadmintonDate, withdrawAbsence){
         return {
             dateMySQLFieldstoJS: function(dateObject) {
                 /*
@@ -119,19 +142,38 @@ module('app', ['ui.bootstrap', 'angularMoment', 'ngDialog'])
                 (Date) -> Date
                 Formats the message based on the date fields of the object, should be in JS Date form
                 */
-                if (dateObject.begin_datetime >= new Date()) {
-                    dateObject.message = 'Begins at ' + moment(dateObject.begin_datetime).format('MMMM Do YYYY, h:mm a') + ' and likely ends at ' + moment(dateObject.end_datetime).format('MMMM Do YYYY, h:mm a');
-                }
-                else {
-                    dateObject.message = 'Began at ' + moment(dateObject.begin_datetime).format('MMMM Do YYYY, h:mm a') + ' and likely ended at ' + moment(dateObject.end_datetime).format('MMMM Do YYYY, h:mm a');
-                }
+                dateObject.begin_date = moment(dateObject.begin_datetime).calendar();
+                dateObject.in_about = moment(dateObject.begin_datetime).fromNow();
+                dateObject.in_about = dateObject.in_about.substr(0, 1).toUpperCase() + dateObject.in_about.substr(1);
+                dateObject.message = 'Court booked until ' + moment(dateObject.end_datetime).format('h:mm a');
+                return dateObject;
             },
             formatConversationMessage: function(ArrayOfMessages) {
                 for (var i = 0; i < ArrayOfMessages.length; i++) {
-                    ArrayOfMessages[i].moment_posted = moment(ArrayOfMessages[i].date_posted).fromNow();
+                    var message = moment(ArrayOfMessages[i].date_posted).fromNow();
+                    message = message.substr(0, 1).toUpperCase() + message.substr(1);
+                    ArrayOfMessages[i].moment_posted = message;
                 }
                 return ArrayOfMessages;
-            }
+            },
+            NotifyAbsence: function(date_id) {
+                /*
+                (Int) -> Promise Object
+                Stores in the database that you will be absent and returns the promise from the $http service
+                */
+                return httpHandler.request(leaveBadmintonDate, {
+                    date_id: date_id
+                });
+            },
+            Withdraw: function(date_id) {
+                /*
+                (Int) -> Promise Object
+                Attempts to withdraw the absence from the database
+                */
+                return httpHandler.request(withdrawAbsence, {
+                    date_id: date_id
+                });
+            } 
         }
     }]).factory('dateFactory', ['$http', 'httpHandler', 'getBadmintonDate', 'getMessagesFromDate', 'serviceDate', function($http, httpHandler, getBadmintonDate, getMessagesFromDate, serviceDate){
         var factoryDate = {};
@@ -140,6 +182,7 @@ module('app', ['ui.bootstrap', 'angularMoment', 'ngDialog'])
             /*
             Get the date basics
              */
+             console.log(date_id);
             return httpHandler.request(getBadmintonDate, {
                 date_id: date_id
             });
@@ -149,22 +192,8 @@ module('app', ['ui.bootstrap', 'angularMoment', 'ngDialog'])
             /*
             (Int) -> Convesation Object
             */
-            httpHandler.request(getMessagesFromDate, {
+            return httpHandler.request(getMessagesFromDate, {
                 date_id: date_id
-            }).then(function(successResponse) {
-                var messages = successResponse.data.messages;
-
-                for (var i = 0; i < messages.length; i++) {
-                    messages[i].date_posted = serviceDate.MySQLDatetimeToDateObject(messages[i].date_posted);
-                }
-
-                var conversation = successResponse.data;
-                conversation.messages = messages;
-
-                return conversation;
-            }, function(errorResponse) {
-                console.log(errorResponse);
-                return {};
             });
         }
         return factoryDate;
@@ -217,10 +246,59 @@ module('app', ['ui.bootstrap', 'angularMoment', 'ngDialog'])
                 restrict:"E"
         };
         return e
-    }).controller('controller', ['$scope', '$http', 'getBadmintonDate', 'getThatDayDates', 'getThatWeekDates', 'getMessagesFromDate', 'MySQLtoJS', 'joinBadmintonDate', 'dateFactory', 'dateHelper', 'userDropdown', 'uiFactory', 'conversationService', 'ngDialog', 'ngDialogCloseConversation', function($scope, $http, getBadmintonDate, getThatDayDates, getThatWeekDates, getMessagesFromDate, MySQLtoJS, joinBadmintonDate, dateFactory, dateHelper, userDropdown, uiFactory, conversationService, ngDialog, ngDialogCloseConversation){
+    }).controller('controller', ['$scope', '$http', 'getBadmintonDate', 'getThatDayDates', 'getThatWeekDates', 'getMessagesFromDate', 'MySQLtoJS', 'joinBadmintonDate', 'dateFactory', 'dateHelper', 'userDropdown', 'uiFactory', 'conversationService', 'ngDialog', 'ngDialogCloseConversation', 'serviceDate', 'ngDialog', '$window', 'notificationsFactory', 'notifiedAbsenceHTML', function($scope, $http, getBadmintonDate, getThatDayDates, getThatWeekDates, getMessagesFromDate, MySQLtoJS, joinBadmintonDate, dateFactory, dateHelper, userDropdown, uiFactory, conversationService, ngDialog, ngDialogCloseConversation, serviceDate, ngDialog, $window, notificationsFactory, notifiedAbsenceHTML){
 
         $scope.data = {};
+    notificationsFactory.CurrentUserNotifications().then(function(successResponse) {
+        console.log(successResponse);
+        $scope.data.notifications = successResponse.data;
+        $scope.data.newNotifications = 0;
+        for (var i = 0; i < $scope.data.notifications.length; i++) {
+            //console.log($scope.data.notifications[i]);
+            if ($scope.data.notifications[i].read_status == 0) {
+                $scope.data.newNotifications++;
+                $scope.data.notifications[i].style = {
+                    "background-color": 'rgba(41, 128, 185, 0.1)'
+                };
+            }
+            else {
+                $scope.data.notifications[i].style = '';
+            }
+        }
+    }, function(errorResponse) {
+        console.log(errorResponse);
+    });
 
+    $scope.withdrawAbsence = function() {
+        dateHelper.Withdraw($scope.data.badmintonDate.date_id).then(function(successResponse) {
+            console.log(successResponse);
+        }, function(errorResponse) {
+            console.log(errorResponse);
+        })
+    }
+
+    $scope.propogateRead = function(notificationObject) {
+        notificationsFactory.MarkAsRead(notificationObject).then(function(successResponse) {
+            $window.location.href = '/' + notificationObject.a_href;
+        }, function(errorResponse) {
+            alert('Some error occured in handling notifications');
+            console.log(errorResponse);
+        });
+    }
+
+    $scope.notifyAbsence = function() {
+        dateHelper.NotifyAbsence($scope.data.badmintonDate.date_id).then(function(successResponse) {
+            console.log(successResponse);
+            var dialog = ngDialog.open({
+                template: notifiedAbsenceHTML
+            });
+            dialog.closePromise.then(function() {
+                $window.location.reload();
+            })
+        }, function(errorResponse) {
+            console.log(errorResponse);
+        })
+    }
         //Conversation scope functions
         $scope.postMessage = function() {
             if ($scope.data.possibleMessage) {
@@ -270,6 +348,7 @@ module('app', ['ui.bootstrap', 'angularMoment', 'ngDialog'])
              */
             $scope.toggle = !$scope.toggle;
         }
+
         $scope.join = function() {
             var promiseJoin = $http({
                 method: "post",
@@ -280,9 +359,16 @@ module('app', ['ui.bootstrap', 'angularMoment', 'ngDialog'])
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
             }).then(function(successResponse) {
                 console.log(successResponse);
+                var dialogPromise = ngDialog.open({
+                    template: 'html/ngDialog/success_join.html'
+                });
+                dialogPromise.closePromise.then(function() {
+                    $window.location.reload();
+                });
+
             }, function(errorResponse) {
                 console.log(errorResponse);
-            })
+            });
         }
 
         $scope.promptConfirmation = function() {
@@ -371,19 +457,56 @@ module('app', ['ui.bootstrap', 'angularMoment', 'ngDialog'])
 
             //Get the date via the factory method
             dateFactory.barebonesBadmintonDate(date_id).then(function(successResponse) {
-                //console.log(successResponse);
+                console.log(successResponse);
 
                 var badmintonDate = successResponse.data;
 
                 //Convert the badminton date fields into the JS dates
                 badmintonDate = dateHelper.dateMySQLFieldstoJS(badmintonDate);
+                //console.log(badmintonDate);
                 $scope.data.badmintonDate = dateHelper.formatDateMessage(badmintonDate);
-
                 //Get the date's conversation
-                $scope.data.badmintonDate.conversation = dateFactory.badmintonDateConversation($scope.data.badmintonDate.date_id);
+                
+                dateFactory.badmintonDateConversation($scope.data.badmintonDate.date_id).then(function(successResponse) {
+                    console.log(successResponse);
+                    var messages = successResponse.data.messages;
 
-                //Format the moment messages for the date
-                $scope.data.badmintonDate.conversation.messages = dateHelper.formatConversationMessage($scope.data.badmintonDate.conversation.messages);
+                    for (var i = 0; i < messages.length; i++) {
+                        messages[i].date_posted = serviceDate.MySQLDatetimeToDateObject(messages[i].date_posted);
+                    }
+
+                    var conversation = successResponse.data;
+                    conversation.messages = messages;
+                    console.log(conversation);
+
+                    $scope.data.badmintonDate.conversation = conversation;
+                    //Format the moment messages for the date
+                    $scope.data.badmintonDate.conversation.messages = dateHelper.formatConversationMessage($scope.data.badmintonDate.conversation.messages);
+
+                    //Finally check if the current user id is joined
+                    for (var i = 0; i < $scope.data.badmintonDate.attendees.length; i++) {
+                        if ($scope.data.badmintonDate.attendees[i].user_id == $scope.user.user_id) {
+                            $scope.data.badmintonDate.joined = true;
+                        }
+                        $scope.data.badmintonDate.attendees[i].date_joined = serviceDate.MySQLDatetimeToDateObject($scope.data.badmintonDate.attendees[i].date_joined);
+                    }
+
+                    for (var i = 0; i <  $scope.data.badmintonDate.absences.length; i++) {
+                        if ($scope.data.badmintonDate.absences[i].user_id == $scope.user.user_id) {
+                            $scope.data.badmintonDate.left = true;
+                        }
+                        $scope.data.badmintonDate.absences[i].date_joined = serviceDate.MySQLDatetimeToDateObject($scope.data.badmintonDate.absences[i].date_joined);
+                    }
+
+                    //Get the label class
+                    $scope.data.badmintonDate.label_class = ($scope.data.badmintonDate.begin_datetime > new Date()) ? 'label label-success' : 'label label-danger';
+                    $scope.data.badmintonDate.label_message =  ($scope.data.badmintonDate.begin_datetime > new Date()) ? 'Upcoming' : 'Past';
+
+                }, function(errorResponse) {
+                    console.log(errorResponse);
+                    $scope.data.badmintonDate.conversation = [];
+                });
+
                 console.log($scope.data.badmintonDate);
             }, function(errorResponse) {
                 console.log(errorResponse);

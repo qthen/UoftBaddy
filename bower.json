@@ -35,5 +35,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/rdash/rdash-angular"
+  },
+  "resolutions": {
+    "angular-bootstrap": "~0.11.0"
   }
 }

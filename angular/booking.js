@@ -12,6 +12,7 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog']).config(function($prov
 	$provide.constant('getAllBadmintonDates', 'postRequests/index/getAllBadmintonDates.php');
 	$provide.constant('loadTopBar', 'postRequests/index/getTopBar.php');
 	$provide.constant('loadCurrentUser', 'postRequests/user/loadCurrentUser.php');
+	$provide.constant('getUserNotifications', 'postRequests/user/getUserNotifications.php');
 
 	$provide.value('convertMySQLToJS', function(arrayInput) {
 		for (var i = 0; i < arrayInput.length; i++) {
@@ -38,7 +39,42 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog']).config(function($prov
 			return false;
 		}
 	});
-});
+}).service('serviceDate', function() {
+        this.MySQLDatetimeToDateObject = function(MySQLDatetimeString) {
+            var t = MySQLDatetimeString.split(/[- :]/);
+            return new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+        }
+    }).service('httpHandler', ['$http', '$q', function($http, $q){
+        /*
+        Dynamicallly Send HTTP request
+         */
+        this.request = function(url, data) {
+            /*
+            (String, JSON) -> Promise Object
+             */
+            var deferred = $q.defer();
+
+            if (url && angular.isObject(data) && !Array.isArray(data)) {
+                var httpRequest = $http({
+                    method: "post",
+                    url: url,
+                    data: data,
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                });
+                return httpRequest;
+            }
+            else {  
+                deferred.reject('The input parameters are not valid');
+            }
+            return deferred.promise;    
+        }
+    }]).factory('notificationsFactory', ['httpHandler', 'getUserNotifications', function(httpHandler, getUserNotifications) {
+    	return {
+    		CurrentUserNotifications: function() {
+    			return httpHandler.request(getUserNotifications, {});
+    		}
+    	}
+    }]);
 
 function rdWidget(){
 	var d={
@@ -102,11 +138,24 @@ return e
 }
 angular.module("app").directive("rdWidgetHeader",rdWidgetTitle);
 
-app.controller('controller', ['$scope', '$http', 'ngDialog', 'createConfirmedTime', 'createConfirmedTimePHP', 'loadBasicUser', '$q', 'createTentativeDate', 'markUnavailable', 'getAllBadmintonDates', 'convertMySQLToJS', 'uiCalendarConfig', 'duringHours', 'loadTopBar', 'loadCurrentUser', function($scope, $http, ngDialog, createConfirmedTime, createConfirmedTimePHP, loadBasicUser, $q, createTentativeDate, markUnavailable, getAllBadmintonDates, convertMySQLToJS, uiCalendarConfig, duringHours, loadTopBar, loadCurrentUser) {
+app.controller('controller', ['$scope', '$http', 'ngDialog', 'createConfirmedTime', 'createConfirmedTimePHP', 'loadBasicUser', '$q', 'createTentativeDate', 'markUnavailable', 'getAllBadmintonDates', 'convertMySQLToJS', 'uiCalendarConfig', 'duringHours', 'loadTopBar', 'loadCurrentUser', 'notificationsFactory', function($scope, $http, ngDialog, createConfirmedTime, createConfirmedTimePHP, loadBasicUser, $q, createTentativeDate, markUnavailable, getAllBadmintonDates, convertMySQLToJS, uiCalendarConfig, duringHours, loadTopBar, loadCurrentUser, notificationsFactory) {
 	$scope.data = {}, //Holding object for scopes
 	$scope.data.animationsEnabled = true;
 	$scope.data.badmintonDates = [
-	]
+	];
+
+	notificationsFactory.CurrentUserNotifications().then(function(successResponse) {
+		console.log(successResponse);
+		$scope.data.notifications = successResponse.data;
+		$scope.data.newNotifications = 0;
+		for (var i = 0; i < $scope.data.notifications.length; i++) {
+			if ($scope.data.notifications[i].read_status == 0) {
+				$scope.data.newNotifications++;
+			}
+		}
+	}, function(errorResponse) {
+		console.log(errorResponse);
+	});
 
 	$scope.toggle = true;
 

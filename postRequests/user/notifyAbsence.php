@@ -12,7 +12,6 @@ $request = file_get_contents('php://input');
 $data = json_decode($request);
 $date_id = $data->date_id;
 $user = User::get_current_user();
-
 try {
 	if (($user instanceof User) && is_numeric($date_id)) {
 		$badminton_date = new ConfirmedBadmintonDate(array(

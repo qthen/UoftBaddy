@@ -18,12 +18,17 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment', 'angu
 		$provide.constant('getThreadsPage', 'postRequests/index/getThreadsPage.php');
 
 		$provide.constant('getUserDropdown', 'postRequests/user/getUserDropdown.php');
+		$provide.constant('getNewUsers', 'postRequests/index/getNewUsers.php');
 
 		$provide.constant('getThreadComments', 'postRequests/thread/getThreadComments.php');
 		$provide.constant('getThreadPlayers', 'postRequests/thread/getThreadPlayers.php');
 		$provide.constant('getIndexStats', 'postRequests/index/getBadmintonDateStats.php');
 		$provide.constant('getCourtsStats', 'postRequests/index/getCourtStats.php');
 		$provide.constant('getNumberOfPeopleLookingToPlay', 'postRequests/index/getNumberOfPeopleLookingToPlay.php');
+		$provide.constant('getUserNotifications', 'postRequests/user/getUserNotifications.php');
+		$provide.constant('markNotificationAsRead', 'postRequests/user/MarkNotificationAsRead.php');
+        $provide.constant('uoftBannerClasses', ['col-lg-12 uoftbannerOne', 'col-lg-12 uoftBannerTwo', 'col-lg-12 uoftBannerThree']);
+        $provide.constant('getUserStats', 'postRequests/index/getTotalandNewUsers.php');
 
 		$provide.value('convertMySQLToJS', function(arrayInput) {
 			for (var i = 0; i < arrayInput.length; i++) {
@@ -79,6 +84,22 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment', 'angu
             }
             return deferred.promise;    
         }
+    }]).factory('notificationsFactory', ['httpHandler', 'getUserNotifications', 'markNotificationAsRead', function(httpHandler, getUserNotifications, markNotificationAsRead) {
+    	return {
+    		CurrentUserNotifications: function() {
+    			return httpHandler.request(getUserNotifications, {});
+    		},
+    		MarkAsRead: function(notificationObject) {
+    			/*
+    			(Notification) -> Promise Object
+    			Marks the notification as read in the database
+    			*/
+    			console.log(notificationObject);
+    			return httpHandler.request(markNotificationAsRead, {
+    				notification_id: notificationObject.notification_id
+    			});;
+    		}
+    	}
     }]).service('threadService', ['httpHandler', 'postThreadPHP', 'moment', function(httpHandler, postThreadPHP, moment){
     	this.postThread = function(threadObject) {
     		/*
@@ -97,7 +118,16 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment', 'angu
     			type: threadObject.type
     		});
     	}
-    }]).factory('indexFactory', ['httpHandler', 'getIndexStats', 'getCourtsStats', 'getNumberOfPeopleLookingToPlay', function(httpHandler, getIndexStats, getCourtStats, getNumberOfPeopleLookingToPlay){
+    }]).factory('bannerFactory', ['uoftBannerClasses', function(e){
+        return {
+            getClass: function(){
+                var classes = e;
+                var rand = classes[Math.floor(Math.random() * classes.length)];
+                console.log(rand);
+                return rand;
+            }
+        };
+    }]).factory('indexFactory', ['httpHandler', 'getIndexStats', 'getCourtsStats', 'getNumberOfPeopleLookingToPlay', 'getNewUsers', 'getUserStats', function(httpHandler, getIndexStats, getCourtStats, getNumberOfPeopleLookingToPlay, getNewUsers, getUserStats){
     	return {
     		SiteStats: function() {
     			/*
@@ -116,7 +146,19 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment', 'angu
     			(Null) -> Promise
     			*/
     			return httpHandler.request(getNumberOfPeopleLookingToPlay, {});
-    		}
+    		},
+    		NewMembers: function() {
+    			/*
+    			(Null) - Promise Object
+    			*/
+    			return httpHandler.request(getNewUsers, {});
+    		},
+            UserStats: function() {
+                /*
+                (Null) -> Promise Object
+                */
+                return httpHandler.request(getUserStats, {});
+            }
     	}
     }]).factory('userDropdown', ['httpHandler', 'getUserDropdown', function(httpHandler, getUserDropdown){
         return {
@@ -245,7 +287,7 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment', 'angu
                 restrict:"E"
         };
         return e
-    }).controller('controller', ['$scope', '$http', 'ngDialog', 'createConfirmedTime', 'createConfirmedTimePHP', 'loadBasicUser', '$q', 'createTentativeDate', 'markUnavailable', 'getAllBadmintonDates', 'convertMySQLToJS', 'uiCalendarConfig', 'duringHours', 'getThreads', 'moment', 'postThreadPHP', 'postCommentPHP', 'userDropdown', 'threadHelper', 'threadFactory', 'threadService', 'indexFactory', function($scope, $http, ngDialog, createConfirmedTime, createConfirmedTimePHP, loadBasicUser, $q, createTentativeDate, markUnavailable, getAllBadmintonDates, convertMySQLToJS, uiCalendarConfig, duringHours, getThreads, moment, postThreadPHP, postCommentPHP, userDropdown, threadHelper, threadFactory, threadService, indexFactory) {
+    }).controller('controller', ['$scope', '$http', 'ngDialog', 'createConfirmedTime', 'createConfirmedTimePHP', 'loadBasicUser', '$q', 'createTentativeDate', 'markUnavailable', 'getAllBadmintonDates', 'convertMySQLToJS', 'uiCalendarConfig', 'duringHours', 'getThreads', 'moment', 'postThreadPHP', 'postCommentPHP', 'userDropdown', 'threadHelper', 'threadFactory', 'threadService', 'indexFactory', '$window', 'notificationsFactory', 'serviceDate', 'bannerFactory', function($scope, $http, ngDialog, createConfirmedTime, createConfirmedTimePHP, loadBasicUser, $q, createTentativeDate, markUnavailable, getAllBadmintonDates, convertMySQLToJS, uiCalendarConfig, duringHours, getThreads, moment, postThreadPHP, postCommentPHP, userDropdown, threadHelper, threadFactory, threadService, indexFactory, $window, notificationsFactory, serviceDate, bannerFactory) {
 	$scope.data = {}, //Holding object for scopes
 	$scope.data.animationsEnabled = true;
 	$scope.data.thread_title = ''; //By default
@@ -253,6 +295,43 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment', 'angu
 
 	$scope.data.view = 1; //By default
 
+    $scope.data.uoftBannerClass = bannerFactory.getClass();
+
+    indexFactory.UserStats().then(function(successResponse) {
+        console.log(successResponse);
+        $scope.data.userStats = successResponse.data;
+    }, function(errorResponse) {
+        console.log(errorResponse);
+    });
+
+	notificationsFactory.CurrentUserNotifications().then(function(successResponse) {
+		console.log(successResponse);
+		$scope.data.notifications = successResponse.data;
+		$scope.data.newNotifications = 0;
+		for (var i = 0; i < $scope.data.notifications.length; i++) {
+			//console.log($scope.data.notifications[i]);
+			if ($scope.data.notifications[i].read_status == 0) {
+				$scope.data.newNotifications++;
+				$scope.data.notifications[i].style = {
+					"background-color": 'rgba(41, 128, 185, 0.1)'
+				};
+			}
+			else {
+				$scope.data.notifications[i].style = '';
+			}
+		}
+	}, function(errorResponse) {
+		console.log(errorResponse);
+	});
+
+	$scope.propogateRead = function(notificationObject) {
+		notificationsFactory.MarkAsRead(notificationObject).then(function(successResponse) {
+			$window.location.href = '/' + notificationObject.a_href;
+		}, function(errorResponse) {
+			alert('Some error occured in handling notifications');
+			console.log(errorResponse);
+		});
+	}
 	$scope.data.doNotAsk = false; //Do not ask if you are looking to play
 
 	threadFactory.getThreads().then(function(successResponse) {
@@ -320,6 +399,17 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment', 'angu
         });
     }
     $scope.getUserDropdown(); //Get the user dropdown
+
+    indexFactory.NewMembers().then(function(successResponse) {
+    	var users = successResponse.data;
+    	$scope.data.newMembers = [];
+    	for (var i = 0; i < users.length; i++) {
+    		users[i].date_registered = serviceDate.MySQLDatetimeToDateObject(users[i].date_registered);
+    		$scope.data.newMembers.push(users[i]);
+    	}
+    }, function(errorResponse) {
+    	console.log(errorResponse);
+    })
 
 	$scope.conditionallyJoinThread = function(thread_id) {
 
@@ -584,7 +674,7 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment', 'angu
 				console.log($scope.user);
 			}, function(errorResponse) {
 				$scope.user = {
-					'user_id': null
+					'user_id': nulls
 				}
 			});
 
@@ -597,5 +687,12 @@ module('app', ['ui.bootstrap', 'ui.calendar', 'ngDialog', 'angularMoment', 'angu
 		else {
 			$scope.userPromise.resolve();
 		}
+	}
+	$scope.register = function() {
+		$window.location.href = '/register.php';
+	}
+
+	$scope.login = function() {
+		$window.location.href = '/fblogin.php';
 	}
 }]);

@@ -18,6 +18,7 @@ abstract class ActionPusher {
 			case 'JoinBadmintonDate':
 			case 'LeaveBadmintonDate':
 			case 'ProposeBadmintonDate':
+			case 'WithdrawAbsence':
 				BadmintonDateActionPusher::push_action($action);
 				break;
 			case 'PostedCommentOnThread':
@@ -100,6 +101,16 @@ abstract class BadmintonDateActionPusher extends ActionPusher {
 				}
 				break;
 			case 'LeaveBadmintonDate':
+				$action_id = $action->log_action();
+				$keys = ActionFactory::$action_key_values[$class];
+				foreach ($keys as $key) {
+					$value = ActionFactory::handle_key($action, $key);
+					$insert = "INSERT INTO `action_key_values` (action_id, `key`, value) VALUES ('$action_id', '$key', '$value')";
+					$result = $mysqli->query($insert)
+					or die ($mysqli->error);
+				}
+				break;
+			case 'WithdrawAbsence':
 				$action_id = $action->log_action();
 				$keys = ActionFactory::$action_key_values[$class];
 				foreach ($keys as $key) {

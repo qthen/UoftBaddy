@@ -14,6 +14,8 @@ module('app', ['ui.bootstrap'])
         $provide.constant('getUserStats', 'postRequests/user/getUserStats.php');
         $provide.constant('getUserEvents', 'postRequests/user/getUserEvents.php');
         $provide.constant('getCreatedEvents', 'postRequests/user/getCreatedUserEvents.php');
+        $provide.constant('getUserNotifications', 'postRequests/user/getUserNotifications.php');
+        $provide.constant('markNotificationAsRead', 'postRequests/user/MarkNotificationAsRead.php');
         $provide.value('MySQLtoJS', function(datetimeString) {
             var t = datetimeString.split(/[- :]/);
             var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
@@ -70,6 +72,22 @@ module('app', ['ui.bootstrap'])
                 deferred.reject('The input parameters are not valid');
             }
             return deferred.promise;    
+        }
+    }]).factory('notificationsFactory', ['httpHandler', 'getUserNotifications', 'markNotificationAsRead', function(httpHandler, getUserNotifications, markNotificationAsRead) {
+        return {
+            CurrentUserNotifications: function() {
+                return httpHandler.request(getUserNotifications, {});
+            },
+            MarkAsRead: function(notificationObject) {
+                /*
+                (Notification) -> Promise Object
+                Marks the notification as read in the database
+                */
+                console.log(notificationObject);
+                return httpHandler.request(markNotificationAsRead, {
+                    notification_id: notificationObject.notification_id
+                });;
+            }
         }
     }]).factory('usersFactory', ['serviceDate', 'getAllUsers', 'httpHandler', function(serviceDate, getAllUsers, httpHandler) {
         /*
@@ -152,7 +170,35 @@ module('app', ['ui.bootstrap'])
                 restrict:"E"
         };
         return e
-    }).controller('controller', ['$scope', '$http', 'usersFactory', 'usersHelper', function($scope, $http, usersFactory, usersHelper) {
+    }).controller('controller', ['$scope', '$http', 'usersFactory', 'usersHelper', 'notificationsFactory', function($scope, $http, usersFactory, usersHelper, notificationsFactory) {
+    notificationsFactory.CurrentUserNotifications().then(function(successResponse) {
+        console.log(successResponse);
+        $scope.data.notifications = successResponse.data;
+        $scope.data.newNotifications = 0;
+        for (var i = 0; i < $scope.data.notifications.length; i++) {
+            //console.log($scope.data.notifications[i]);
+            if ($scope.data.notifications[i].read_status == 0) {
+                $scope.data.newNotifications++;
+                $scope.data.notifications[i].style = {
+                    "background-color": 'rgba(41, 128, 185, 0.1)'
+                };
+            }
+            else {
+                $scope.data.notifications[i].style = '';
+            }
+        }
+    }, function(errorResponse) {
+        console.log(errorResponse);
+    });
+
+    $scope.propogateRead = function(notificationObject) {
+        notificationsFactory.MarkAsRead(notificationObject).then(function(successResponse) {
+            $window.location.href = '/' + notificationObject.a_href;
+        }, function(errorResponse) {
+            alert('Some error occured in handling notifications');
+            console.log(errorResponse);
+        });
+    }
 
     $scope.data = {};
 
